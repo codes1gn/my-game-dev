@@ -134,7 +134,16 @@ func _update_status() -> void:
 		_show_all_found()
 
 func _show_all_found() -> void:
-	status_label.text = "所有证据已收集！可以开始推理了。"
+	status_label.text = "所有证据已收集！"
+	var deduce_btn := Button.new()
+	deduce_btn.text = "开始推理"
+	deduce_btn.add_theme_font_size_override("font_size", 18)
+	deduce_btn.custom_minimum_size = Vector2(140, 40)
+	deduce_btn.pressed.connect(func():
+		get_tree().change_scene_to_file("res://src/investigation/deduction_board.tscn")
+	)
+	$StatusBar.add_child(deduce_btn)
+	$StatusBar.move_child(deduce_btn, 1)
 
 func _on_back() -> void:
 	get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")
