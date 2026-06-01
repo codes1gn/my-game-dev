@@ -1,0 +1,11 @@
+# Godot
+.godot/
+*.import
+export_presets.cfg
+
+# GRB full repo clone (addon is copied into addons/)
+/godot-runtime-bridge/
+
+# OS
+.DS_Store
+Thumbs.db
