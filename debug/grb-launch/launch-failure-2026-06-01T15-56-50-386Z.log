@@ -1,0 +1,62 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":49552,"proto":"grb/1","tier_default":1,"token":"4277ad724287c061422c88f0a13db056f8d9e7ca6cc9c566"}
+[VN] Loading dialogue: res://data/dialogue/case_001_opening.json
+[VN] Loaded OK, nodes count: 31
+[DialogueBox] show_dialogue: speaker=narrator text_len=15
+[DialogueBox] show_dialogue: speaker=青年警员 text_len=17
+[DialogueBox] show_dialogue: speaker=青年警员 text_len=26
+
+
+
+=== STDERR ===
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/narrator.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:206)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:80)
+       [3] _process_node (res://src/vn/vn_engine.gd:67)
+       [4] start_dialogue (res://src/vn/vn_engine.gd:53)
+       [5] _ready (res://src/vn/vn_engine.gd:25)
+ERROR: Failed to open: res://data/characters/青年警员.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:206)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:80)
+       [3] _process_node (res://src/vn/vn_engine.gd:67)
+       [4] _on_advance (res://src/vn/vn_engine.gd:145)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/青年警员.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:206)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:80)
+       [3] _process_node (res://src/vn/vn_engine.gd:67)
+       [4] _on_advance (res://src/vn/vn_engine.gd:145)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+
+

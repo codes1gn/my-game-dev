@@ -12,6 +12,7 @@ func show_choices(options: Array) -> void:
 		btn.text = opt.get("text", "???")
 		btn.custom_minimum_size = Vector2(400, 50)
 		btn.add_theme_font_size_override("font_size", 20)
+		ThemeManager.style_button(btn)
 		var idx := i
 		btn.pressed.connect(func(): _on_choice(idx))
 		add_child(btn)

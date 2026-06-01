@@ -13,6 +13,7 @@ var _current_node_id: String = ""
 var _pending_dialogue_path: String = ""
 
 func _ready() -> void:
+	_apply_theme()
 	dialogue_box.advance_requested.connect(_on_advance)
 	choice_panel.choice_selected.connect(_on_choice_selected)
 	choice_panel.visible = false
@@ -22,6 +23,20 @@ func _ready() -> void:
 		start_dialogue(_pending_dialogue_path)
 	else:
 		start_dialogue("res://data/dialogue/case_001_opening.json")
+
+func _apply_theme() -> void:
+	var bg_tex := ThemeManager.generate_gradient_bg(1280, 720, Color(0.04, 0.04, 0.07), Color(0.08, 0.06, 0.04))
+	background.texture = bg_tex
+
+	var box_style := ThemeManager.make_panel_style(
+		Color(0.04, 0.04, 0.06, 0.88),
+		ThemeManager.COLORS["accent_gold_dim"], 8
+	)
+	box_style.content_margin_left = 24
+	box_style.content_margin_right = 24
+	box_style.content_margin_top = 16
+	box_style.content_margin_bottom = 16
+	dialogue_box.add_theme_stylebox_override("panel", box_style)
 
 func start_dialogue(dialogue_path: String) -> void:
 	print("[VN] Loading dialogue: ", dialogue_path)

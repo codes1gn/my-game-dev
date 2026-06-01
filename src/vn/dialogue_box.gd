@@ -14,6 +14,9 @@ var _chars_per_second: float = 30.0
 
 func _ready() -> void:
 	continue_indicator.visible = false
+	speaker_label.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
+	text_label.add_theme_color_override("default_color", ThemeManager.COLORS["text_primary"])
+	continue_indicator.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 
 func _process(delta: float) -> void:
 	if not _is_typing:

@@ -20,6 +20,7 @@ config/features=PackedStringArray("4.6")
 GRBServer="*uid://hwkgc74v20qq"
 EventBus="*res://src/autoload/event_bus.gd"
 GameManager="*res://src/autoload/game_manager.gd"
+ThemeManager="*res://src/autoload/theme_manager.gd"
 
 [display]
 

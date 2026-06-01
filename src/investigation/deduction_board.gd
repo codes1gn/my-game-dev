@@ -18,7 +18,32 @@ func _ready() -> void:
 	result_popup.visible = false
 	submit_button.pressed.connect(_on_submit)
 	result_close.pressed.connect(func(): result_popup.visible = false; _return_to_menu())
+	_apply_theme()
 	_load_case("res://data/cases/case_001_deduction.json")
+
+func _apply_theme() -> void:
+	var bg_tex := ThemeManager.generate_gradient_bg(960, 540, Color(0.06, 0.06, 0.10), Color(0.04, 0.04, 0.06))
+	$Background.texture = bg_tex
+	$Background.expand_mode = 1
+	$Background.stretch_mode = 6
+
+	title_label.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
+
+	var left_style := ThemeManager.make_panel_style(Color(0.08, 0.08, 0.12, 0.9), ThemeManager.COLORS["border"], 6)
+	$HSplit/LeftPanel.add_theme_stylebox_override("panel", left_style)
+	var right_style := ThemeManager.make_panel_style(Color(0.08, 0.08, 0.12, 0.9), ThemeManager.COLORS["border"], 6)
+	$HSplit/RightPanel.add_theme_stylebox_override("panel", right_style)
+
+	ThemeManager.style_button(submit_button)
+	submit_button.add_theme_font_size_override("font_size", 22)
+
+	var popup_style := ThemeManager.make_panel_style(
+		Color(0.06, 0.06, 0.09, 0.96),
+		ThemeManager.COLORS["accent_gold_dim"], 8
+	)
+	result_popup.add_theme_stylebox_override("panel", popup_style)
+	result_title.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
+	ThemeManager.style_button(result_close)
 
 func _load_case(path: String) -> void:
 	_case_data = GameManager.load_json(path)
@@ -38,6 +63,7 @@ func _build_evidence_panel() -> void:
 	var header := Label.new()
 	header.text = "已收集证据"
 	header.add_theme_font_size_override("font_size", 20)
+	header.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 	evidence_list.add_child(header)
 
 	var sep := HSeparator.new()
@@ -61,6 +87,7 @@ func _build_questions() -> void:
 		var q_label := Label.new()
 		q_label.text = q.get("prompt", "")
 		q_label.add_theme_font_size_override("font_size", 18)
+		q_label.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 		q_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		q_label.custom_minimum_size = Vector2(400, 0)
 		question_container.add_child(q_label)
@@ -75,6 +102,7 @@ func _build_questions() -> void:
 			btn.text = opt.get("text", "")
 			btn.toggle_mode = true
 			btn.add_theme_font_size_override("font_size", 15)
+			ThemeManager.style_button(btn)
 			var opt_id: String = opt.get("id", str(i))
 			btn.pressed.connect(func():
 				_answers[q_id] = opt_id

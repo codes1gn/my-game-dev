@@ -16,7 +16,28 @@ var _current_hotspot_id: String = ""
 func _ready() -> void:
 	evidence_popup.visible = false
 	back_button.pressed.connect(_on_back)
+	_apply_theme()
 	_load_scene("res://data/scenes/case_001_apartment.json")
+
+func _apply_theme() -> void:
+	var bg_tex := ThemeManager.generate_crime_scene_bg(960, 540)
+	$Background.texture = bg_tex
+	$Background.expand_mode = 1
+	$Background.stretch_mode = 6
+
+	var map_style := ThemeManager.make_panel_style(Color(0.12, 0.14, 0.18, 0.9), Color(0.25, 0.22, 0.15, 0.4), 4)
+	$SceneMapBg.visible = false
+
+	$SceneLabel.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
+	status_label.add_theme_color_override("font_color", ThemeManager.COLORS["text_primary"])
+	ThemeManager.style_button(back_button)
+
+	var popup_style := ThemeManager.make_panel_style(
+		Color(0.06, 0.06, 0.09, 0.95),
+		ThemeManager.COLORS["accent_gold_dim"], 8
+	)
+	evidence_popup.add_theme_stylebox_override("panel", popup_style)
+	evidence_title.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 
 func _load_scene(path: String) -> void:
 	_scene_data = GameManager.load_json(path)
@@ -41,7 +62,8 @@ func _build_hotspots() -> void:
 		btn.custom_minimum_size = Vector2(rect.get("w", 80), rect.get("h", 60))
 		btn.size = btn.custom_minimum_size
 		btn.add_theme_font_size_override("font_size", 16)
-		btn.modulate = Color(1, 1, 1, 0.8)
+		ThemeManager.style_button(btn)
+		btn.modulate = Color(1, 1, 1, 0.85)
 
 		var hs_id: String = hs["id"]
 		btn.pressed.connect(func(): _on_hotspot_clicked(hs_id))
@@ -87,6 +109,7 @@ func _show_evidence(evidence_id: String) -> void:
 	for analysis in analyses:
 		var action_btn := Button.new()
 		action_btn.text = analysis.get("action", "检查")
+		ThemeManager.style_button(action_btn)
 		var result_text: String = analysis.get("result", "无结果")
 		action_btn.pressed.connect(func():
 			evidence_desc.text = desc + "\n\n【分析结果】\n" + result_text
@@ -95,6 +118,7 @@ func _show_evidence(evidence_id: String) -> void:
 
 	var close_btn := Button.new()
 	close_btn.text = "关闭"
+	ThemeManager.style_button(close_btn)
 	close_btn.pressed.connect(func(): evidence_popup.visible = false)
 	evidence_actions.add_child(close_btn)
 
@@ -114,6 +138,7 @@ func _show_simple_popup(title: String, desc: String) -> void:
 
 	var close_btn := Button.new()
 	close_btn.text = "关闭"
+	ThemeManager.style_button(close_btn)
 	close_btn.pressed.connect(func(): evidence_popup.visible = false)
 	evidence_actions.add_child(close_btn)
 
@@ -139,6 +164,7 @@ func _show_all_found() -> void:
 	deduce_btn.text = "开始推理"
 	deduce_btn.add_theme_font_size_override("font_size", 18)
 	deduce_btn.custom_minimum_size = Vector2(140, 40)
+	ThemeManager.style_button(deduce_btn)
 	deduce_btn.pressed.connect(func():
 		get_tree().change_scene_to_file("res://src/investigation/deduction_board.tscn")
 	)
