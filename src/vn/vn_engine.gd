@@ -218,6 +218,8 @@ const _PORTRAIT_MAP := {
 	"周业斌": "res://assets/portraits/zhou_yebin.jpg",
 	"zhou_yebin": "res://assets/portraits/zhou_yebin.jpg",
 	"青年警员": "res://assets/portraits/young_officer.jpg",
+	"法医": "res://assets/portraits/forensic_doctor.jpg",
+	"助手": "res://assets/portraits/assistant_officer.jpg",
 }
 
 func _update_portraits(node: Dictionary) -> void:
