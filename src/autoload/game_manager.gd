@@ -1,6 +1,10 @@
 extends Node
 
-var current_state: int = Enums.GameState.MAIN_MENU
+const STATE_MAIN_MENU := 0
+const STATE_DAILY_LIFE := 1
+const STATE_INVESTIGATION := 2
+
+var current_state: int = STATE_MAIN_MENU
 var current_day: int = 1
 var player_data: Dictionary = {}
 var flags: Dictionary = {}
@@ -11,7 +15,7 @@ func _ready() -> void:
 func _init_player_data() -> void:
 	player_data = {
 		"name": "陈益",
-		"rank": Enums.Rank.DISTRICT,
+		"rank": 0,
 		"system_points": 0,
 		"attributes": {
 			"observation": 5,

@@ -1,0 +1,36 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":55854,"proto":"grb/1","tier_default":1,"token":"8c2234bcf3375aa2e239dc81c09ff1ee063bece52ef860ff"}
+
+
+
+=== STDERR ===
+SCRIPT ERROR: Parse Error: Cannot infer the type of "attr" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://src/vn/vn_engine.gd:107)
+   GDScript backtrace (most recent call first):
+       [0] _on_start (res://src/ui/main_menu.gd:9)
+       [1] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:692)
+       [2] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [3] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [4] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to load script "res://src/vn/vn_engine.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+   GDScript backtrace (most recent call first):
+       [0] _on_start (res://src/ui/main_menu.gd:9)
+       [1] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:692)
+       [2] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [3] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [4] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+
+

@@ -24,10 +24,12 @@ func _ready() -> void:
 		start_dialogue("res://data/dialogue/case_001_opening.json")
 
 func start_dialogue(dialogue_path: String) -> void:
+	print("[VN] Loading dialogue: ", dialogue_path)
 	_dialogue_data = GameManager.load_json(dialogue_path)
 	if _dialogue_data == null:
-		push_error("Failed to load dialogue: " + dialogue_path)
+		push_error("[VN] Failed to load dialogue: " + dialogue_path)
 		return
+	print("[VN] Loaded OK, nodes count: ", (_dialogue_data.get("nodes", []) as Array).size())
 	_nodes.clear()
 	for node_data in _dialogue_data.get("nodes", []):
 		_nodes[node_data["id"]] = node_data
@@ -102,13 +104,13 @@ func _check_condition(cond) -> bool:
 	if cond == null:
 		return true
 	if cond is Dictionary:
-		for key in cond:
+		for key: String in cond:
 			if key.ends_with("_gte"):
-				var attr := key.trim_suffix("_gte")
+				var attr_name: String = key.trim_suffix("_gte")
 				if key.begins_with("system_points"):
 					if GameManager.player_data["system_points"] < cond[key]:
 						return false
-				elif GameManager.get_attribute(attr) < cond[key]:
+				elif GameManager.get_attribute(attr_name) < cond[key]:
 					return false
 			elif key == "has_flag":
 				if not GameManager.get_flag(cond[key]):

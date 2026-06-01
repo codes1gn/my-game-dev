@@ -1,0 +1,14 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":63738,"proto":"grb/1","tier_default":1,"token":"e049029260f86a7e03feba04e6499508e421465ed25af752"}
+Start button pressed — game logic goes here
+
+
+
+=== STDERR ===
+(empty)
+

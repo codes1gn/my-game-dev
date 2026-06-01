@@ -8,9 +8,9 @@ signal advance_requested
 @onready var continue_indicator: Control = %ContinueIndicator
 
 var _full_text: String = ""
-var _char_index: int = 0
+var _char_index: float = 0.0
 var _is_typing: bool = false
-var _chars_per_second: float = 40.0
+var _chars_per_second: float = 30.0
 
 func _ready() -> void:
 	continue_indicator.visible = false
@@ -20,13 +20,13 @@ func _process(delta: float) -> void:
 		return
 	_char_index += delta * _chars_per_second
 	var visible_count := int(_char_index)
-	if visible_count >= _full_text.length():
-		text_label.text = _full_text
+	if visible_count >= text_label.get_total_character_count():
+		text_label.visible_characters = -1
 		_is_typing = false
 		continue_indicator.visible = true
 		text_finished.emit()
 	else:
-		text_label.text = _full_text.substr(0, visible_count)
+		text_label.visible_characters = visible_count
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.pressed):
@@ -37,6 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			advance_requested.emit()
 
 func show_dialogue(speaker: String, text: String) -> void:
+	print("[DialogueBox] show_dialogue: speaker=", speaker, " text_len=", text.length())
 	if speaker.is_empty() or speaker == "narrator":
 		speaker_label.text = ""
 	else:
@@ -44,14 +45,14 @@ func show_dialogue(speaker: String, text: String) -> void:
 	_full_text = text
 	_char_index = 0.0
 	_is_typing = true
-	text_label.text = ""
+	text_label.text = text
+	text_label.visible_characters = 0
 	continue_indicator.visible = false
 	visible = true
 
 func _skip_typing() -> void:
-	text_label.text = _full_text
+	text_label.visible_characters = -1
 	_is_typing = false
-	_char_index = float(_full_text.length())
 	continue_indicator.visible = true
 	text_finished.emit()
 
