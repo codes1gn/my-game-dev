@@ -88,7 +88,10 @@ func _on_hotspot_clicked(hotspot_id: String) -> void:
 			else:
 				_show_evidence(evidence_ids[0])
 		"surveillance":
-			_show_simple_popup("监控录像", "正在回放监控画面...\n[监控系统尚未实现 — 原型占位]")
+			if not evidence_ids.is_empty():
+				_show_evidence(evidence_ids[0])
+			else:
+				_show_simple_popup("监控录像", "正在回放监控画面...\n[监控布局尚未实现 — 原型占位]")
 
 func _show_evidence(evidence_id: String) -> void:
 	var ev_path := "res://data/evidence/case_001/%s.json" % evidence_id

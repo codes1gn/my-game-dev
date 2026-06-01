@@ -1,0 +1,183 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":50640,"proto":"grb/1","tier_default":1,"token":"269565ebc44f1c6450fb2f8edfc6ab1a21101e9da2fcd86d"}
+[VN] Loading dialogue: res://data/dialogue/case_001_conclusion.json
+[VN] Loaded OK, nodes count: 24
+[DialogueBox] show_dialogue: speaker=narrator text_len=23
+[DialogueBox] show_dialogue: speaker=narrator text_len=42
+[DialogueBox] show_dialogue: speaker=陈益 text_len=49
+[DialogueBox] show_dialogue: speaker=陈益 text_len=44
+[DialogueBox] show_dialogue: speaker=周业斌 text_len=31
+[DialogueBox] show_dialogue: speaker=周业斌 text_len=29
+[DialogueBox] show_dialogue: speaker=陈益 text_len=23
+[DialogueBox] show_dialogue: speaker=周业斌 text_len=20
+[DialogueBox] show_dialogue: speaker=青年警员 text_len=38
+[DialogueBox] show_dialogue: speaker=周业斌 text_len=23
+[DialogueBox] show_dialogue: speaker=narrator text_len=48
+[DialogueBox] show_dialogue: speaker=陈益 text_len=39
+[DialogueBox] show_dialogue: speaker=narrator text_len=26
+
+
+
+=== STDERR ===
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/narrator.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] start_dialogue (res://src/vn/vn_engine.gd:61)
+       [5] _ready (res://src/vn/vn_engine.gd:30)
+ERROR: Failed to open: res://data/characters/narrator.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _handle_condition_node (res://src/vn/vn_engine.gd:117)
+       [5] _process_node (res://src/vn/vn_engine.gd:79)
+       [6] _on_advance (res://src/vn/vn_engine.gd:153)
+       [7] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [8] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [9] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [10] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [11] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [12] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/陈益.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/陈益.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/周业斌.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/周业斌.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/陈益.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/周业斌.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/青年警员.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/周业斌.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:68)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:214)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:88)
+       [3] _process_node (res://src/vn/vn_engine.gd:75)
+       [4] _on_advance (res://src/vn/vn_engine.gd:153)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runt
+
+[stderr truncated]
