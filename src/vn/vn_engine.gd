@@ -150,11 +150,27 @@ func _end_dialogue() -> void:
 	portrait_left.visible = false
 	portrait_right.visible = false
 	EventBus.dialogue_ended.emit(_dialogue_data.get("id", ""))
-	_show_end_screen()
+
+	var next_scene: String = _dialogue_data.get("on_end_goto", "")
+	if not next_scene.is_empty():
+		_transition_to(next_scene)
+	else:
+		_show_end_screen()
+
+func _transition_to(scene_path: String) -> void:
+	var label := Label.new()
+	label.text = "正在进入现场..."
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_font_size_override("font_size", 28)
+	label.anchors_preset = Control.PRESET_FULL_RECT
+	add_child(label)
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file(scene_path)
 
 func _show_end_screen() -> void:
 	var label := Label.new()
-	label.text = "— 序章完 —\n按任意键返回主菜单"
+	label.text = "\u2014 \u5e8f\u7ae0\u5b8c \u2014\n\u6309\u4efb\u610f\u952e\u8fd4\u56de\u4e3b\u83dc\u5355"
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.add_theme_font_size_override("font_size", 32)

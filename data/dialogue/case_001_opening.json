@@ -2,6 +2,7 @@
   "id": "case_001_opening",
   "type": "vn_dialogue",
   "start_node": "start",
+  "on_end_goto": "res://src/investigation/investigation_scene.tscn",
   "nodes": [
     {
       "id": "start",
@@ -243,7 +244,7 @@
       "id": "opening_end",
       "type": "text",
       "speaker": "narrator",
-      "text": "【第一章结束 — 案件序幕已拉开】",
+      "text": "\u5468\u4e1a\u658c\u5e26\u9648\u76ca\u6765\u5230\u4e86\u5218\u683c\u516c\u5bd3\u7684\u6848\u53d1\u73b0\u573a\u3002\u201c\u65e2\u7136\u4f60\u8fd9\u4e48\u6709\u4fe1\u5fc3\uff0c\u5c31\u5728\u73b0\u573a\u770b\u770b\u5427\u3002\u201d",
       "next": ""
     }
   ]

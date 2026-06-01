@@ -130,6 +130,11 @@ func _update_status() -> void:
 	for hs in _scene_data.get("hotspots", []):
 		total_evidence += (hs.get("evidence_ids", []) as Array).size()
 	status_label.text = "已发现证据: %d / %d" % [_discovered_evidence.size(), total_evidence]
+	if _discovered_evidence.size() >= total_evidence and total_evidence > 0:
+		_show_all_found()
+
+func _show_all_found() -> void:
+	status_label.text = "所有证据已收集！可以开始推理了。"
 
 func _on_back() -> void:
 	get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")
