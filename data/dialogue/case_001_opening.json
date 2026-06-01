@@ -1,0 +1,250 @@
+{
+  "id": "case_001_opening",
+  "type": "vn_dialogue",
+  "start_node": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "八月十二日。阳城市局。审讯室。",
+      "next": "interrogation_1"
+    },
+    {
+      "id": "interrogation_1",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "陈益！休息了半个小时，可以了吧？！",
+      "next": "interrogation_2"
+    },
+    {
+      "id": "interrogation_2",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "能继续回答问题了吗？案发时你到底做了什么，赶紧交代！",
+      "next": "interrogation_3"
+    },
+    {
+      "id": "interrogation_3",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "刘格，是不是你杀的？！",
+      "next": "chen_yi_wakes"
+    },
+    {
+      "id": "chen_yi_wakes",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "恍惚间，陈益抬起沉重的眼皮，睁开了双眼。目光深处，带着浓浓的迷茫与疑惑。",
+      "next": "chen_yi_thought_1"
+    },
+    {
+      "id": "chen_yi_thought_1",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（耳边回荡着似曾相识的审问话语……我曾无数次这般质问过嫌疑人。现在，怎么轮到了自己？）",
+      "next": "chen_yi_thought_2"
+    },
+    {
+      "id": "chen_yi_thought_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（等等！我不是出了意外吗？没死？？审讯室……自己，是正在被审讯的嫌疑人。）",
+      "next": "chen_yi_realization"
+    },
+    {
+      "id": "chen_yi_realization",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "陈益很快接受了一个事实：自己穿越了。死亡之后穿越，算是重生吗？",
+      "next": "chen_yi_thought_3"
+    },
+    {
+      "id": "chen_yi_thought_3",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（我好歹也是一名享誉国际的顶级侦探，穿越过来搖身一变成了嫌疑人算怎么回事？有点讽刺啊。）",
+      "next": "chen_yi_analysis"
+    },
+    {
+      "id": "chen_yi_analysis",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "好在可以确定的是，自己绝对没有杀人。死者刘格是他在这个世界上的大学同学。所谓的经济纠纷，其实就是刘格向他借过钱。不多不少，三十万。",
+      "next": "first_choice"
+    },
+    {
+      "id": "first_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "直接否认杀人",
+          "next": "deny_direct",
+          "set_flag": "opening_approach",
+          "flag_value": "direct"
+        },
+        {
+          "text": "用逻辑反驳作案动机",
+          "next": "deny_logic",
+          "set_flag": "opening_approach",
+          "flag_value": "logic"
+        },
+        {
+          "text": "先观察审讯室里的人",
+          "next": "observe_room",
+          "set_flag": "opening_approach",
+          "flag_value": "observe"
+        }
+      ]
+    },
+    {
+      "id": "deny_direct",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "我没杀他。",
+      "next": "police_reaction_1"
+    },
+    {
+      "id": "deny_logic",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "作案动机？不对。是刘格欠我三十万，不是我欠他三十万。他死了，钱我找谁要去？",
+      "next": "police_impressed"
+    },
+    {
+      "id": "observe_room",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "陈益沉默着，目光依次扫过审讯室中的每一个人。负责记录的年轻警员，年龄稍大的中年男子——应该是队长，旁边站着的青年男子，还有两名警员。",
+      "next": "observe_continue"
+    },
+    {
+      "id": "observe_continue",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（中年人是队长，青年是主审。六个人的审讯室，规格不低。看来这个案子，他们很重视。）",
+      "next": "deny_direct"
+    },
+    {
+      "id": "police_reaction_1",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "没杀他？？兇器上只有你和死者的指纹，死者和你更是有经济纠纷！",
+      "next": "police_reaction_2"
+    },
+    {
+      "id": "police_reaction_2",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "你自己也承认，案发前曾去过死者家，时间上吻合。作案时间，作案动机，作案地点，作案手法，全都在这里！",
+      "next": "chen_yi_counter"
+    },
+    {
+      "id": "chen_yi_counter",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "从这个逻辑讲，在刘格还钱之前，我不可能对他下手，没错吧？",
+      "next": "police_impressed"
+    },
+    {
+      "id": "police_impressed",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "话虽如此，但若他拒不还钱的话，你愤起杀人也是有可能的。我说的对吗？",
+      "next": "chen_yi_key_argument"
+    },
+    {
+      "id": "chen_yi_key_argument",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "这位队长说的不错。不过还有一种可能，人不是我杀的。仅凭凶器上的指纹，外加时间地点，虽然构成比较完整的证据链，但却并未闭合。",
+      "next": "footprint_argument"
+    },
+    {
+      "id": "footprint_argument",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "至少，案发全过程你们无法清晰还原，因为脚印对不上。我说的可有出入？刑侦，要严谨啊。",
+      "next": "zhou_surprise"
+    },
+    {
+      "id": "zhou_surprise",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "对方突如其来的笑容和精准反击，让周业斌詫异。在陈益睡着之前，面对警方的审问，可是一度战战兢兢。怎么醒了之后仿佛换了一个人？",
+      "next": "chen_yi_proposal"
+    },
+    {
+      "id": "chen_yi_proposal",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，现场……还有第三个人的脚印吧？",
+      "next": "chen_yi_deduction"
+    },
+    {
+      "id": "chen_yi_deduction",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "基于我不是凶手这个前提，现场应该会留下第三个人的脚印。如果第三个人的所有脚印都在我之后，那么我的作案和帮凶嫌疑，便基本可以排除。",
+      "next": "zhou_accepts"
+    },
+    {
+      "id": "zhou_accepts",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "我明白你的意思。让技术科马上做现场重叠脚印分析，拿到结果立即送过来。",
+      "set_flag": "footprint_analysis_requested",
+      "next": "uncuffed"
+    },
+    {
+      "id": "uncuffed",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "周业斌看向陈益的眼神开始不同起来。他冲附近的警员挥了挥手："给他打开手铐。"",
+      "next": "chen_yi_proposal_2"
+    },
+    {
+      "id": "chen_yi_proposal_2",
+      "type": "choice",
+      "options": [
+        {
+          "text": "提议：给我一天时间，我来破案",
+          "next": "propose_solve",
+          "set_flag": "proposed_to_solve"
+        },
+        {
+          "text": "安静等待脚印分析结果",
+          "next": "wait_result"
+        }
+      ]
+    },
+    {
+      "id": "propose_solve",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，给我一天的时间。一天之内，我帮你破了这个案子。",
+      "next": "zhou_skeptical"
+    },
+    {
+      "id": "zhou_skeptical",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "一天？你以为这是在拍电影呢？你现在可是嫌疑人。",
+      "next": "opening_end"
+    },
+    {
+      "id": "wait_result",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "陈益选择了沉默，等待技术科的结果。不急，让证据说话。",
+      "next": "opening_end"
+    },
+    {
+      "id": "opening_end",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第一章结束 — 案件序幕已拉开】",
+      "next": ""
+    }
+  ]
+}

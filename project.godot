@@ -10,10 +10,16 @@ config_version=5
 
 [application]
 
-config/name="My Game Dev"
-config/description="AI Agent-assisted game development project"
-run/main_scene="res://main.tscn"
+config/name="神探陈益 - Roguelike Detective"
+config/description="Roguelike + Detective game based on the novel"
+run/main_scene="res://src/ui/main_menu.tscn"
 config/features=PackedStringArray("4.6")
+
+[autoload]
+
+GRBServer="*uid://hwkgc74v20qq"
+EventBus="*res://src/autoload/event_bus.gd"
+GameManager="*res://src/autoload/game_manager.gd"
 
 [display]
 

@@ -1,0 +1,36 @@
+class_name Enums
+
+enum GameState {
+	MAIN_MENU,
+	DAILY_LIFE,
+	INVESTIGATION,
+	INTERROGATION,
+	DEDUCTION,
+	CASE_RESULT,
+	TEAM_MANAGE,
+	CAREER_VIEW,
+	SYSTEM_SHOP,
+}
+
+enum Rank {
+	DISTRICT,
+	CITY,
+	PROVINCE,
+	NATIONAL,
+}
+
+enum EvidenceType {
+	PHYSICAL,
+	DOCUMENT,
+	AUDIO,
+	VIDEO,
+	TESTIMONY,
+}
+
+enum DialogueNodeType {
+	TEXT,
+	CHOICE,
+	CONDITION,
+	SET_FLAG,
+	END,
+}

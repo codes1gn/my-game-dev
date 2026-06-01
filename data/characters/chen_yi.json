@@ -1,0 +1,19 @@
+{
+  "id": "chen_yi",
+  "name": "陈益",
+  "name_en": "Chen Yi",
+  "role": "protagonist",
+  "title": "嫌疑人（前世界级侦探）",
+  "rank": "district",
+  "portrait": "",
+  "attributes": {
+    "observation": 8,
+    "interrogation": 9,
+    "forensics": 7,
+    "psychology": 9,
+    "fitness": 6,
+    "charisma": 7
+  },
+  "talents": ["criminal_profiling", "micro_expression", "footprint_analysis"],
+  "bio": "世界级侦探，穿越到平行世界后发现自己被铐在审讯室的椅子上。前世零悬案记录，精通犯罪心理学和痕检技术。"
+}

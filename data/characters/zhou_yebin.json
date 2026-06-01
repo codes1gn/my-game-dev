@@ -1,0 +1,19 @@
+{
+  "id": "zhou_yebin",
+  "name": "周业斌",
+  "name_en": "Zhou Yebin",
+  "role": "npc",
+  "title": "阳城市局刑侦支队队长",
+  "rank": "city",
+  "portrait": "",
+  "attributes": {
+    "observation": 7,
+    "interrogation": 8,
+    "forensics": 5,
+    "psychology": 6,
+    "fitness": 7,
+    "charisma": 6
+  },
+  "talents": ["experienced_interrogator"],
+  "bio": "阳城市局刑侦支队队长，经验丰富的老刑警。严肃但不失公正。"
+}
