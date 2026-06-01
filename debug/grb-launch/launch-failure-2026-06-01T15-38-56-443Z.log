@@ -1,0 +1,20 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":49400,"proto":"grb/1","tier_default":1,"token":"a8703bc5015e51f9c4c0141a2136d13978096fc8b3e961ff"}
+
+
+
+=== STDERR ===
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+
+

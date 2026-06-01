@@ -1,0 +1,32 @@
+Failure: Timeout waiting for GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":50105,"proto":"grb/1","tier_default":1,"token":"6da21467dba91d7006bffd225921ddc8f8d6ffb69ed80cb6"}
+[VN] Loading dialogue: res://data/dialogue/case_001_opening.json
+[VN] Loaded OK, nodes count: 31
+[DialogueBox] show_dialogue: speaker=narrator text_len=15
+
+
+
+=== STDERR ===
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/narrator.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:175)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:65)
+       [3] _process_node (res://src/vn/vn_engine.gd:52)
+       [4] start_dialogue (res://src/vn/vn_engine.gd:38)
+       [5] _ready (res://src/vn/vn_engine.gd:24)
+
+

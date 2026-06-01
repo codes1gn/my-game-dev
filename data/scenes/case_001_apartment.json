@@ -1,0 +1,51 @@
+{
+  "id": "case_001_apartment",
+  "name": "\u5218\u683c\u516c\u5bd3",
+  "background": "",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "entrance",
+      "label": "\u95e8\u53e3\u8109\u5370",
+      "rect": {"x": 20, "y": 280, "w": 120, "h": 60},
+      "evidence_ids": ["ev_footprint"],
+      "interaction": "examine"
+    },
+    {
+      "id": "living_room_table",
+      "label": "\u5ba2\u539c\u8336\u51e0",
+      "rect": {"x": 130, "y": 80, "w": 140, "h": 70},
+      "evidence_ids": ["ev_fruit_knife"],
+      "interaction": "examine"
+    },
+    {
+      "id": "living_room_sofa",
+      "label": "\u6c99\u53d1\u533a\u57df",
+      "rect": {"x": 130, "y": 170, "w": 140, "h": 70},
+      "evidence_ids": ["ev_orange_peels"],
+      "interaction": "examine"
+    },
+    {
+      "id": "kitchen",
+      "label": "\u53a8\u623f",
+      "rect": {"x": 420, "y": 80, "w": 120, "h": 80},
+      "evidence_ids": [],
+      "interaction": "examine"
+    },
+    {
+      "id": "bedroom",
+      "label": "\u5367\u5ba4",
+      "rect": {"x": 580, "y": 160, "w": 120, "h": 80},
+      "evidence_ids": ["ev_body_position"],
+      "interaction": "examine"
+    },
+    {
+      "id": "surveillance",
+      "label": "\u76d1\u63a7\u5f55\u50cf",
+      "rect": {"x": 720, "y": 20, "w": 120, "h": 50},
+      "evidence_ids": [],
+      "interaction": "surveillance",
+      "clip_id": "surveillance_001"
+    }
+  ]
+}
