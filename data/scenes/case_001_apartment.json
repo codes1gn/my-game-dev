@@ -43,7 +43,7 @@
       "id": "surveillance",
       "label": "\u76d1\u63a7\u5f55\u50cf",
       "rect": {"x": 720, "y": 20, "w": 120, "h": 50},
-      "evidence_ids": [],
+      "evidence_ids": ["ev_surveillance_tampering"],
       "interaction": "surveillance",
       "clip_id": "surveillance_001"
     }

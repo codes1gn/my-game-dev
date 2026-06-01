@@ -1,19 +1,30 @@
 {
   "id": "ev_orange_peels",
   "case_id": "case_001",
-  "name": "\u6a59\u5b50\u76ae",
-  "description": "\u8336\u51e0\u4e0a\u6709\u5207\u5f00\u7684\u6a59\u5b50\u76ae\u548c\u679c\u6c41\u75d5\u8ff9\u3002\u9648\u76ca\u548c\u5218\u683c\u5f53\u5929\u4e00\u8d77\u5403\u8fc7\u6a59\u5b50\u3002",
+  "name": "橙子皮",
+  "description": "客厅茶几和垃圾桶内发现的新鲜橙子皮，以及残留果汁的痕迹。与陈益供述的「拜访时一起切橙子吃」完全吻合。",
   "type": "physical",
   "image": "",
   "analysis_options": [
     {
-      "action": "\u57fa\u672c\u68c0\u67e5",
-      "result": "\u65b0\u9c9c\u7684\u6a59\u5b50\u76ae\uff0c\u8bf4\u660e\u9648\u76ca\u6765\u8bbf\u65f6\u4e24\u4eba\u5173\u7cfb\u6b63\u5e38\uff0c\u4e00\u8d77\u5403\u6c34\u679c\u804a\u5929\u3002\u8fd9\u4e5f\u89e3\u91ca\u4e86\u4e3a\u4ec0\u4e48\u51f6\u5668\u4e0a\u6709\u9648\u76ca\u7684\u6307\u7eb9\u3002",
+      "action": "基本检查",
+      "result": "新鲜的橙子皮，说明陈益来访时两人关系正常，一起吃水果聊天。这也解释了为什么凶器上有陈益的指纹——他确实用过那把水果刀。",
       "skill_required": null
+    },
+    {
+      "action": "时间推断",
+      "result": "橙子皮尚未干涸变色，与陈益离开时间（下午三点多）吻合。在陈益离开后、刘格遇害前，现场未再出现新的进食痕迹——第三人进门后直接去了卧室方向。",
+      "skill_required": {"observation": 2}
+    },
+    {
+      "action": "动机排除",
+      "result": "两人轻松吃水果聊天的状态，与「因债务纠纷激烈冲突」不符。陈益来访时并未提及三十万借款，进一步削弱陈益的作案动机。",
+      "skill_required": {"observation": 3}
     }
   ],
   "relevance": {
+    "summary": "解释凶器上陈益指纹的合法来源，证明其来访时气氛正常、非为逼债。结合经济关系（刘格欠陈益三十万），进一步排除陈益因财杀人的动机。",
     "suspects_implicated": [],
-    "deduction_tags": ["explains_fingerprint", "normal_visit"]
+    "deduction_tags": ["explains_fingerprint", "normal_visit", "motive_exclusion"]
   }
 }

@@ -155,4 +155,9 @@ func _on_submit() -> void:
 	result_popup.visible = true
 
 func _return_to_menu() -> void:
-	get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")
+	var conclusion_path := "res://data/dialogue/case_001_conclusion.json"
+	if FileAccess.file_exists(conclusion_path):
+		GameManager.next_dialogue_path = conclusion_path
+		get_tree().change_scene_to_file("res://src/vn/vn_scene.tscn")
+	else:
+		get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")

@@ -1,0 +1,184 @@
+{
+  "id": "case_001_conclusion",
+  "type": "vn_dialogue",
+  "start_node": "start",
+  "on_end_goto": "res://src/ui/main_menu.tscn",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "八月十二日，深夜。阳城市局刑侦支队，办案大厅。",
+      "next": "check_investigation"
+    },
+    {
+      "id": "check_investigation",
+      "type": "condition",
+      "branches": [
+        {
+          "condition": {"has_flag": "identified_framing"},
+          "next": "correct_intro"
+        },
+        {
+          "condition": {"has_flag": "understood_timeline"},
+          "next": "correct_intro"
+        }
+      ],
+      "fallback": "partial_intro"
+    },
+    {
+      "id": "correct_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "推理板上的结论与现场证据完全吻合。周业斌看着陈益，眼神中多了几分认真。",
+      "next": "correct_theory_1"
+    },
+    {
+      "id": "partial_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "推理板上的结论部分正确，但关键的拼图尚未完整。周业斌示意陈益坐下，准备听听他的分析。",
+      "next": "partial_theory_1"
+    },
+    {
+      "id": "correct_theory_1",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，我梳理一下完整的推理链条。",
+      "next": "correct_theory_2"
+    },
+    {
+      "id": "correct_theory_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "第一，现场有第三人的脚印，且全部覆盖在我离开之后。这证明真凶在我走后进入公寓，我并非凶手，也不可能是帮凶。",
+      "next": "correct_theory_3"
+    },
+    {
+      "id": "correct_theory_3",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "第二，凶器是一把水果刀，上面只有我和刘格的指纹。凶手使用了反侦察手段——手套或涂胶水——说明这是蓄意谋杀，而非激情犯罪。",
+      "next": "correct_theory_4"
+    },
+    {
+      "id": "correct_theory_4",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "第三，凶手偏偏选用我碰过的刀，而不是自带凶器。这是栽赃——凶手知道我来过，知道我用刀切过橙子。",
+      "next": "correct_theory_5"
+    },
+    {
+      "id": "correct_theory_5",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "第四，入户监控被从内部以网络手段破坏。刘格经营软件公司——凶手具备技术能力，且与刘格关系极近，近到可以不签合同就交付核心技术。",
+      "next": "correct_theory_6"
+    },
+    {
+      "id": "correct_theory_6",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "第五，刘格向我借的三十万，应该是购买核心代码的定金。公司起死回生后，刘格可能反悔了未兑现的承诺——利益冲突，足以让一个人痛下杀手。",
+      "next": "correct_theory_7"
+    },
+    {
+      "id": "correct_theory_7",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "综合以上，真凶是刘格的熟人——有技术、有信任、有积怨。通话记录中，范中林在案发前与刘格多次长时间通话，嫌疑极大。",
+      "next": "zhou_correct_react"
+    },
+    {
+      "id": "zhou_correct_react",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "……不到一天。你从嫌疑人，到洗清嫌疑，再到锁定方向。",
+      "next": "zhou_correct_react_2"
+    },
+    {
+      "id": "zhou_correct_react_2",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "范中林那边，我已经派人去查了。如果他的不在场证明站不住脚，这案子就算破了。",
+      "next": "chen_yi_career"
+    },
+    {
+      "id": "partial_theory_1",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，我目前的判断是：真凶不是我，而是案发后进入现场的第三人。但凶手的具体身份，还需要更多调查。",
+      "next": "partial_theory_2"
+    },
+    {
+      "id": "partial_theory_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "现场证据至少能证明两点——足迹覆盖关系排除了我的嫌疑，凶器上的指纹缺失说明凶手有备而来。",
+      "next": "zhou_partial_react"
+    },
+    {
+      "id": "zhou_partial_react",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "方向没错，但还不够。这案子背后牵扯刘格公司的利益，没那么简单。",
+      "next": "zhou_partial_react_2"
+    },
+    {
+      "id": "zhou_partial_react_2",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "我们会继续查刘格的人际关系。你提供的思路，我们会认真考虑。",
+      "next": "chen_yi_career"
+    },
+    {
+      "id": "chen_yi_career",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，下个月市局有招考名额吧？我想进刑侦队。",
+      "next": "zhou_career_react"
+    },
+    {
+      "id": "zhou_career_react",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "你想当刑警？……好吧，但愿。到时候别哭。",
+      "next": "young_officer_final"
+    },
+    {
+      "id": "young_officer_final",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "周队，我真觉得他不像以前那个陈少了……刚才在现场，简直像个干了十年的老刑警。",
+      "next": "zhou_final"
+    },
+    {
+      "id": "zhou_final",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "不管结果如何，我好像都有点希望，他能进刑侦队。",
+      "next": "next_case_setup"
+    },
+    {
+      "id": "next_case_setup",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "刘格命案的真凶即将落网。但陈益知道，这只是开始——在这个平行世界里，还有无数离奇的案件等待着他。",
+      "next": "next_case_setup_2"
+    },
+    {
+      "id": "next_case_setup_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（从嫌疑人到侦探……这条路，我走了上辈子整个职业生涯。这一次，我要走得更远。）",
+      "next": "conclusion_end"
+    },
+    {
+      "id": "conclusion_end",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第一章 完】\n\n下一章：范中林的审讯与真相揭露……",
+      "next": ""
+    }
+  ]
+}

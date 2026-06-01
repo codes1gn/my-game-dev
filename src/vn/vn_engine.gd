@@ -19,10 +19,15 @@ func _ready() -> void:
 	choice_panel.visible = false
 	portrait_left.visible = false
 	portrait_right.visible = false
+	var dialogue_to_load := ""
 	if not _pending_dialogue_path.is_empty():
-		start_dialogue(_pending_dialogue_path)
+		dialogue_to_load = _pending_dialogue_path
+	elif not GameManager.next_dialogue_path.is_empty():
+		dialogue_to_load = GameManager.next_dialogue_path
+		GameManager.next_dialogue_path = ""
 	else:
-		start_dialogue("res://data/dialogue/case_001_opening.json")
+		dialogue_to_load = "res://data/dialogue/case_001_opening.json"
+	start_dialogue(dialogue_to_load)
 
 func _apply_theme() -> void:
 	var bg_tex := ThemeManager.load_external_image("res://assets/scenes/bg_interrogation.jpg")

@@ -1,57 +1,82 @@
 {
   "case_id": "case_001",
-  "title": "\u63a8\u7406\u677f \u2014 \u5218\u683c\u547d\u6848",
+  "title": "推理板 — 刘格命案",
   "evidence_summary": [
     {
-      "name": "\u73b0\u573a\u8db3\u8ff9",
-      "finding": "\u9664\u9648\u76ca\u548c\u5218\u683c\u5916\uff0c\u6709\u7b2c\u4e09\u4eba\u7684\u811a\u5370\u3002\u7b2c\u4e09\u4eba\u7684\u811a\u5370\u8986\u76d6\u5728\u9648\u76ca\u7684\u811a\u5370\u4e4b\u4e0a\uff0c\u8bc1\u660e\u7b2c\u4e09\u4eba\u540e\u5230\u3002"
+      "name": "现场足迹",
+      "finding": "除陈益和刘格外，有第三人的脚印。第三人的脚印覆盖在陈益的脚印之上，证明第三人后到。第三人未戴脚套，说明与刘格相识。"
     },
     {
-      "name": "\u6c34\u679c\u5200",
-      "finding": "\u51f6\u5668\u4e0a\u53ea\u6709\u9648\u76ca\u548c\u5218\u683c\u7684\u6307\u7eb9\u3002\u51f6\u624b\u4f7f\u7528\u4e86\u53cd\u4fa6\u5bdf\u624b\u6bb5\uff0c\u8bf4\u660e\u662f\u84c4\u610f\u8c0b\u6740\u3002"
+      "name": "水果刀",
+      "finding": "凶器上只有陈益和刘格的指纹。凶手使用了反侦察手段，说明是蓄意谋杀。选用已有陈益指纹的刀，疑似故意栽赃。"
     },
     {
-      "name": "\u6a59\u5b50\u76ae",
-      "finding": "\u9648\u76ca\u548c\u5218\u683c\u66fe\u4e00\u8d77\u5207\u6a59\u5b50\u5403\uff0c\u89e3\u91ca\u4e86\u51f6\u5668\u4e0a\u9648\u76ca\u6307\u7eb9\u7684\u6765\u6e90\u3002"
+      "name": "橙子皮",
+      "finding": "陈益和刘格曾一起切橙子吃，解释了凶器上陈益指纹的来源。来访时气氛正常，陈益未提及三十万借款。"
     },
     {
-      "name": "\u5c38\u4f53\u4f4d\u7f6e",
-      "finding": "\u5218\u683c\u88ab\u6b63\u9762\u523a\u4f24\uff0c\u51f6\u624b\u8eab\u9ad8\u7ea6175cm\uff0c\u53f3\u624b\u6301\u5200\u3002"
+      "name": "尸体位置",
+      "finding": "刘格被正面刺伤，凶手身高约175cm，右手持刀。死亡时间在下午四到六点，与陈益离开时间吻合。"
+    },
+    {
+      "name": "监控破坏",
+      "finding": "入户走廊监控从内部被网络手段破坏。凶手具备技术能力，与刘格软件公司背景相关。外部天网监控未被破坏。"
     }
   ],
   "questions": [
     {
       "id": "q_killer",
-      "prompt": "\u8c01\u662f\u51f6\u624b\uff1f",
+      "prompt": "谁是凶手？",
       "options": [
-        {"id": "chen_yi", "text": "\u9648\u76ca\uff08\u4e3b\u89d2\u81ea\u5df1\uff09"},
-        {"id": "third_person", "text": "\u7b2c\u4e09\u4eba\uff08\u9648\u76ca\u79bb\u5f00\u540e\u8fdb\u5165\u7684\u4eba\uff09"},
-        {"id": "suicide", "text": "\u5218\u683c\u81ea\u6740"},
-        {"id": "unknown", "text": "\u65e0\u6cd5\u5224\u65ad"}
+        {"id": "chen_yi", "text": "陈益（主角自己）"},
+        {"id": "third_person", "text": "第三人（陈益离开后进入的人）"},
+        {"id": "suicide", "text": "刘格自杀"},
+        {"id": "unknown", "text": "无法判断"}
       ]
     },
     {
       "id": "q_premeditated",
-      "prompt": "\u8fd9\u662f\u84c4\u610f\u8c0b\u6740\u8fd8\u662f\u6fc0\u60c5\u6740\u4eba\uff1f",
+      "prompt": "这是蓄意谋杀还是激情杀人？",
       "options": [
-        {"id": "premeditated", "text": "\u84c4\u610f\u8c0b\u6740 \u2014 \u51f6\u624b\u63d0\u524d\u51c6\u5907\u4e86\u53cd\u4fa6\u5bdf\u624b\u6bb5"},
-        {"id": "passion", "text": "\u6fc0\u60c5\u6740\u4eba \u2014 \u4e34\u65f6\u8d77\u610f"},
-        {"id": "accident", "text": "\u610f\u5916\u4e8b\u4ef6"}
+        {"id": "premeditated", "text": "蓄意谋杀 — 凶手提前准备了反侦察手段"},
+        {"id": "passion", "text": "激情杀人 — 临时起意"},
+        {"id": "accident", "text": "意外事件"}
       ]
     },
     {
       "id": "q_chen_yi_innocent",
-      "prompt": "\u9648\u76ca\u662f\u5426\u6e05\u767d\uff1f\u5173\u952e\u8bc1\u636e\u662f\u4ec0\u4e48\uff1f",
+      "prompt": "陈益是否清白？关键证据是什么？",
       "options": [
-        {"id": "footprint_overlap", "text": "\u6e05\u767d \u2014 \u8db3\u8ff9\u8986\u76d6\u5206\u6790\u8bc1\u660e\u7b2c\u4e09\u4eba\u540e\u5230"},
-        {"id": "motive", "text": "\u6e05\u767d \u2014 \u9648\u76ca\u6ca1\u6709\u4f5c\u6848\u52a8\u673a"},
-        {"id": "not_clear", "text": "\u4e0d\u786e\u5b9a \u2014 \u8bc1\u636e\u4e0d\u8db3"}
+        {"id": "footprint_overlap", "text": "清白 — 足迹覆盖分析证明第三人后到"},
+        {"id": "motive", "text": "清白 — 陈益没有作案动机"},
+        {"id": "not_clear", "text": "不确定 — 证据不足"}
+      ]
+    },
+    {
+      "id": "q_surveillance",
+      "prompt": "入户监控是如何被破坏的？这说明什么？",
+      "options": [
+        {"id": "network_internal", "text": "内部网络技术手段 — 凶手具备IT技术能力"},
+        {"id": "physical_damage", "text": "物理破坏摄像头 — 普通入室犯罪"},
+        {"id": "malfunction", "text": "设备自然故障 — 与案件无关"}
+      ]
+    },
+    {
+      "id": "q_motive",
+      "prompt": "刘格被杀最可能的动机是什么？",
+      "options": [
+        {"id": "company_dispute", "text": "软件公司利益纠纷 — 三十万购代码后反悔承诺"},
+        {"id": "debt_revenge", "text": "债务纠纷 — 刘格欠钱不还"},
+        {"id": "robbery", "text": "入室抢劫 — 现场有财物丢失"},
+        {"id": "random", "text": "随机犯罪 — 陌生人作案"}
       ]
     }
   ],
   "correct_answers": {
     "q_killer": "third_person",
     "q_premeditated": "premeditated",
-    "q_chen_yi_innocent": "footprint_overlap"
+    "q_chen_yi_innocent": "footprint_overlap",
+    "q_surveillance": "network_internal",
+    "q_motive": "company_dispute"
   }
 }

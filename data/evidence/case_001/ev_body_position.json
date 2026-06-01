@@ -1,24 +1,30 @@
 {
   "id": "ev_body_position",
   "case_id": "case_001",
-  "name": "\u5c38\u4f53\u4f4d\u7f6e",
-  "description": "\u5218\u683c\u7684\u5c38\u4f53\u5728\u5367\u5ba4\u4e2d\u88ab\u53d1\u73b0\u3002\u6839\u636e\u5c38\u4f53\u4f4d\u7f6e\u548c\u4f24\u53e3\u5206\u6790\uff0c\u53ef\u4ee5\u8fd8\u539f\u6848\u53d1\u7ecf\u8fc7\u3002",
+  "name": "尸体位置",
+  "description": "刘格的尸体在卧室中被发现。根据尸体位置、伤口形态和现场痕迹，可以还原案发经过。",
   "type": "physical",
   "image": "",
   "analysis_options": [
     {
-      "action": "\u57fa\u672c\u68c0\u67e5",
-      "result": "\u5218\u683c\u4f8b\u5728\u5367\u5ba4\u5730\u677f\u4e0a\uff0c\u80f8\u53e3\u6709\u4e00\u5904\u523a\u4f24\u3002\u51f6\u624b\u4ece\u6b63\u9762\u884c\u51f6\uff0c\u8bf4\u660e\u4e24\u4eba\u662f\u9762\u5bf9\u9762\u7684\u3002",
+      "action": "基本检查",
+      "result": "刘格倒在卧室地板上，胸口有一处刺伤。凶手从正面行凶，说明两人是面对面的。现场无搏斗痕迹，刘格对来人没有防备。",
       "skill_required": null
     },
     {
-      "action": "\u4f24\u53e3\u89d2\u5ea6\u5206\u6790",
-      "result": "\u6839\u636e\u523a\u4f24\u89d2\u5ea6\u548c\u6df1\u5ea6\uff0c\u51f6\u624b\u8eab\u9ad8\u7ea6175cm\uff0c\u53f3\u624b\u6301\u5200\u3002\u8fd9\u4e0e\u811a\u5370\u5206\u6790\u4e2d\u7b2c\u4e09\u4eba\u7684\u4f53\u578b\u7279\u5f81\u5339\u914d\u3002",
+      "action": "伤口角度分析",
+      "result": "根据刺伤角度和深度，凶手身高约175cm，右手持刀。这与足迹分析中第三人的体型特征匹配。",
       "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "死亡时间推断",
+      "result": "结合尸斑和体温，死亡时间在下午四点到六点之间。陈益三点多离开——真凶在其走后约一到两小时内作案，与足迹覆盖的时间线一致。",
+      "skill_required": {"forensics": 3}
     }
   ],
   "relevance": {
+    "summary": "确定死因（正面刺伤、一刀毙命）和死亡时间，证明行凶者与死者面对面、关系亲密。死亡时段与陈益离开时间及第三人足迹覆盖关系相互印证，锁定真凶作案窗口。",
     "suspects_implicated": ["third_person"],
-    "deduction_tags": ["cause_of_death", "suspect_profile"]
+    "deduction_tags": ["cause_of_death", "suspect_profile", "timeline"]
   }
 }

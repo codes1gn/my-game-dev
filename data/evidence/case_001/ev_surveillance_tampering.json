@@ -1,0 +1,30 @@
+{
+  "id": "ev_surveillance_tampering",
+  "case_id": "case_001",
+  "name": "监控破坏痕迹",
+  "description": "刘格所在高档小区的入户走廊监控已被破坏，摄像头指示灯熄灭。小区口、楼道口、电梯内的监控均正常，唯独入户走廊失效。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "监控从内部被破坏，非物理损毁。手法较为高明，初步判断为通过网络技术手段远程干扰。外部道路监控未被破坏——凶手无法避开官方天网。",
+      "skill_required": null
+    },
+    {
+      "action": "技术特征分析",
+      "result": "能精准破坏入户走廊监控而不影响其他设备，说明凶手具备网络/电子技术能力。这与刘格经营软件公司的背景高度相关——凶手可能是IT技术人才。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "作案预谋推断",
+      "result": "破坏监控是蓄意谋杀的准备环节，非临时起意。凶手提前规划了进出路线，刻意避开大部分监控，但无法破坏全部官方监控——若真凶在案发时段出现在小区外，仍会被拍到。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "证明本案为预谋杀人，凶手具备网络技术能力。将调查方向引向刘格软件公司相关技术人员。同时说明警方无法通过监控完整还原进出人员，这也是陈益一度成为嫌疑人的原因之一。",
+    "suspects_implicated": ["third_person"],
+    "deduction_tags": ["premeditation", "tech_suspect", "surveillance"]
+  }
+}

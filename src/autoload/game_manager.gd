@@ -8,6 +8,7 @@ var current_state: int = STATE_MAIN_MENU
 var current_day: int = 1
 var player_data: Dictionary = {}
 var flags: Dictionary = {}
+var next_dialogue_path: String = ""
 
 func _ready() -> void:
 	_init_player_data()

@@ -1,24 +1,30 @@
 {
   "id": "ev_footprint",
   "case_id": "case_001",
-  "name": "\u73b0\u573a\u8db3\u8ff9",
-  "description": "\u6848\u53d1\u73b0\u573a\u95e8\u53e3\u53d1\u73b0\u7684\u6ce5\u5370\u8db3\u8ff9\u3002\u9664\u4e86\u6b7b\u8005\u548c\u9648\u76ca\u7684\u8db3\u8ff9\u5916\uff0c\u8fd8\u6709\u7b2c\u4e09\u4e2a\u4eba\u7684\u811a\u5370\u3002",
+  "name": "现场足迹",
+  "description": "案发现场玄关处发现的三组泥印足迹。除死者刘格和陈益外，还存在第三人的运动鞋印，鞋底花纹清晰可辨。",
   "type": "physical",
   "image": "",
   "analysis_options": [
     {
-      "action": "\u57fa\u672c\u68c0\u67e5",
-      "result": "\u7537\u6027\u978b\u5370\uff0c\u7ea642\u7801\uff0c\u978b\u5e95\u82b1\u7eb9\u4e3a\u8fd0\u52a8\u978b\u3002\u9664\u9648\u76ca\u548c\u5218\u683c\u5916\uff0c\u8fd8\u6709\u7b2c\u4e09\u4e2a\u4eba\u7684\u811a\u5370\u3002",
+      "action": "基本检查",
+      "result": "男性鞋印，约42码，鞋底花纹为运动鞋。除陈益和刘格外，还有第三人的脚印。第三人身高体重与现场还原的凶手体型（约175cm）大致吻合。",
       "skill_required": null
     },
     {
-      "action": "\u8db3\u8ff9\u8986\u76d6\u5206\u6790",
-      "result": "\u7ecf\u8fc7\u91cd\u53e0\u8db3\u8ff9\u5206\u6790\uff0c\u7b2c\u4e09\u4eba\u7684\u6240\u6709\u811a\u5370\u90fd\u8986\u76d6\u5728\u9648\u76ca\u7684\u811a\u5370\u4e4b\u4e0a\u3002\u8fd9\u8bc1\u660e\u7b2c\u4e09\u4eba\u662f\u5728\u9648\u76ca\u79bb\u5f00\u4e4b\u540e\u8fdb\u5165\u7684\uff01",
+      "action": "足迹覆盖分析",
+      "result": "经过重叠足迹分析，第三人的所有脚印都覆盖在陈益的脚印之上。这证明第三人是陈益离开之后进入的！前后时间间隔不会太大。",
       "skill_required": {"observation": 3}
+    },
+    {
+      "action": "行为推断",
+      "result": "第三人从玄关进入后，足迹延伸至客厅和卧室，没有佩戴脚套的痕迹。刘格对客人从不需要脚套——说明来者是熟人，刘格对其毫无防备。",
+      "skill_required": {"observation": 4}
     }
   ],
   "relevance": {
+    "summary": "本案最关键的洗冤证据。足迹覆盖关系证明陈益离开后真凶才进入现场，直接打破「陈益作案」的完整证据链。同时证明凶手与死者相识，支持熟人作案、仇杀方向。",
     "suspects_implicated": ["third_person"],
-    "deduction_tags": ["timeline", "physical_evidence", "exoneration"]
+    "deduction_tags": ["timeline", "physical_evidence", "exoneration", "acquaintance_killer"]
   }
 }

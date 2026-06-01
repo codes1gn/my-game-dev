@@ -1,0 +1,385 @@
+{
+  "id": "case_001_investigation",
+  "type": "vn_dialogue",
+  "start_node": "start",
+  "on_end_goto": "res://src/investigation/investigation_scene.tscn",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "八月十二日，傍晚。刘格公寓，案发单元门口。",
+      "next": "arrival_1"
+    },
+    {
+      "id": "arrival_1",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "既然你这么有信心，就在现场看看吧。不过丑话说在前头——在案子侦破之前，你别想离开阳城。",
+      "next": "arrival_2"
+    },
+    {
+      "id": "arrival_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长放心，我比任何人都想查清真相。",
+      "next": "arrival_3"
+    },
+    {
+      "id": "arrival_3",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "周队，让一个嫌疑人进现场，这不符合规定吧？",
+      "next": "arrival_4"
+    },
+    {
+      "id": "arrival_4",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "足迹分析已经出来了，他的嫌疑基本排除。让他看看，说不定能发现我们遗漏的东西。",
+      "next": "enter_apartment"
+    },
+    {
+      "id": "enter_apartment",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "防盗门上的封条被撕开，陈益跟着周业斌走进了刘格的公寓。空气中弥漫着一股尚未散尽的消毒水味。",
+      "next": "entrance_1"
+    },
+    {
+      "id": "entrance_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【门口区域】玄关处，痕检人员已经做了标记。三组不同的脚印在浅色地砖上清晰可见。",
+      "next": "entrance_2"
+    },
+    {
+      "id": "entrance_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（三组脚印……我的，刘格的，还有第三个人的。第三人的鞋印是运动鞋底，42码左右。）",
+      "next": "entrance_3"
+    },
+    {
+      "id": "entrance_3",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，重叠脚印分析的结果，能在这里看到吗？",
+      "next": "entrance_4"
+    },
+    {
+      "id": "entrance_4",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "技术科已经标注过了。第三人的所有脚印，都覆盖在你离开之后留下的脚印上面。",
+      "next": "entrance_5"
+    },
+    {
+      "id": "entrance_5",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（覆盖关系说明：我走后，第三人才进入。时间间隔不会太长——否则刘格不会毫无防备。来人，他认识。）",
+      "next": "entrance_choice"
+    },
+    {
+      "id": "entrance_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "指出：凶手是刘格的熟人",
+          "next": "entrance_acquaintance",
+          "set_flag": "identified_acquaintance",
+          "flag_value": true
+        },
+        {
+          "text": "先不表态，继续勘查",
+          "next": "entrance_silent",
+          "set_flag": "investigation_cautious",
+          "flag_value": true
+        }
+      ]
+    },
+    {
+      "id": "entrance_acquaintance",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "客人上门从不需要戴脚套——刘格不是注重家居卫生的人。第三人从容进门，说明是熟人作案。",
+      "next": "zhou_entrance_react"
+    },
+    {
+      "id": "entrance_silent",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "陈益蹲下身，仔细端详每一组脚印的重叠层次，在心中默默记录。",
+      "next": "zhou_entrance_react"
+    },
+    {
+      "id": "zhou_entrance_react",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "这一点我们也判断了。熟人作案，仇杀的可能性很大。家里没有翻动的痕迹，也没有财物丢失。",
+      "next": "living_room_1"
+    },
+    {
+      "id": "living_room_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【客厅茶几】一把水果刀被证物袋封存，放在茶几中央。刀柄上的指纹痕迹已经被提取。",
+      "next": "living_room_2"
+    },
+    {
+      "id": "living_room_2",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "凶器就是这把刀。上面只有你和死者的指纹，陈益，你怎么解释？",
+      "next": "living_room_3"
+    },
+    {
+      "id": "living_room_3",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "我来的时候，用这把刀切过橙子。刘格和我一起吃的，垃圾桶里的果皮可以证实。",
+      "next": "living_room_4"
+    },
+    {
+      "id": "living_room_4",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "这点已经核实过了。但你怎么证明，你不是吃完橙子后用这把刀杀的人？",
+      "next": "living_room_5"
+    },
+    {
+      "id": "living_room_5",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（凶器上只有我和刘格的指纹，却没有第三人的——凶手用了反侦察手段。手套，或者指尖涂胶水。蓄意谋杀，不是激情犯罪。）",
+      "next": "living_room_6"
+    },
+    {
+      "id": "living_room_6",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "凶器上缺少第三人的指纹，这本身就很说明问题。正常人行凶，指纹不可能消失得这么干净。",
+      "next": "knife_choice"
+    },
+    {
+      "id": "knife_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "提出：凶手故意用这把刀，想栽赃给我",
+          "next": "knife_framing",
+          "set_flag": "identified_framing",
+          "flag_value": true
+        },
+        {
+          "text": "提出：凶手是临时起意，碰巧拿了这把刀",
+          "next": "knife_coincidence",
+          "set_flag": "knife_coincidence_theory",
+          "flag_value": true
+        }
+      ]
+    },
+    {
+      "id": "knife_framing",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "蓄意谋杀却不用自带凶器，偏偏选一把已有我指纹的刀——这不是巧合，是栽赃。凶手知道我来过，知道我用过这把刀。",
+      "next": "zhou_knife_react"
+    },
+    {
+      "id": "knife_coincidence",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "也许凶手进门时没有准备凶器，看到茶几上的刀就用了。但结合反侦察手段来看，这种可能性偏低。",
+      "next": "zhou_knife_react"
+    },
+    {
+      "id": "zhou_knife_react",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "……有意思。如果是栽赃，那凶手和你、和刘格都很熟。",
+      "next": "sofa_1"
+    },
+    {
+      "id": "sofa_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【沙发区域】茶几旁的茶几上散落着新鲜的橙子皮，沙发垫略有压痕，像是两人刚聊过天。",
+      "next": "sofa_2"
+    },
+    {
+      "id": "sofa_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（橙子皮还很新鲜。我来的时候，刘格心情不错，我们还聊了他的软件公司。三十万的事，我根本没提——我不缺那点钱。）",
+      "next": "sofa_3"
+    },
+    {
+      "id": "sofa_3",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "经济纠纷！三十万！你敢说这跟案子没关系？",
+      "next": "sofa_4"
+    },
+    {
+      "id": "sofa_4",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "是刘格欠我三十万，不是我欠他。他死了，我找谁要去？从动机上讲，在他还钱之前，我不可能对他下手。",
+      "next": "sofa_5"
+    },
+    {
+      "id": "sofa_5",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "……这倒是。你是债权人，不是债务人。",
+      "next": "bedroom_1"
+    },
+    {
+      "id": "bedroom_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【卧室】刘格的遗体已被移走，卧室地板上画着白色的人形轮廓。空气中残留着法医消毒后的气味。",
+      "next": "bedroom_2"
+    },
+    {
+      "id": "bedroom_2",
+      "type": "text",
+      "speaker": "法医",
+      "text": "死者正面刺伤，一刀毙命。凶手身高约175cm，右手持刀，与第三人脚印的体型特征吻合。",
+      "next": "bedroom_3"
+    },
+    {
+      "id": "bedroom_3",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（正面刺伤——两人面对面。没有搏斗痕迹，说明刘格对来人没有防备。熟人之争，不是入室抢劫。）",
+      "next": "bedroom_4"
+    },
+    {
+      "id": "bedroom_4",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "死亡时间呢？",
+      "next": "bedroom_5"
+    },
+    {
+      "id": "bedroom_5",
+      "type": "text",
+      "speaker": "法医",
+      "text": "结合尸斑和体温推断，死亡时间在下午四点到六点之间。与你离开的时间间隔，大约在一到两个小时。",
+      "next": "bedroom_6"
+    },
+    {
+      "id": "bedroom_6",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（我三点多离开。四到六点之间遇害——第三人是在我走后不久进门的。时间线完全吻合。）",
+      "set_flag": "understood_timeline",
+      "next": "surveillance_1"
+    },
+    {
+      "id": "surveillance_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【监控】周业斌带陈益来到入户走廊，摄像头上的指示灯已经熄灭。",
+      "next": "surveillance_2"
+    },
+    {
+      "id": "surveillance_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "入户走廊的监控，是怎么被破坏的？",
+      "next": "surveillance_3"
+    },
+    {
+      "id": "surveillance_3",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "内部破坏。比较高明的手法，应该是通过网络技术手段。",
+      "next": "surveillance_4"
+    },
+    {
+      "id": "surveillance_4",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（网络技术……刘格开的是软件公司。凶手很可能具备相关技术能力。这不是普通的仇杀，背后有利益纠葛。）",
+      "next": "final_choice"
+    },
+    {
+      "id": "final_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "向周业斌完整陈述推理",
+          "next": "present_theory",
+          "set_flag": "presented_full_theory",
+          "flag_value": true
+        },
+        {
+          "text": "保留判断，回局里再深入分析",
+          "next": "hold_back",
+          "set_flag": "investigation_cautious",
+          "flag_value": true
+        }
+      ]
+    },
+    {
+      "id": "present_theory",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "周队长，我梳理一下：第三人在我之后进入，用我碰过的水果刀行凶，并抹去了自己的指纹。监控被网络手段破坏——凶手懂技术，且与刘格相熟。这不是随机犯罪，是蓄意谋杀，甚至可能涉及刘格公司的利益纠纷。",
+      "next": "zhou_impressed"
+    },
+    {
+      "id": "hold_back",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "现场的信息还不够。有些推断，我需要更多资料才能确认——比如刘格的人际关系，和他公司最近的情况。",
+      "next": "zhou_impressed"
+    },
+    {
+      "id": "zhou_impressed",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "……你比我想象中更像一个老刑警。",
+      "next": "young_officer_1"
+    },
+    {
+      "id": "young_officer_1",
+      "type": "text",
+      "speaker": "青年警员",
+      "text": "周队，就算足迹分析排除了他的嫌疑，他仍然是最后见到死者的人之一！",
+      "next": "zhou_response"
+    },
+    {
+      "id": "zhou_response",
+      "type": "text",
+      "speaker": "周业斌",
+      "text": "查案讲究证据，要尊重事实。他的嫌疑已经很小了——剩下的，是找到那个第三人。",
+      "next": "investigation_end_1"
+    },
+    {
+      "id": "investigation_end_1",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（刘格向我借的三十万，应该是拿去购买核心技术代码，让公司起死回生的。能帮他做到这件事的人，有技术、有信任、没签合同……）",
+      "next": "investigation_end_2"
+    },
+    {
+      "id": "investigation_end_2",
+      "type": "text",
+      "speaker": "陈益",
+      "text": "（而那个人，很可能就是第三人的身份。）",
+      "next": "investigation_end_3"
+    },
+    {
+      "id": "investigation_end_3",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "陈益最后环视了一圈现场，将每一处细节刻入脑海。接下来，他需要亲自验证每一个推断。",
+      "next": ""
+    }
+  ]
+}
