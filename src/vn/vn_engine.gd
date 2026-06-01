@@ -25,8 +25,11 @@ func _ready() -> void:
 		start_dialogue("res://data/dialogue/case_001_opening.json")
 
 func _apply_theme() -> void:
-	var bg_tex := ThemeManager.generate_gradient_bg(1280, 720, Color(0.04, 0.04, 0.07), Color(0.08, 0.06, 0.04))
-	background.texture = bg_tex
+	var bg_tex := ThemeManager.load_external_image("res://assets/scenes/bg_interrogation.jpg")
+	if bg_tex:
+		background.texture = bg_tex
+	else:
+		background.texture = ThemeManager.generate_gradient_bg(1280, 720, Color(0.04, 0.04, 0.07), Color(0.08, 0.06, 0.04))
 
 	var box_style := ThemeManager.make_panel_style(
 		Color(0.04, 0.04, 0.06, 0.88),
@@ -208,18 +211,72 @@ func _get_speaker_display_name(speaker_id: String) -> String:
 		return char_data.get("name", speaker_id)
 	return speaker_id
 
+var _portrait_cache: Dictionary = {}
+const _PORTRAIT_MAP := {
+	"陈益": "res://assets/portraits/chen_yi.jpg",
+	"chen_yi": "res://assets/portraits/chen_yi.jpg",
+	"周业斌": "res://assets/portraits/zhou_yebin.jpg",
+	"zhou_yebin": "res://assets/portraits/zhou_yebin.jpg",
+	"青年警员": "res://assets/portraits/young_officer.jpg",
+}
+
 func _update_portraits(node: Dictionary) -> void:
+	if node.has("portrait_left") or node.has("portrait_right"):
+		_update_portrait_explicit(node)
+		return
+
+	var speaker: String = node.get("speaker", "")
+	if speaker == "narrator" or speaker.is_empty():
+		portrait_left.visible = false
+		portrait_right.visible = false
+		return
+
+	var is_protagonist := speaker == "陈益" or speaker == "chen_yi"
+	var portrait_path: String = _PORTRAIT_MAP.get(speaker, "")
+
+	if portrait_path.is_empty():
+		portrait_left.visible = false
+		portrait_right.visible = false
+		return
+
+	var tex: Texture2D = _load_portrait(portrait_path)
+	if tex == null:
+		portrait_left.visible = false
+		portrait_right.visible = false
+		return
+
+	if is_protagonist:
+		portrait_left.texture = tex
+		portrait_left.visible = true
+		portrait_right.modulate = Color(0.5, 0.5, 0.5, 0.6) if portrait_right.visible else Color.WHITE
+		portrait_left.modulate = Color.WHITE
+	else:
+		portrait_right.texture = tex
+		portrait_right.visible = true
+		portrait_left.modulate = Color(0.5, 0.5, 0.5, 0.6) if portrait_left.visible else Color.WHITE
+		portrait_right.modulate = Color.WHITE
+
+func _update_portrait_explicit(node: Dictionary) -> void:
 	if node.has("portrait_left"):
-		var path: String = node["portrait_left"]
-		if path.is_empty():
+		var p: String = node["portrait_left"]
+		if p.is_empty():
 			portrait_left.visible = false
 		else:
-			portrait_left.texture = load(path) if ResourceLoader.exists(path) else null
+			portrait_left.texture = _load_portrait(p)
 			portrait_left.visible = portrait_left.texture != null
 	if node.has("portrait_right"):
-		var path: String = node["portrait_right"]
-		if path.is_empty():
+		var p: String = node["portrait_right"]
+		if p.is_empty():
 			portrait_right.visible = false
 		else:
-			portrait_right.texture = load(path) if ResourceLoader.exists(path) else null
+			portrait_right.texture = _load_portrait(p)
 			portrait_right.visible = portrait_right.texture != null
+
+func _load_portrait(p: String) -> Texture2D:
+	if p in _portrait_cache:
+		return _portrait_cache[p]
+	var tex: Texture2D = ThemeManager.load_external_image(p)
+	if tex:
+		_portrait_cache[p] = tex
+		return tex
+	return null

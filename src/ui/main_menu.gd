@@ -8,10 +8,20 @@ func _ready() -> void:
 		$VBox/InvestigateButton.pressed.connect(_on_investigate)
 
 func _apply_theme() -> void:
-	var bg_tex := ThemeManager.generate_vignette_bg(1280, 720, Color(0.05, 0.05, 0.08))
-	$Background.texture = bg_tex
+	var bg_tex := ThemeManager.load_external_image("res://assets/scenes/bg_main_menu.jpg")
+	if bg_tex:
+		$Background.texture = bg_tex
+	else:
+		$Background.texture = ThemeManager.generate_vignette_bg(1280, 720, Color(0.05, 0.05, 0.08))
 	$Background.expand_mode = 1
 	$Background.stretch_mode = 6
+
+	var overlay := ColorRect.new()
+	overlay.color = Color(0, 0, 0, 0.6)
+	overlay.anchors_preset = Control.PRESET_FULL_RECT
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(overlay)
+	move_child(overlay, 1)
 
 	$VBox/Title.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 	$VBox/Title.add_theme_font_size_override("font_size", 56)

@@ -1,0 +1,185 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":58464,"proto":"grb/1","tier_default":1,"token":"9d90f3f7c08f33776b8b980689b3d96a3ff262a6f69ccef5"}
+[VN] Loading dialogue: res://data/dialogue/case_001_opening.json
+[VN] Loaded OK, nodes count: 31
+[DialogueBox] show_dialogue: speaker=narrator text_len=15
+[DialogueBox] show_dialogue: speaker=青年警员 text_len=17
+[DialogueBox] show_dialogue: speaker=青年警员 text_len=26
+
+
+
+=== STDERR ===
+WARNING: Not a PNG file
+   at: check_error (drivers/png/png_driver_common.cpp:55)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/ui/main_menu.gd:11)
+       [2] _ready (res://src/ui/main_menu.gd:4)
+ERROR: Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+   at: png_to_image (drivers/png/png_driver_common.cpp:68)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/ui/main_menu.gd:11)
+       [2] _ready (res://src/ui/main_menu.gd:4)
+ERROR: Error loading image: 'c:/Users/codes/workspace/my-game-dev/assets/scenes/bg_main_menu.png'.
+   at: load_image (core/io/image_loader.cpp:100)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/ui/main_menu.gd:11)
+       [2] _ready (res://src/ui/main_menu.gd:4)
+WARNING: [ThemeManager] Failed to load image: c:/Users/codes/workspace/my-game-dev/assets/scenes/bg_main_menu.png
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:86)
+       [1] _apply_theme (res://src/ui/main_menu.gd:11)
+       [2] _ready (res://src/ui/main_menu.gd:4)
+ERROR: Cannot get path of node as it is not in a scene tree.
+   at: get_path (scene/main/node.cpp:2419)
+   GDScript backtrace (most recent call first):
+       [0] _cmd_press_button (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:693)
+       [1] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:430)
+       [2] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [3] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+WARNING: Not a PNG file
+   at: check_error (drivers/png/png_driver_common.cpp:55)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/vn/vn_engine.gd:28)
+       [2] _ready (res://src/vn/vn_engine.gd:16)
+ERROR: Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+   at: png_to_image (drivers/png/png_driver_common.cpp:68)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/vn/vn_engine.gd:28)
+       [2] _ready (res://src/vn/vn_engine.gd:16)
+ERROR: Error loading image: 'c:/Users/codes/workspace/my-game-dev/assets/scenes/bg_interrogation.png'.
+   at: load_image (core/io/image_loader.cpp:100)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _apply_theme (res://src/vn/vn_engine.gd:28)
+       [2] _ready (res://src/vn/vn_engine.gd:16)
+WARNING: [ThemeManager] Failed to load image: c:/Users/codes/workspace/my-game-dev/assets/scenes/bg_interrogation.png
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:86)
+       [1] _apply_theme (res://src/vn/vn_engine.gd:28)
+       [2] _ready (res://src/vn/vn_engine.gd:16)
+ERROR: Failed to open: res://data/characters/narrator.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:209)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:83)
+       [3] _process_node (res://src/vn/vn_engine.gd:70)
+       [4] start_dialogue (res://src/vn/vn_engine.gd:56)
+       [5] _ready (res://src/vn/vn_engine.gd:25)
+ERROR: Failed to open: res://data/characters/青年警员.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:209)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:83)
+       [3] _process_node (res://src/vn/vn_engine.gd:70)
+       [4] _on_advance (res://src/vn/vn_engine.gd:148)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+WARNING: Not a PNG file
+   at: check_error (drivers/png/png_driver_common.cpp:55)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _load_portrait (res://src/vn/vn_engine.gd:278)
+       [2] _update_portraits (res://src/vn/vn_engine.gd:242)
+       [3] _handle_text_node (res://src/vn/vn_engine.gd:85)
+       [4] _process_node (res://src/vn/vn_engine.gd:70)
+       [5] _on_advance (res://src/vn/vn_engine.gd:148)
+       [6] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [7] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [8] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [9] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [10] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [11] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+   at: png_to_image (drivers/png/png_driver_common.cpp:68)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _load_portrait (res://src/vn/vn_engine.gd:278)
+       [2] _update_portraits (res://src/vn/vn_engine.gd:242)
+       [3] _handle_text_node (res://src/vn/vn_engine.gd:85)
+       [4] _process_node (res://src/vn/vn_engine.gd:70)
+       [5] _on_advance (res://src/vn/vn_engine.gd:148)
+       [6] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [7] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [8] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [9] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [10] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [11] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Error loading image: 'c:/Users/codes/workspace/my-game-dev/assets/portraits/young_officer.png'.
+   at: load_image (core/io/image_loader.cpp:100)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _load_portrait (res://src/vn/vn_engine.gd:278)
+       [2] _update_portraits (res://src/vn/vn_engine.gd:242)
+       [3] _handle_text_node (res://src/vn/vn_engine.gd:85)
+       [4] _process_node (res://src/vn/vn_engine.gd:70)
+       [5] _on_advance (res://src/vn/vn_engine.gd:148)
+       [6] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [7] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [8] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [9] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [10] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [11] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+WARNING: [ThemeManager] Failed to load image: c:/Users/codes/workspace/my-game-dev/assets/portraits/young_officer.png
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:86)
+       [1] _load_portrait (res://src/vn/vn_engine.gd:278)
+       [2] _update_portraits (res://src/vn/vn_engine.gd:242)
+       [3] _handle_text_node (res://src/vn/vn_engine.gd:85)
+       [4] _process_node (res://src/vn/vn_engine.gd:70)
+       [5] _on_advance (res://src/vn/vn_engine.gd:148)
+       [6] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [7] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [8] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [9] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [10] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [11] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+ERROR: Failed to open: res://data/characters/青年警员.json
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] load_json (res://src/autoload/game_manager.gd:67)
+       [1] _get_speaker_display_name (res://src/vn/vn_engine.gd:209)
+       [2] _handle_text_node (res://src/vn/vn_engine.gd:83)
+       [3] _process_node (res://src/vn/vn_engine.gd:70)
+       [4] _on_advance (res://src/vn/vn_engine.gd:148)
+       [5] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [6] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [7] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [8] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [9] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+       [10] _process (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:347)
+WARNING: Not a PNG file
+   at: check_error (drivers/png/png_driver_common.cpp:55)
+   GDScript backtrace (most recent call first):
+       [0] load_external_image (res://src/autoload/theme_manager.gd:84)
+       [1] _load_portrait (res://src/vn/vn_engine.gd:278)
+       [2] _update_portraits (res://src/vn/vn_engine.gd:242)
+       [3] _handle_text_node (res://src/vn/vn_engine.gd:85)
+       [4] _process_node (res://src/vn/vn_engine.gd:70)
+       [5] _on_advance (res://src/vn/vn_engine.gd:148)
+       [6] _unhandled_input (res://src/vn/dialogue_box.gd:40)
+       [7] _inject_event (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:634)
+       [8] _cmd_key (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:657)
+       [9] _execute (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:428)
+       [10] _dispatch (res://godot-runtime-bridge/addons/godot-runtime-bridge/runtime_bridge/DebugServer.gd:391)
+      
+
+[stderr truncated]

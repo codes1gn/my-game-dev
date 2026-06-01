@@ -76,6 +76,17 @@ func generate_vignette_bg(width: int, height: int, base_color: Color) -> ImageTe
 			img.set_pixel(x, y, c)
 	return ImageTexture.create_from_image(img)
 
+func load_external_image(path: String) -> ImageTexture:
+	var abs_path := path
+	if path.begins_with("res://"):
+		abs_path = ProjectSettings.globalize_path(path)
+	var img := Image.new()
+	var err := img.load(abs_path)
+	if err != OK:
+		push_warning("[ThemeManager] Failed to load image: " + abs_path)
+		return null
+	return ImageTexture.create_from_image(img)
+
 func generate_crime_scene_bg(width: int, height: int) -> ImageTexture:
 	var img := Image.create(width, height, false, Image.FORMAT_RGBA8)
 	var base := Color(0.14, 0.16, 0.20, 1.0)

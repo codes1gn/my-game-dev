@@ -20,8 +20,11 @@ func _ready() -> void:
 	_load_scene("res://data/scenes/case_001_apartment.json")
 
 func _apply_theme() -> void:
-	var bg_tex := ThemeManager.generate_crime_scene_bg(960, 540)
-	$Background.texture = bg_tex
+	var bg_tex := ThemeManager.load_external_image("res://assets/scenes/bg_apartment.jpg")
+	if bg_tex:
+		$Background.texture = bg_tex
+	else:
+		$Background.texture = ThemeManager.generate_crime_scene_bg(960, 540)
 	$Background.expand_mode = 1
 	$Background.stretch_mode = 6
 

@@ -1,0 +1,18 @@
+Failure: Godot exited (code null) before GDRB_READY
+
+=== STDOUT ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+Vulkan 1.4.312 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+
+GDRB_READY:{"input_mode":"synthetic","port":63443,"proto":"grb/1","tier_default":1,"token":"d8758eeb8f960dbded16ccb6f6d116f9d3d2299557f95808"}
+
+
+
+=== STDERR ===
+ERROR: Failed loading resource: res://assets/scenes/bg_main_menu.png.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+       [0] _apply_theme (res://src/ui/main_menu.gd:13)
+       [1] _ready (res://src/ui/main_menu.gd:4)
+
+
