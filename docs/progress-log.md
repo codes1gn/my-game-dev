@@ -40,9 +40,27 @@
 | ThemeManager | theme_manager.gd | UI主题、外部图片加载 |
 | AudioManager | audio_manager.gd | BGM交叉淡入淡出 + 语音播放 |
 
+### 素材提取进度（因果链模型）
+
+| 案件 | 章节 | 类型 | 状态 |
+|------|------|------|------|
+| 1. 刘格被杀案 | Ch 1-19 | 伪装自杀 | ✅ 完成 |
+| 2. 马萌入室抢劫杀人案 | Ch 20-43 | 入室抢劫→杀人 | ✅ 完成 |
+| 3. 王立华/贴加官案 | Ch 46-64 | 窒息谋杀 | ✅ 完成 |
+| 4. 赵若瑶/福利院连环奸杀案 | Ch 65-82 | 连环奸杀 | ✅ 完成 |
+| 5. 唐一平/针灸复仇杀人案 | Ch 85-110 | 针灸复仇 | ✅ 完成 |
+| 6. 董玉波/床底藏尸情杀案 | Ch 120-128 | 情杀藏尸 | ✅ 完成 |
+| 7. 江城大案/113连环杀人案 | Ch 132-158 | 跨25年连环杀人 | ✅ 完成 |
+| 8. 王福江/头孢饮酒猝死案 | Ch 162-164 | 意外死亡+抛尸 | ✅ 完成 |
+| 9. 郭佳茵/一案变四案 | Ch 166-181 | 杀妻+阴婚+骗婚+囚禁 | ✅ 完成 |
+| 10. 吴倩倩碎尸案/三重顶罪案 | Ch 185-207 | 先奸后杀+碎尸+三层顶罪 | ✅ 完成 |
+| 11+ | Ch 210+ | 待提取 | ⏳ 待续 |
+
+全书共802章，预计约30-40个案件。提取文档位于 `docs/case-extractions/` 目录。
+
 ### Git 最新提交
 
-- `c41000a` - feat: add BGM music system and Edge TTS character voice acting for Case 1
+- `c5161b2` - docs: add causal chain extractions for cases 1-9 and material library design
 
 ### 当前痛点分析
 
@@ -67,4 +85,6 @@
 - `docs/game-concept.md` — 游戏概念
 - `docs/technical-architecture.md` — 技术架构
 - `docs/voice-acting-roadmap.md` — 语音系统路线图
-- `docs/roguelike-investigation-design.md` — Roguelike破案机制设计方案（本次新建）
+- `docs/roguelike-investigation-design.md` — Roguelike破案机制设计方案
+- `docs/material-library-design.md` — 素材库设计（因果链模型）
+- `docs/case-extractions/` — 案件因果链提取文档（已完成10个案件）
