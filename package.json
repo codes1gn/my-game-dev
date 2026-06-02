@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "edge-tts-universal": "^1.4.0"
+    "adm-zip": "^0.5.17",
+    "edge-tts-universal": "^1.4.0",
+    "iconv-lite": "^0.7.2"
   }
 }
