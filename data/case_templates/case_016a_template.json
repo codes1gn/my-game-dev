@@ -1,0 +1,126 @@
+{
+  "case_id": "template_016a",
+  "source": "case_016_dual_cases (sub-case A: Saint Mary's Tear)",
+  "difficulty": 4,
+  "tags": ["serial_murder", "terminal_illness", "poison_signature", "criminal_profiling"],
+
+  "causal_chain": {
+    "background": {
+      "template_id": "R10",
+      "template_name": "medical_caregiver_breakdown",
+      "setting": "urban_hospital_district",
+      "npcs": [
+        {
+          "id": "doctor",
+          "archetype": "dying_healer",
+          "traits": ["dedicated", "terminal_cancer", "god_complex_emerging"],
+          "iq": 8,
+          "role": "perpetrator",
+          "profession": "emergency_doctor"
+        },
+        {
+          "id": "victim_1",
+          "archetype": "suicidal_youth",
+          "traits": ["depressed", "jumped_from_building_survived"],
+          "role": "victim"
+        },
+        {
+          "id": "victim_2",
+          "archetype": "despairing_worker",
+          "traits": ["drunk", "expressed_death_wish"],
+          "role": "victim"
+        }
+      ],
+      "relationships": [
+        {"from": "doctor", "to": "victim_1", "type": "stranger_observed", "context": "saw viral suicide video"},
+        {"from": "doctor", "to": "victim_2", "type": "stranger_overheard", "context": "heard death wish at bar"}
+      ]
+    },
+
+    "conflict_accumulation": {
+      "template_ids": ["M03"],
+      "layers": [
+        "10 years saving lives as ER doctor",
+        "diagnosed with terminal lung cancer",
+        "existential crisis: why save those who don't value life?",
+        "growing contempt for people who want to die"
+      ],
+      "duration": "months_post_diagnosis"
+    },
+
+    "trigger_event": {
+      "description": "viral video of victim_1's suicide attempt circulates online",
+      "catalyst": "doctor watches video while processing own mortality",
+      "emotional_state": "twisted mercy: 'if they want to die, I'll help them'"
+    },
+
+    "criminal_decision": {
+      "perpetrator_id": "doctor",
+      "motive": "twisted_mercy_killing",
+      "planning_level": "premeditated_serial",
+      "target_selection": "people who express desire to die",
+      "signature": "teardrop pendant left at each scene (Saint Mary's Tear)"
+    },
+
+    "method": {
+      "primary_ids": ["W01", "W14"],
+      "weapon": "lily_of_the_valley_extract (Convallaria toxin) + sedative injection",
+      "delivery": "syringe attack from behind → inject sedative → then lethal poison",
+      "signature_item": "teardrop-shaped pendant placed on each victim",
+      "medical_knowledge_used": "precise dosing, injection technique, toxin selection"
+    },
+
+    "execution_timeline": [
+      {"seq": 1, "target": "victim_1", "method": "sedative + lily toxin injection", "scene": "secluded area near apartment"},
+      {"seq": 2, "target": "victim_2", "method": "sedative + lily toxin injection", "scene": "alley near bar"}
+    ],
+
+    "aftermath": [
+      "moved victims to hidden locations post-mortem",
+      "left teardrop pendant as signature",
+      "continued normal hospital work"
+    ],
+
+    "exposure_points": [
+      {
+        "id": "ep_01",
+        "type": "E14",
+        "content": "two cases share identical MO: same toxin, same pendant",
+        "discovery_method": "case_linking",
+        "difficulty": 3,
+        "required_skill": "pattern_recognition"
+      },
+      {
+        "id": "ep_02",
+        "type": "E09",
+        "content": "criminal profile: medical professional, terminal condition, lives near victims",
+        "discovery_method": "behavioral_profiling",
+        "difficulty": 6,
+        "required_skill": "criminal_psychology"
+      },
+      {
+        "id": "ep_03",
+        "type": "E07",
+        "content": "lily_of_the_valley toxin identified → botanical/pharmacological knowledge",
+        "discovery_method": "toxicology_analysis",
+        "difficulty": 5,
+        "required_skill": "toxicology"
+      },
+      {
+        "id": "ep_04",
+        "type": "E10",
+        "content": "terminal cancer patient in same residential complex as victims",
+        "discovery_method": "area_canvass + hospital_records",
+        "difficulty": 4,
+        "required_skill": "investigation"
+      }
+    ]
+  },
+
+  "game_design_notes": {
+    "unique_mechanics": ["criminal_signature_linking", "toxicology_identification", "behavioral_profiling"],
+    "player_traps": ["victims seem unrelated", "deaths could be mistaken for overdose/suicide"],
+    "key_skill_checks": ["toxicology >= 5 to identify lily poison", "psychology >= 6 for accurate profile"],
+    "moral_complexity": "dying doctor killing 'those who want to die' - twisted compassion or murder?"
+  }
+}

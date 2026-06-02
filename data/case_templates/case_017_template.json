@@ -1,0 +1,162 @@
+{
+  "case_id": "template_017",
+  "source": "case_017_pingxian_family",
+  "difficulty": 4,
+  "tags": ["family_massacre", "poison", "blood_betrayal", "self_as_victim"],
+
+  "causal_chain": {
+    "background": {
+      "template_id": "R01",
+      "template_name": "family_inheritance_dispute",
+      "setting": "rural_mansion",
+      "npcs": [
+        {
+          "id": "patriarch",
+          "archetype": "wealthy_elder",
+          "traits": ["infertile_secret", "controlling", "business_savvy"],
+          "iq": 7,
+          "role": "perpetrator",
+          "public_role": "victim"
+        },
+        {
+          "id": "wife_2",
+          "archetype": "younger_wife",
+          "traits": ["unfaithful", "materialistic"],
+          "role": "primary_victim"
+        },
+        {
+          "id": "fake_son",
+          "archetype": "adopted_unknowing",
+          "traits": ["obedient", "naive"],
+          "role": "victim"
+        },
+        {
+          "id": "brother_1",
+          "archetype": "sibling_rival",
+          "traits": ["greedy", "cowardly"],
+          "role": "victim"
+        },
+        {
+          "id": "brother_2",
+          "archetype": "sibling_rival",
+          "traits": ["scheming", "opportunistic"],
+          "role": "victim"
+        },
+        {
+          "id": "outsider_son",
+          "archetype": "long_lost_child",
+          "traits": ["innocent", "hopeful"],
+          "role": "catalyst"
+        }
+      ],
+      "relationships": [
+        {"from": "patriarch", "to": "wife_2", "type": "marriage", "secret": "wife_cheating_with_nephew"},
+        {"from": "patriarch", "to": "fake_son", "type": "father_son", "secret": "not_biological"},
+        {"from": "patriarch", "to": "brother_1", "type": "siblings", "tension": "inheritance_dispute"},
+        {"from": "patriarch", "to": "outsider_son", "type": "believed_father_son", "secret": "also_not_biological"},
+        {"from": "wife_2", "to": "fake_son", "type": "stepmother_stepson", "secret": "affair"}
+      ]
+    },
+
+    "conflict_accumulation": {
+      "template_ids": ["M02", "M10"],
+      "layers": [
+        "patriarch secretly infertile his entire life",
+        "first wife had affair with brother, produced fake_son",
+        "second wife had affair with nephew, produced outsider_son",
+        "entire family conspired to steal outsider_son as baby to protect inheritance"
+      ],
+      "duration": "decades"
+    },
+
+    "trigger_event": {
+      "description": "patriarch develops terminal kidney disease, needs transplant",
+      "catalyst": "outsider_son found, kidney compatible but DNA test reveals NOT biological son",
+      "realization": "doctor explains 'related but not parent-child' = brother's bloodline",
+      "emotional_state": "decades of betrayal revealed in one DNA report"
+    },
+
+    "criminal_decision": {
+      "perpetrator_id": "patriarch",
+      "motive": "rage_and_betrayal",
+      "planning_level": "premeditated",
+      "target_selection": "kill ALL family members who betrayed him"
+    },
+
+    "method": {
+      "primary_ids": ["W01", "W03"],
+      "phase_1": {
+        "method": "dismemberment",
+        "target": "wife_2",
+        "details": "confrontation → forced confession → killed → body fed to pig grinder",
+        "timing": "5 days post-surgery"
+      },
+      "phase_2": {
+        "method": "mass_poisoning",
+        "target": "all_family_members",
+        "details": "rat poison in seasoning + alcohol at family dinner",
+        "self_protection": "ate minimally, did not drink alcohol",
+        "timing": "11 days post-surgery"
+      }
+    },
+
+    "execution_timeline": [
+      {"day": -30, "event": "kidney_transplant_from_outsider_son"},
+      {"day": -25, "event": "DNA_test_result_received"},
+      {"day": -20, "event": "patriarch_realizes_truth"},
+      {"day": 5, "event": "kills_wife_2_via_dismemberment"},
+      {"day": 11, "event": "organizes_family_dinner"},
+      {"day": 11, "event": "poisons_all_food_and_alcohol"},
+      {"day": 11, "event": "7_family_members_die"},
+      {"day": 11, "event": "patriarch_hospitalized_as_apparent_victim"}
+    ],
+
+    "aftermath": [
+      "claimed wife_2 attended dinner then disappeared",
+      "posed as survivor/victim requiring medical attention",
+      "refused to cooperate with investigation"
+    ],
+
+    "exposure_points": [
+      {
+        "id": "ep_01",
+        "type": "E04",
+        "content": "forensics finds NO trace of 9th person (wife_2) at dinner",
+        "discovery_method": "trace_evidence_analysis",
+        "difficulty": 5,
+        "required_skill": "forensics"
+      },
+      {
+        "id": "ep_02",
+        "type": "E01",
+        "content": "luminol reaction on pig grinder reveals human blood/tissue",
+        "discovery_method": "luminol_test",
+        "difficulty": 4,
+        "required_skill": "forensics"
+      },
+      {
+        "id": "ep_03",
+        "type": "E01",
+        "content": "DNA kinship analysis reveals complex blood relationships",
+        "discovery_method": "dna_analysis",
+        "difficulty": 6,
+        "required_skill": "genetics"
+      },
+      {
+        "id": "ep_04",
+        "type": "E02",
+        "content": "patriarch's psychological breakdown under questioning about infertility",
+        "discovery_method": "psychological_interrogation",
+        "difficulty": 7,
+        "required_skill": "psychology"
+      }
+    ]
+  },
+
+  "game_design_notes": {
+    "unique_mechanics": ["self_as_victim_deception", "mass_poisoning_dinner", "pig_grinder_disposal"],
+    "player_traps": ["initially suspect outside attacker", "patriarch appears as elderly victim"],
+    "key_skill_checks": ["forensics >= 6 to find grinder evidence", "psychology >= 7 to break patriarch"],
+    "moral_complexity": "patriarch was betrayed by EVERYONE; does decades of deception justify mass murder?"
+  }
+}

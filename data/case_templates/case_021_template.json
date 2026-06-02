@@ -1,0 +1,168 @@
+{
+  "case_id": "template_021",
+  "source": "case_021_yunzhou_jade_serial_murder",
+  "difficulty": 5,
+  "tags": ["indirect_murder", "revenge", "jade_smuggling", "ghost_market", "suspect_suicide", "moral_grey"],
+
+  "causal_chain": {
+    "background": {
+      "template_id": "R08+R13",
+      "template_name": "victim_turns_mastermind_with_proxy",
+      "setting": "tropical_city + ghost_market + rainforest",
+      "npcs": [
+        {
+          "id": "healer",
+          "archetype": "dying_avenger",
+          "traits": ["medical_expert", "poison_master", "terminally_ill", "selfless_to_allies"],
+          "iq": 9,
+          "role": "mastermind",
+          "condition": "uremia"
+        },
+        {
+          "id": "brother",
+          "archetype": "innocent_victim",
+          "traits": ["hopeful", "hardworking"],
+          "role": "murdered_catalyst",
+          "note": "found rare jade that could fund sister's treatment"
+        },
+        {
+          "id": "spy",
+          "archetype": "undercover_lover",
+          "traits": ["beautiful", "resilient", "secretive"],
+          "iq": 7,
+          "role": "accomplice",
+          "profession": "manicurist"
+        },
+        {
+          "id": "thief_king",
+          "archetype": "noble_thief",
+          "traits": ["agile", "righteous", "lone_wolf"],
+          "role": "support_accomplice",
+          "note": "spy's older brother, A-list wanted"
+        },
+        {
+          "id": "killer_target_1",
+          "archetype": "greedy_merchant",
+          "traits": ["ruthless", "jade_trader"],
+          "role": "victim_who_deserved_it"
+        },
+        {
+          "id": "borrowed_knife",
+          "archetype": "compromised_elite",
+          "traits": ["wealthy", "cowardly", "desperate_father"],
+          "iq": 6,
+          "role": "manipulated_killer",
+          "note": "biological father of killer_target_1 (abandoned at birth)"
+        }
+      ],
+      "relationships": [
+        {"from": "healer", "to": "brother", "type": "siblings", "intensity": 10},
+        {"from": "spy", "to": "brother", "type": "lovers", "intensity": 9},
+        {"from": "spy", "to": "thief_king", "type": "siblings"},
+        {"from": "killer_target_1", "to": "brother", "type": "murdered_for_jade"},
+        {"from": "borrowed_knife", "to": "killer_target_1", "type": "secret_father_son"},
+        {"from": "healer", "to": "borrowed_knife", "type": "manipulator_puppet"}
+      ]
+    },
+
+    "conflict_accumulation": {
+      "template_ids": ["M03", "M08"],
+      "layers": [
+        "brother finds priceless jade raw stone that could save healer's life",
+        "4 jade traders murder brother and steal the stone",
+        "healer loses both brother and hope for treatment",
+        "healer + spy spend years tracking down the murderers"
+      ]
+    },
+
+    "trigger_event": {
+      "description": "spy infiltrates as killer_target_1's girlfriend",
+      "catalyst": "spy extracts confession and burial location from target",
+      "method": "earned trust through romantic relationship"
+    },
+
+    "criminal_decision": {
+      "perpetrator_id": "healer",
+      "mastermind_id": "healer",
+      "motive": "revenge_for_brother",
+      "planning_level": "genius_orchestrated",
+      "strategy": "borrowed_knife_murder - force someone else to do the killing"
+    },
+
+    "method": {
+      "primary_ids": ["W06", "W01"],
+      "step_1": "healer poisons borrowed_knife's daughter with slow-acting toxin",
+      "step_2": "healer offers antidote in exchange for killing the 4 jade traders",
+      "step_3": "borrowed_knife personally murders all 4 to save daughter",
+      "step_4": "healer provides antidote, daughter survives",
+      "parallel": "thief_king steals key evidence (jade bracelet) from daughter"
+    },
+
+    "exposure_points": [
+      {
+        "id": "ep_01",
+        "type": "E08",
+        "content": "jade bracelet from village shrine traces to stolen raw stone",
+        "discovery_method": "artifact_provenance_analysis",
+        "difficulty": 7,
+        "required_skill": "gemology_or_art"
+      },
+      {
+        "id": "ep_02",
+        "type": "E10",
+        "content": "ghost market broker (钟六) connects jade trade to victims",
+        "discovery_method": "undercover_market_investigation",
+        "difficulty": 5,
+        "required_skill": "streetwise"
+      },
+      {
+        "id": "ep_03",
+        "type": "E01",
+        "content": "DNA paternity test reveals borrowed_knife is killer_target_1's father",
+        "discovery_method": "dna_analysis",
+        "difficulty": 4,
+        "required_skill": "forensics"
+      },
+      {
+        "id": "ep_04",
+        "type": "E12",
+        "content": "village collectively protects healer ('divine doctor sister')",
+        "discovery_method": "child_accidentally_reveals_presence",
+        "difficulty": 6,
+        "required_skill": "social"
+      },
+      {
+        "id": "ep_05",
+        "type": "E02",
+        "content": "spy's emotional reaction when told 'we found the rainforest cottage'",
+        "discovery_method": "shock_revelation_technique",
+        "difficulty": 5,
+        "required_skill": "psychology"
+      }
+    ],
+
+    "special_event": {
+      "type": "suspect_suicide",
+      "description": "healer records confession then drinks self-prepared poison",
+      "player_consequence": "investigation report required, possible suspension",
+      "prevention_possible": false,
+      "note": "healer had prepared poison in advance, prewritten will found"
+    }
+  },
+
+  "game_design_notes": {
+    "unique_mechanics": [
+      "ghost_market_exploration",
+      "jade_provenance_tracking",
+      "borrowed_knife_murder_deduction",
+      "drone_rainforest_search",
+      "suspect_suicide_during_interview_event"
+    ],
+    "player_traps": [
+      "borrowed_knife appears to be the mastermind",
+      "spy appears to be innocent manicurist",
+      "thief_king seems unrelated to murder case"
+    ],
+    "moral_complexity": "all murder victims were themselves murderers; healer died for justice the law couldn't provide"
+  }
+}

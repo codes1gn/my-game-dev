@@ -1,0 +1,206 @@
+{
+  "case_id": "template_020bc",
+  "source": "case_020 (sub-cases B+C: serial rape + village murder)",
+  "difficulty": 5,
+  "tags": ["serial_assault", "incitement", "village_customs", "dna_dragnet", "psychological_interrogation", "hidden_mastermind"],
+
+  "causal_chain": {
+    "background": {
+      "template_id": "R03+R08+R09",
+      "template_name": "closed_village_revenge_via_pawn",
+      "setting": "remote_mountain_village + university_city",
+      "npcs": [
+        {
+          "id": "pawn",
+          "archetype": "honest_naive_villager",
+          "traits": ["honest", "naive", "deeply_loyal", "physically_strong"],
+          "iq": 4,
+          "role": "executor",
+          "public_role": "perpetrator"
+        },
+        {
+          "id": "mastermind",
+          "archetype": "vengeful_intellectual",
+          "traits": ["introverted", "intelligent", "traumatized", "manipulative"],
+          "iq": 8,
+          "role": "mastermind",
+          "public_role": "victim",
+          "profession": "web_novelist"
+        },
+        {
+          "id": "primary_target",
+          "archetype": "sharp_tongued_friend",
+          "traits": ["outspoken", "abrasive", "unaware"],
+          "role": "primary_victim"
+        },
+        {
+          "id": "victim_b",
+          "archetype": "athletic_friend",
+          "traits": ["active", "cautious"],
+          "role": "victim"
+        },
+        {
+          "id": "victim_c",
+          "archetype": "quiet_friend",
+          "traits": ["married", "fearful"],
+          "role": "victim"
+        },
+        {
+          "id": "initial_offender_1",
+          "archetype": "village_thug",
+          "traits": ["cunning", "cowardly"],
+          "role": "killed_victim"
+        },
+        {
+          "id": "initial_offender_2",
+          "archetype": "village_thug",
+          "traits": ["aggressive", "reckless"],
+          "role": "killed_victim"
+        }
+      ],
+      "relationships": [
+        {"from": "pawn", "to": "mastermind", "type": "unrequited_love", "intensity": 10},
+        {"from": "mastermind", "to": "pawn", "type": "manipulation", "appears_as": "love"},
+        {"from": "mastermind", "to": "primary_target", "type": "hidden_hatred", "appears_as": "friendship"},
+        {"from": "initial_offender_1", "to": "mastermind", "type": "rapist_victim"},
+        {"from": "pawn", "to": "initial_offender_1", "type": "village_acquaintance"}
+      ]
+    },
+
+    "conflict_accumulation": {
+      "template_ids": ["M07", "M05"],
+      "layers": [
+        "four college girls go hiking in remote village",
+        "mastermind is raped by initial_offenders during the trip",
+        "mastermind hides trauma from friends",
+        "pawn witnesses or learns of the assault, falls in love with mastermind",
+        "mastermind weaponizes pawn's love for revenge plan"
+      ],
+      "duration": "years"
+    },
+
+    "trigger_event": {
+      "description": "mastermind gives pawn handmade safety charm (平安符)",
+      "catalyst": "this gift cements pawn's devotion and activates the plan",
+      "emotional_state": "pawn believes in true love, mastermind sees chess piece"
+    },
+
+    "criminal_decision": {
+      "perpetrator_id": "pawn",
+      "mastermind_id": "mastermind",
+      "motive_pawn": "love_and_rage",
+      "motive_mastermind": "revenge_and_hatred",
+      "planning_level": "orchestrated_by_mastermind",
+      "phases": [
+        "Phase 1: pawn kills initial_offenders (direct revenge)",
+        "Phase 2: pawn serially assaults mastermind's friends (orchestrated revenge)",
+        "Phase 3: primary_target gets worst treatment (mastermind's true target)"
+      ]
+    },
+
+    "method": {
+      "phase_1": {
+        "ids": ["W07", "W08"],
+        "details": "use local herb (商陆/Phytolacca) to knock out offenders → throw into wolf-infested valley",
+        "disposal": "natural predators destroy evidence"
+      },
+      "phase_2": {
+        "ids": ["W02", "W07"],
+        "details": "stalk and assault each victim individually",
+        "anti_forensics": "mastermind teaches pawn counter-forensics for first 3 victims",
+        "final_victim": "deliberately leave DNA on primary_target + disfigure face"
+      }
+    },
+
+    "execution_timeline": [
+      {"phase": 1, "day": "T-1460", "event": "pawn kills initial_offenders via herb + valley"},
+      {"phase": 1, "day": "T-1459", "event": "pawn burns evidence cabin"},
+      {"phase": 1, "day": "T-1450", "event": "pawn leaves village, moves to city"},
+      {"phase": 2, "day": "T-730", "event": "assault victim_b (night jogger)"},
+      {"phase": 2, "day": "T-365", "event": "assault victim_c (home invasion)"},
+      {"phase": 2, "day": "T-180", "event": "assault mastermind (staged, consensual)"},
+      {"phase": 2, "day": "T-0", "event": "assault + disfigure primary_target (leave DNA)"}
+    ],
+
+    "aftermath": [
+      "mastermind creates 'victim alliance', convinces victim_c not to report",
+      "mastermind reports own 'assault' (fake) to appear as victim",
+      "primary_target eventually reports to police in different city",
+      "pawn continues normal life as food delivery driver"
+    ],
+
+    "exposure_points": [
+      {
+        "id": "ep_01",
+        "type": "E01",
+        "content": "mass DNA collection matches pawn",
+        "discovery_method": "dna_dragnet",
+        "difficulty": 3,
+        "required_skill": "forensics",
+        "note": "brute force approach but effective"
+      },
+      {
+        "id": "ep_02",
+        "type": "E08",
+        "content": "safety charm found in forest near wolf valley",
+        "discovery_method": "extensive_crime_scene_search",
+        "difficulty": 8,
+        "required_skill": "observation",
+        "note": "fox carried it away from path"
+      },
+      {
+        "id": "ep_03",
+        "type": "E07",
+        "content": "forest ranger identifies 商陆 herb as sedative",
+        "discovery_method": "specialist_consultation",
+        "difficulty": 6,
+        "required_skill": "botany_or_network"
+      },
+      {
+        "id": "ep_04",
+        "type": "E02",
+        "content": "pawn's intense reaction to safety charm during interrogation",
+        "discovery_method": "psychological_pressure",
+        "difficulty": 5,
+        "required_skill": "psychology"
+      },
+      {
+        "id": "ep_05",
+        "type": "E02",
+        "content": "pawn's psychological breakdown via novel character parallel + childhood toy",
+        "discovery_method": "targeted_emotional_attack",
+        "difficulty": 7,
+        "required_skill": "psychology >= 8"
+      },
+      {
+        "id": "ep_06",
+        "type": "E04",
+        "content": "3 assaults with no forensic trace, 4th deliberately leaves evidence = taught anti-forensics",
+        "discovery_method": "pattern_analysis",
+        "difficulty": 6,
+        "required_skill": "logic"
+      }
+    ]
+  },
+
+  "game_design_notes": {
+    "unique_mechanics": [
+      "hidden_mastermind_among_victims",
+      "dna_dragnet_system",
+      "multi_phase_crime_spanning_years",
+      "safety_charm_as_physical_clue",
+      "psychological_interrogation_minigame"
+    ],
+    "player_traps": [
+      "mastermind appears to be just another victim",
+      "village murder seems unrelated to city assaults",
+      "pawn's 'honest' facade is convincing"
+    ],
+    "key_skill_checks": [
+      "observation >= 8 to find safety charm",
+      "psychology >= 8 to break pawn's resolve",
+      "logic >= 6 to notice forensic pattern discrepancy"
+    ],
+    "moral_complexity": "mastermind was a genuine rape victim who weaponized a naive man's love to destroy others"
+  }
+}

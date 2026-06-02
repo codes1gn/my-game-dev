@@ -1,0 +1,169 @@
+{
+  "case_id": "template_022",
+  "source": "case_022_jingcheng_corpse_teleportation",
+  "difficulty": 5,
+  "tags": ["impossible_crime", "corpse_swap", "identity_replacement", "mortuary_science", "revenge"],
+
+  "causal_chain": {
+    "background": {
+      "template_id": "R07+R10",
+      "template_name": "parent_revenge_via_professional_skill",
+      "setting": "multi_city (county_town + small_town + capital)",
+      "npcs": [
+        {
+          "id": "mortician",
+          "archetype": "grieving_father_with_special_skills",
+          "traits": ["meticulous", "patient", "grief_stricken", "professional"],
+          "iq": 8,
+          "role": "perpetrator",
+          "profession": "mortuary_cosmetologist",
+          "alias": "innkeeper"
+        },
+        {
+          "id": "daughter",
+          "archetype": "tragic_youth",
+          "traits": ["dancer", "ill", "hopeful"],
+          "role": "catalyst_deceased",
+          "condition": "acute_myelitis → paraplegia → suicide"
+        },
+        {
+          "id": "doctor",
+          "archetype": "negligent_professional",
+          "traits": ["competent", "busy", "insufficient_warning"],
+          "role": "victim",
+          "note": "told daughter to return in 3 days but didn't stress urgency"
+        },
+        {
+          "id": "classmate_1",
+          "archetype": "indirect_cause",
+          "role": "victim"
+        },
+        {
+          "id": "classmate_2",
+          "archetype": "indirect_cause",
+          "role": "victim"
+        },
+        {
+          "id": "morgue_insider",
+          "archetype": "lonely_accomplice",
+          "traits": ["isolated", "poor", "morgue_worker"],
+          "role": "unwitting_accomplice",
+          "status": "deceased_natural_causes"
+        }
+      ],
+      "relationships": [
+        {"from": "mortician", "to": "daughter", "type": "father_daughter", "intensity": 10},
+        {"from": "daughter", "to": "doctor", "type": "patient_doctor"},
+        {"from": "mortician", "to": "morgue_insider", "type": "bribed_helper"},
+        {"from": "mortician", "to": "doctor", "type": "blame_for_daughter_death"}
+      ]
+    },
+
+    "conflict_accumulation": {
+      "template_ids": ["M07", "M03"],
+      "layers": [
+        "daughter develops acute myelitis symptoms",
+        "doctor sees her but only says 'come back in 3 days' without stressing severity",
+        "daughter doesn't return, condition worsens severely",
+        "daughter eventually diagnosed in capital city but too late: paraplegia",
+        "daughter can never dance again → kills herself",
+        "father blames doctor and classmates who were indirectly involved"
+      ]
+    },
+
+    "trigger_event": {
+      "description": "daughter hangs herself",
+      "catalyst": "father finds daughter's body",
+      "emotional_state": "years of silent grief → cold calculated revenge"
+    },
+
+    "criminal_decision": {
+      "perpetrator_id": "mortician",
+      "motive": "revenge_for_daughter",
+      "planning_level": "years_of_preparation",
+      "strategy": "use mortuary skills to create impossible crime"
+    },
+
+    "method": {
+      "primary_ids": ["W10", "W09"],
+      "core_trick": "corpse_teleportation_via_swap",
+      "steps": [
+        "kill victim in City A (capital/main city)",
+        "transport real corpse to County B morgue",
+        "use substitute corpse (unrelated deceased) in Town C",
+        "use mortuary cosmetics to make substitute look like victim",
+        "morgue_insider helps swap real corpse for substitute during forensic gap",
+        "result: victim appears to have died in Town C, not City A"
+      ],
+      "identity_replacement": {
+        "method": "mortician assumes new identity as 'innkeeper'",
+        "inn_name": "Cloud Water Inn (云水 = reversed daughter's name 水云)",
+        "location": "small town near where crimes staged"
+      }
+    },
+
+    "exposure_points": [
+      {
+        "id": "ep_01",
+        "type": "E04",
+        "content": "bodies cannot physically appear in Town C if killed in City A",
+        "discovery_method": "timeline_impossibility_analysis",
+        "difficulty": 6,
+        "required_skill": "logic"
+      },
+      {
+        "id": "ep_02",
+        "type": "E07",
+        "content": "mortuary cosmetology explains how substitute corpses look identical",
+        "discovery_method": "specialist_knowledge",
+        "difficulty": 7,
+        "required_skill": "forensic_science"
+      },
+      {
+        "id": "ep_03",
+        "type": "E11",
+        "content": "'Cloud Water Inn' = reversed 'Water Cloud' (daughter's name)",
+        "discovery_method": "name_pattern_recognition",
+        "difficulty": 8,
+        "required_skill": "intuition"
+      },
+      {
+        "id": "ep_04",
+        "type": "E08",
+        "content": "freezer in inn contains preserved evidence",
+        "discovery_method": "physical_search_of_inn",
+        "difficulty": 5,
+        "required_skill": "observation"
+      },
+      {
+        "id": "ep_05",
+        "type": "E04",
+        "content": "morgue_insider had opportunity to swap bodies during forensic exam gaps",
+        "discovery_method": "procedural_audit",
+        "difficulty": 5,
+        "required_skill": "investigation"
+      }
+    ]
+  },
+
+  "game_design_notes": {
+    "unique_mechanics": [
+      "impossible_crime_deduction",
+      "corpse_swap_puzzle",
+      "name_anagram_clue",
+      "morgue_investigation_scene",
+      "multi_city_travel_required"
+    ],
+    "player_traps": [
+      "innkeeper seems like normal business owner",
+      "morgue insider is dead and can't be questioned",
+      "cosmetics trick makes substitute corpse convincing"
+    ],
+    "key_skill_checks": [
+      "logic >= 6 to realize body was swapped",
+      "forensics >= 7 to understand cosmetic technique",
+      "intuition >= 8 to catch name reversal"
+    ],
+    "moral_complexity": "daughter's death was caused by medical negligence chain, but is multi-murder justified?"
+  }
+}
