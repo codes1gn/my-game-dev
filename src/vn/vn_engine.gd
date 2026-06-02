@@ -9,11 +9,13 @@ extends Control
 var _dialogue_data: Dictionary = {}
 var _nodes: Dictionary = {}
 var _current_node_id: String = ""
+var _voice_prefix: String = ""
 
 var _pending_dialogue_path: String = ""
 
 func _ready() -> void:
 	_apply_theme()
+	AudioManager.play_bgm("vn")
 	dialogue_box.advance_requested.connect(_on_advance)
 	choice_panel.choice_selected.connect(_on_choice_selected)
 	choice_panel.visible = false
@@ -56,6 +58,10 @@ func start_dialogue(dialogue_path: String) -> void:
 	_nodes.clear()
 	for node_data in _dialogue_data.get("nodes", []):
 		_nodes[node_data["id"]] = node_data
+
+	var fname := dialogue_path.get_file().get_basename()
+	_voice_prefix = fname.replace("case_001_", "")
+
 	_current_node_id = _dialogue_data.get("start_node", "start")
 	EventBus.dialogue_started.emit(_dialogue_data.get("id", ""))
 	_process_node()
@@ -89,6 +95,7 @@ func _handle_text_node(node: Dictionary) -> void:
 
 	_update_portraits(node)
 	dialogue_box.show_dialogue(display_name, text)
+	_play_voice_for_node(node)
 
 	if node.has("set_flag"):
 		GameManager.set_flag(node["set_flag"], node.get("flag_value", true))
@@ -148,6 +155,7 @@ func _check_condition(cond) -> bool:
 	return true
 
 func _on_advance() -> void:
+	AudioManager.stop_voice()
 	var node: Dictionary = _nodes.get(_current_node_id, {})
 	_current_node_id = node.get("next", "")
 	_process_node()
@@ -168,6 +176,7 @@ func _on_choice_selected(index: int) -> void:
 		_process_node()
 
 func _end_dialogue() -> void:
+	AudioManager.stop_voice()
 	dialogue_box.hide_box()
 	choice_panel.visible = false
 	portrait_left.visible = false
@@ -287,3 +296,10 @@ func _load_portrait(p: String) -> Texture2D:
 		_portrait_cache[p] = tex
 		return tex
 	return null
+
+func _play_voice_for_node(node: Dictionary) -> void:
+	var node_id: String = node.get("id", "")
+	if node_id.is_empty() or _voice_prefix.is_empty():
+		return
+	var voice_path := "res://assets/voice/case_001/%s_%s.mp3" % [_voice_prefix, node_id]
+	AudioManager.play_voice(voice_path)

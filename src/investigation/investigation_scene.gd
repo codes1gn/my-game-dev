@@ -17,6 +17,7 @@ func _ready() -> void:
 	evidence_popup.visible = false
 	back_button.pressed.connect(_on_back)
 	_apply_theme()
+	AudioManager.play_bgm("investigation")
 	_load_scene("res://data/scenes/case_001_apartment.json")
 
 func _apply_theme() -> void:

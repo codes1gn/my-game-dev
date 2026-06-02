@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	_apply_theme()
+	AudioManager.play_bgm("menu")
 	$VBox/StartButton.pressed.connect(_on_start)
 	$VBox/QuitButton.pressed.connect(_on_quit)
 	if $VBox.has_node("InvestigateButton"):
@@ -15,6 +16,7 @@ func _apply_theme() -> void:
 		$Background.texture = ThemeManager.generate_vignette_bg(1280, 720, Color(0.05, 0.05, 0.08))
 	$Background.expand_mode = 1
 	$Background.stretch_mode = 6
+	$Background.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	var overlay := ColorRect.new()
 	overlay.color = Color(0, 0, 0, 0.6)
@@ -22,6 +24,8 @@ func _apply_theme() -> void:
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(overlay)
 	move_child(overlay, 1)
+
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	$VBox/Title.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
 	$VBox/Title.add_theme_font_size_override("font_size", 56)

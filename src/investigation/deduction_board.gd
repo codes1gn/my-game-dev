@@ -19,6 +19,7 @@ func _ready() -> void:
 	submit_button.pressed.connect(_on_submit)
 	result_close.pressed.connect(func(): result_popup.visible = false; _return_to_menu())
 	_apply_theme()
+	AudioManager.play_bgm("deduction")
 	_load_case("res://data/cases/case_001_deduction.json")
 
 func _apply_theme() -> void:
