@@ -1,0 +1,775 @@
+{
+  "id": "case_gen001_opening",
+  "type": "vn_dialogue",
+  "start_node": "start",
+  "on_end_goto": "",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "桐溪镇。清明节前夜。\n\n雨丝如针，斜斜地织在青瓦之上。镇子尽头，贺氏酒坊的灯还亮着——那是桐溪最后一家仍在手工酿酒的作坊，也是今夜命案的发生地。",
+      "next": "arrival_1"
+    },
+    {
+      "id": "arrival_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你作为省厅派来的调研员，在凌晨四点抵达现场。酒坊后院的二层书斋里，贺仲海仰面倒在梨花木书桌旁，像一尊被突然抽走魂魄的泥塑。",
+      "next": "arrival_2"
+    },
+    {
+      "id": "arrival_2",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "书斋门窗自内反锁，钥匙在死者裤袋里。桌上摆着半杯未饮尽的白干，纸面上压着一封遗书，床头柜上倒着一只空的安眠药瓶——一切，都指向自杀。",
+      "next": "scene_overview"
+    },
+    {
+      "id": "scene_overview",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第一章 · 苦水初凝】\n\n桐溪镇的夜雨尚未停歇。你在封条尚未干透的书斋里，第一次看见了那个被精心布置成“自我了断”的现场。",
+      "next": "examiner_intro"
+    },
+    {
+      "id": "examiner_intro",
+      "type": "text",
+      "speaker": "法医",
+      "text": "调研员同志，初步尸检报告出来了。死亡时间大约在凌晨两点前后，死因初步判定为药物过量伴随窒息——安眠药，剂量足以致命。",
+      "next": "examiner_contradiction_1"
+    },
+    {
+      "id": "examiner_contradiction_1",
+      "type": "text",
+      "speaker": "法医",
+      "text": "但有两个地方，让我没法签字结案。第一，胃内容物显示安眠药摄入时间约在晚上十点——从代谢曲线推算，他不该撑到凌晨两点才死。",
+      "next": "examiner_contradiction_2"
+    },
+    {
+      "id": "examiner_contradiction_2",
+      "type": "text",
+      "speaker": "法医",
+      "text": "第二，死者十指指甲缝里有深灰色沉积物，色泽不像泥土，也不像常见的化学残留。我建议做毒物筛查——尤其是重金属类。",
+      "next": "forensics_skill_check"
+    },
+    {
+      "id": "forensics_skill_check",
+      "type": "condition",
+      "branches": [
+        {
+          "condition": {"forensics_gte": 5},
+          "next": "forensics_early_insight"
+        }
+      ],
+      "fallback": "forensics_no_insight"
+    },
+    {
+      "id": "forensics_early_insight",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（这种灰黑色、略带金属光泽的沉积……不是普通的尘垢。长期接触含砷化合物，会在甲缝留下类似的硫化物痕迹。）",
+      "next": "forensics_early_insight_2"
+    },
+    {
+      "id": "forensics_early_insight_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（若真是砷中毒，那这封遗书、这瓶安眠药，便只是凶手在死者断气后，用来掩人耳目的布景。）",
+      "set_flag": "early_arsenic_clue",
+      "next": "suicide_note_intro"
+    },
+    {
+      "id": "forensics_no_insight",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（指甲下的灰色沉积物……暂时说不清来历。先按法医的建议送检吧。）",
+      "next": "suicide_note_intro"
+    },
+    {
+      "id": "suicide_note_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "遗书共三页，笔迹与贺仲海日常签名样本高度吻合。字里行间尽是生意失败、众叛亲离的颓唐，最后一句写道——“此身如苦水，不堪再酿。”",
+      "next": "desk_evidence"
+    },
+    {
+      "id": "desk_evidence",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "书桌上的白葡萄酒只饮了三分之一，杯沿有单一组唇印。安眠药瓶标签完整，瓶底批号与死者三个月前的处方记录一致——表面看，无懈可击。",
+      "next": "chapter1_choice"
+    },
+    {
+      "id": "chapter1_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "从时间矛盾入手——十点服药，两点才死，中间的四小时发生了什么？",
+          "next": "focus_time",
+          "set_flag": "investigation_focus",
+          "flag_value": "time"
+        },
+        {
+          "text": "从指甲异常入手——追查灰色沉积物的来源",
+          "next": "focus_fingernail",
+          "set_flag": "investigation_focus",
+          "flag_value": "fingernail"
+        },
+        {
+          "text": "从遗书入手——逐字审读，看是否有伪造痕迹",
+          "next": "focus_note",
+          "set_flag": "investigation_focus",
+          "flag_value": "note"
+        }
+      ]
+    },
+    {
+      "id": "focus_time",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "十点摄入的安眠药，按常规代谢，凌晨零点前后就该出现呼吸抑制。拖到两点——说明要么剂量被人为调整过，要么……十点之后，他仍然活着，且有人在这段时间内靠近过他。",
+      "next": "focus_time_2"
+    },
+    {
+      "id": "focus_time_2",
+      "type": "text",
+      "speaker": "法医",
+      "text": "你的推断有道理。另外，死者喉头有轻微水肿，不完全是药物作用——更像是后期有人调整过他的体位，或者……曾试图让他“喝”下什么。",
+      "next": "chapter1_merge"
+    },
+    {
+      "id": "focus_fingernail",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "指甲缝的沉积物取样送检。另外，检查他最近六个月的医疗记录、饮食来源，以及——酒坊里有没有接触矿物或化学制剂的可能。",
+      "next": "focus_fingernail_2"
+    },
+    {
+      "id": "focus_fingernail_2",
+      "type": "text",
+      "speaker": "法医",
+      "text": "好。我加急做毒物筛查。顺便说一句——这种沉积不像一次性沾染，更像是长期、低剂量接触留下的。",
+      "next": "chapter1_merge"
+    },
+    {
+      "id": "focus_note",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "遗书文字太“顺”了。一个决意赴死的人，笔触往往有颤抖、停顿——这份稿子，工整得像在写公文。",
+      "next": "focus_note_2"
+    },
+    {
+      "id": "focus_note_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "申请笔迹压力分析。尤其注意——如果出现“守诚”二字，看笔锋是否过于流畅。",
+      "set_flag": "note_suspicion_early",
+      "next": "chapter1_merge"
+    },
+    {
+      "id": "chapter1_merge",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "天色将明时，你走出书斋。酒坊前庭里，几个工人正被拦在警戒线外，神色各异。空气中飘着未发酵完毕的醪糟甜香——与死亡现场那种冷涩的纸墨味，格格不入。",
+      "next": "chapter2_intro"
+    },
+    {
+      "id": "chapter2_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第二章 · 苦水深处】\n\n贺氏酒坊在桐溪立号一百六十七年。如今掌舵的两兄弟，早已把这份祖业拆成了两半——一半是生意，一半是手艺。",
+      "next": "history_1"
+    },
+    {
+      "id": "history_1",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "十五年前，老贺老爷子撒手人寰。遗嘱写得很明白：长子贺守诚继承全部酿酒秘方与窖池管理权；次子贺仲海继承商标、门店与对外经营。",
+      "next": "history_2"
+    },
+    {
+      "id": "history_2",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "守诚守的是“活曲”——那些靠口传心授、凭嗅觉与手感续命的古老菌系；仲海跑的是“活钱”——把桐溪白干卖到省城、卖到海外，把百年字号变成可以估值的商标。",
+      "next": "history_3"
+    },
+    {
+      "id": "history_3",
+      "type": "text",
+      "speaker": "老秦",
+      "text": "守诚哥那人……话少，手稳，一辈子只认曲，不认人。仲海掌柜不一样，嘴甜，会算，镇上人都说他是“会把酒坊变成公司”的人。",
+      "next": "trademark_secret"
+    },
+    {
+      "id": "trademark_secret",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你在仲海的书柜夹层里，发现了一份未公开的商标转让意向书——受让方指向“志远酒业集团”，签字栏有仲海的名字，日期是三个月前。",
+      "next": "trademark_secret_2"
+    },
+    {
+      "id": "trademark_secret_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（商标转让……守诚知道吗？若他不知情，这就是对祖训的背叛——在守诚眼里，卖商标等于卖祖宗的名讳。）",
+      "set_flag": "trademark_discovered",
+      "next": "yiming_rejection"
+    },
+    {
+      "id": "yiming_rejection",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "贺守诚之子贺一鸣，化工专业毕业，半年前曾向父亲请求进酒坊做“现代化验”，被守诚当面回绝。",
+      "next": "yiming_rejection_2"
+    },
+    {
+      "id": "yiming_rejection_2",
+      "type": "text",
+      "speaker": "贺一鸣",
+      "text": "我爸说，化验室会“杀死”酒。我只想做点分析，帮他把曲温、酸度控稳一点……他连门都不让我进。",
+      "next": "tao_sale_plan"
+    },
+    {
+      "id": "tao_sale_plan",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "仲海妻子柳菁主动找到你，递上一份陶志远酒业的收购方案——整坊打包，开价不低，条件是连窖池带商标一并交割，三个月内完成过户。",
+      "next": "tao_sale_plan_2"
+    },
+    {
+      "id": "tao_sale_plan_2",
+      "type": "text",
+      "speaker": "柳菁",
+      "text": "仲海生前已经在谈了。守诚那边……一直拖着不签。若他死了，我作为法定继承人有权推进这笔交易——这不算犯罪吧，调研员同志？",
+      "next": "chapter2_choice"
+    },
+    {
+      "id": "chapter2_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "先调查陶志远——收购方往往最了解“谁死了对谁有利”",
+          "next": "investigate_tao",
+          "set_flag": "chapter2_focus",
+          "flag_value": "tao"
+        },
+        {
+          "text": "先调查柳菁——她最清楚仲海的秘密，也最急于推动交易",
+          "next": "investigate_liu",
+          "set_flag": "chapter2_focus",
+          "flag_value": "liu"
+        },
+        {
+          "text": "先勘查酒坊——百闻不如一见，曲房和窖池不会撒谎",
+          "next": "investigate_brewery",
+          "set_flag": "chapter2_focus",
+          "flag_value": "brewery"
+        }
+      ]
+    },
+    {
+      "id": "investigate_tao",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "志远酒业设在镇口，陶志远亲自接待了你。他五十有五，笑声洪亮，递烟的手势熟练得像在跟老主顾寒暄。",
+      "next": "investigate_tao_2"
+    },
+    {
+      "id": "investigate_tao_2",
+      "type": "text",
+      "speaker": "陶志远",
+      "text": "我跟仲海是对手，也是朋友。竞争归竞争，收购？那是生意。我巴不得他活着签字——死人不会履约，这道理我比谁都懂。",
+      "next": "investigate_tao_3"
+    },
+    {
+      "id": "investigate_tao_3",
+      "type": "text",
+      "speaker": "陶志远",
+      "text": "守诚那老倔头才可疑！他反对卖坊，反对得……你知道么，上个月还当众摔了仲海的合同。要我说，你们该查查曲房里的那些“老古董”。",
+      "next": "investigate_tao_4"
+    },
+    {
+      "id": "investigate_tao_4",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（陶志远急于把矛头引向守诚——典型的“红鲱鱼”。他的不在场证明：案发时在省城酒展，有监控、有发票、有十几位证人。）",
+      "set_flag": "tao_red_herring_investigated",
+      "next": "chapter2_merge"
+    },
+    {
+      "id": "investigate_liu",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "柳菁在灵堂侧厢见你，素服，妆容极淡，说话前先看了眼门外——确认守诚不在附近。",
+      "next": "investigate_liu_2"
+    },
+    {
+      "id": "investigate_liu_2",
+      "type": "text",
+      "speaker": "柳菁",
+      "text": "仲海确实瞒着守诚谈转让。我不觉得这有错——守诚守着那些霉菌能守出房贷吗？但杀人……我没那胆，也没那力。",
+      "next": "investigate_liu_3"
+    },
+    {
+      "id": "investigate_liu_3",
+      "type": "text",
+      "speaker": "柳菁",
+      "text": "有一件事你可能用得上：案发前一周，仲海半夜从曲房回来，鞋上全是霉灰。他说守诚“又在搞鬼”——具体是什么，他没肯说。",
+      "set_flag": "liu_secret_passage_hint",
+      "next": "chapter2_merge"
+    },
+    {
+      "id": "investigate_brewery",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你跟着老秦穿过发酵间。蒸汽氤氲，曲块堆叠如丘，空气里满是酵母与乳酸交织的酸香——这是活人酿造的活物，不是书斋里那种死气。",
+      "next": "investigate_brewery_2"
+    },
+    {
+      "id": "investigate_brewery_2",
+      "type": "text",
+      "speaker": "老秦",
+      "text": "守诚哥每天寅时进曲房，酉时出。谁也别打扰。仲海掌柜以前也不进这儿——说霉气伤肺。可前阵子，我夜里瞧见掌柜从这边的墙根走过……",
+      "next": "investigate_brewery_3"
+    },
+    {
+      "id": "investigate_brewery_3",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（墙根？发酵间靠北的那面墙，是后来加砌的……砖色与东侧旧墙略有不同。）",
+      "set_flag": "brewery_wall_noticed",
+      "next": "chapter2_merge"
+    },
+    {
+      "id": "chapter2_merge",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "午后，化验科的加急报告陆续传回。你在临时指挥部的白板前，将零散的线索一枚一枚钉上去——像把未过滤的新酒，慢慢澄清。",
+      "next": "chapter3_intro"
+    },
+    {
+      "id": "chapter3_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第三章 · 苦水现形】\n\n毒物筛查结果出来了——指甲沉积物中检出砷化物。更关键的，是死者头发分段分析：六个月内，砷含量呈缓慢上升曲线，而非一次大剂量摄入。",
+      "next": "arsenic_analysis_1"
+    },
+    {
+      "id": "arsenic_analysis_1",
+      "type": "text",
+      "speaker": "法医",
+      "text": "这是典型的慢性投毒。凶手懂药，懂剂量，懂怎么让一个人看起来像是“自己身体出了问题”。最后再用安眠药和遗书，完成最后一笔。",
+      "next": "arsenic_analysis_2"
+    },
+    {
+      "id": "arsenic_analysis_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "慢性投毒需要接近受害者的饮食或日常用品。能长期接触仲海饮食的人不多——兄弟、妻子、贴身工人。",
+      "next": "passage_search_check"
+    },
+    {
+      "id": "passage_search_check",
+      "type": "condition",
+      "branches": [
+        {
+          "condition": {"has_flag": "liu_secret_passage_hint"},
+          "next": "passage_search_hinted"
+        },
+        {
+          "condition": {"has_flag": "brewery_wall_noticed"},
+          "next": "passage_search_hinted"
+        }
+      ],
+      "fallback": "passage_search_blind"
+    },
+    {
+      "id": "passage_search_hinted",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你带人回到发酵间北墙。敲了敲，空腔声。移开遮挡的曲篓，一块砖松动了——墙后是一条窄道，连通书斋下方的暗室。",
+      "next": "passage_discovery"
+    },
+    {
+      "id": "passage_search_blind",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你在酒坊内外查了整整一圈，直到老秦“无意”提到曲房北墙曾翻修过，才在发酵间发现那条被曲块遮住的暗道——连通书斋下方。",
+      "next": "passage_discovery"
+    },
+    {
+      "id": "passage_discovery",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "暗道内壁有新近蹭掉的霉斑，地面有反复踩踏的痕迹。提取的DNA样本与贺守诚的唾液样本比对——吻合。",
+      "set_flag": "secret_passage_found",
+      "next": "passage_discovery_2"
+    },
+    {
+      "id": "passage_discovery_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（自内反锁的书斋，对守诚而言不过是一扇门的事。他熟悉曲房每一条缝、每一根梁——这条暗道，恐怕只有他和老秦知道。）",
+      "next": "handwriting_report"
+    },
+    {
+      "id": "handwriting_report",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "笔迹压力分析报告同时送达。遗书整体压力过于均匀，缺乏濒死前的肌肉颤抖；其中“守诚”二字，笔锋流畅得不像仲海在情绪崩溃下写就——倒像书写者本人早已习惯这两个字。",
+      "set_flag": "handwriting_analyzed",
+      "next": "handwriting_report_2"
+    },
+    {
+      "id": "handwriting_report_2",
+      "type": "text",
+      "speaker": "法医",
+      "text": "结论：遗书大概率由他人模仿仲海笔迹写成。若守诚与仲海从小一起练字——“守诚”二字，极可能暴露代笔者。",
+      "next": "handwriting_use_choice"
+    },
+    {
+      "id": "handwriting_use_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "立刻拿遗书样本与守诚对质笔迹——打草惊蛇，但可观察其反应",
+          "next": "handwriting_confront_path",
+          "set_flag": "handwriting_strategy",
+          "flag_value": "confront"
+        },
+        {
+          "text": "先按兵不动，继续从化学物证与暗道方向加压",
+          "next": "handwriting_wait_path",
+          "set_flag": "handwriting_strategy",
+          "flag_value": "wait"
+        }
+      ]
+    },
+    {
+      "id": "handwriting_confront_path",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你将笔迹报告当面出示。贺守诚只看了一眼，指节微微发白，却只说：“仲海的字，我比他更熟。”——这句话，等于承认了一半。",
+      "next": "yiming_chemicals_intro"
+    },
+    {
+      "id": "handwriting_wait_path",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（笔迹牌先按下。等暗道、毒物、DNA 三条线合拢，再一并摊在守诚面前——那时，他无处可退。）",
+      "next": "yiming_chemicals_intro"
+    },
+    {
+      "id": "yiming_chemicals_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "贺一鸣的住处搜出一套小型化学实验设备——瓶瓶罐罐，标签工整。他坚称只是业余爱好，与案件无关。",
+      "next": "yiming_chemicals_2"
+    },
+    {
+      "id": "yiming_chemicals_2",
+      "type": "text",
+      "speaker": "贺一鸣",
+      "text": "我承认我测过酒样里的微量元素——包括砷。那是为了证明曲房的水源没问题！我没投毒，我爸更不会让我碰那种东西！",
+      "next": "chapter3_choice"
+    },
+    {
+      "id": "chapter3_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "证据已足——立刻传唤贺守诚，当面突破",
+          "next": "approach_confront",
+          "set_flag": "chapter3_approach",
+          "flag_value": "confront"
+        },
+        {
+          "text": "再查贺一鸣的化学记录——确认砷的来源与守诚是否知情",
+          "next": "approach_chemicals",
+          "set_flag": "chapter3_approach",
+          "flag_value": "chemicals"
+        },
+        {
+          "text": "（法医学≥6）比对现场砷化物与一鸣试剂中的同位素比例",
+          "next": "approach_forensics_deep",
+          "condition": {"forensics_gte": 6},
+          "set_flag": "chapter3_approach",
+          "flag_value": "forensics"
+        }
+      ]
+    },
+    {
+      "id": "approach_confront",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你合上卷宗。暗道、DNA、慢性砷中毒、遗书破绽——每一环都指向那个沉默寡言的酿酒师。",
+      "next": "chapter3_merge"
+    },
+    {
+      "id": "approach_chemicals",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "化验显示：一鸣试剂中的砷化合物与死者体内检出物，来源不同——他的样品来自工业标准品，而毒物更接近天然矿物形态。",
+      "next": "approach_chemicals_2"
+    },
+    {
+      "id": "approach_chemicals_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（排除一鸣的直接嫌疑。但守诚若懂曲房附近的老矿泉——那里本就含微量砷，他完全有能力“慢火熬毒”。）",
+      "set_flag": "yiming_cleared",
+      "next": "chapter3_merge"
+    },
+    {
+      "id": "approach_forensics_deep",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "同位素比例与桐溪后山矿泉涌出的天然砷化物完全吻合——不是化工试剂，是守诚用了六十年的那一眼“苦水”。",
+      "next": "approach_forensics_deep_2"
+    },
+    {
+      "id": "approach_forensics_deep_2",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（曲房用水皆取自后山。守诚每日经手，比任何人都清楚哪一口泉眼，砷含量最高，却又“不至于立刻致命”。）",
+      "set_flag": "arsenic_source_identified",
+      "next": "chapter3_merge"
+    },
+    {
+      "id": "chapter3_merge",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "入夜。你让人在地下酒窖备了灯。贺守诚被“请”来时，仍穿着那身洗得发白的工装，手上还有未洗净的曲霉——像刚从一百六十七年的时间里走出来。",
+      "next": "chapter4_intro"
+    },
+    {
+      "id": "chapter4_intro",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【第四章 · 苦水谣】\n\n地下酒窖潮冷，橡木桶排列如棺。灯影里，贺守诚的脸像一块泡久了的老曲——表面平静，内里发酵着无人能懂的东西。",
+      "next": "interrogation_start"
+    },
+    {
+      "id": "interrogation_start",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "贺师傅，仲海不是自杀。你是最后一个在暗道里靠近他的人——你的DNA，遗书上的“守诚”，还有后山苦水里六个月的砷，都在。",
+      "next": "he_shoucheng_silent"
+    },
+    {
+      "id": "he_shoucheng_silent",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "……",
+      "next": "interrogation_evidence_check"
+    },
+    {
+      "id": "interrogation_evidence_check",
+      "type": "condition",
+      "branches": [
+        {
+          "condition": {"has_flag": "early_arsenic_clue"},
+          "next": "interrogation_full_evidence"
+        },
+        {
+          "condition": {"has_flag": "arsenic_source_identified"},
+          "next": "interrogation_full_evidence"
+        }
+      ],
+      "fallback": "interrogation_partial_evidence"
+    },
+    {
+      "id": "interrogation_full_evidence",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "你用了后山的苦水——那眼泉，你父亲教你辨过的。六个月的慢性投毒，最后一夜，你经暗道进入书斋，布置了安眠药和遗书。你比他更清楚怎么写他的字，尤其是“守诚”——因为你们本是同一个“诚”字辈。",
+      "next": "interrogation_choice"
+    },
+    {
+      "id": "interrogation_partial_evidence",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "暗道、DNA、笔迹——证据链已经闭合。守诚师傅，你还要等到什么时候？",
+      "next": "interrogation_choice"
+    },
+    {
+      "id": "interrogation_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "追问他为何选慢性投毒——而不是更快的方式",
+          "next": "ask_method",
+          "set_flag": "interrogation_angle",
+          "flag_value": "method"
+        },
+        {
+          "text": "追问他与仲海的最后一次争吵",
+          "next": "ask_argument",
+          "set_flag": "interrogation_angle",
+          "flag_value": "argument"
+        },
+        {
+          "text": "（心理学≥5）沉默。等他自己在窖藏的死寂里开口",
+          "next": "ask_silence",
+          "condition": {"psychology_gte": 5},
+          "set_flag": "interrogation_angle",
+          "flag_value": "silence"
+        }
+      ]
+    },
+    {
+      "id": "ask_method",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "快？……他卖商标那日，在祠堂摔了父亲的牌位。我若快，像是恨。我慢，像命。桐溪人信命，也信“苦水养曲”——我让他喝了一样的水。",
+      "next": "breakdown_start"
+    },
+    {
+      "id": "ask_argument",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "他最后说：“守诚，这坊子卖了吧，陶志远出的价，够你我两辈子。”我说：“你卖的是一百六十七年的活物，买主只懂钱。”……那是我们最后一次说话。",
+      "next": "breakdown_start"
+    },
+    {
+      "id": "ask_silence",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "你不再说话。酒窖里只有橡木桶渗水的滴答声——像漏刻，一滴一滴，数着谁也无法挽回的时间。",
+      "next": "ask_silence_2"
+    },
+    {
+      "id": "ask_silence_2",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "……你们城里人，总问“为什么”。因为仲海要把一个活了一万六千天的东西，卖给一个只数得清钱的人。",
+      "next": "breakdown_start"
+    },
+    {
+      "id": "breakdown_start",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "他是我弟弟。……我教他认曲，他教我认账。可后来他只认账了。",
+      "next": "breakdown_2"
+    },
+    {
+      "id": "breakdown_2",
+      "type": "text",
+      "speaker": "贺守诚",
+      "text": "我杀的不是一个人——是一个要把“贺氏”变成“志远”的人。我守的不是酒坊，是那一缸还在呼吸的老曲。",
+      "next": "final_judgment_choice"
+    },
+    {
+      "id": "final_judgment_choice",
+      "type": "choice",
+      "options": [
+        {
+          "text": "以法问罪——无论有何隐情，杀人者须伏法",
+          "next": "judgment_law",
+          "set_flag": "closing_stance",
+          "flag_value": "law"
+        },
+        {
+          "text": "以情收尾——让他说完关于“苦水谣”的最后一句",
+          "next": "judgment_empathy",
+          "set_flag": "closing_stance",
+          "flag_value": "empathy"
+        },
+        {
+          "text": "（逻辑≥5）指出：守诚的保护，恰恰毁灭了他要守的东西",
+          "next": "judgment_logic",
+          "condition": {"logic_gte": 5},
+          "set_flag": "closing_stance",
+          "flag_value": "logic"
+        }
+      ]
+    },
+    {
+      "id": "judgment_law",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "守诚师傅，祖业也好，曲魂也好，都不能成为夺命的借口。你弟弟该由法律审判，而不是由你来执行。",
+      "next": "breakdown_3"
+    },
+    {
+      "id": "judgment_empathy",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "……你说吧。把桐溪这坛苦水，倒尽。",
+      "next": "breakdown_3"
+    },
+    {
+      "id": "judgment_logic",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "你想守一百六十七年的活物——可仲海一死，商标落入柳菁之手，陶志远仍可能接手空壳。你杀的不是买主，是你唯一能阻止交易的人。",
+      "next": "breakdown_3"
+    },
+    {
+      "id": "breakdown_3",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "他的声音没有升高，甚至没有任何哭腔——像一条埋在地下的河，突然找到了出口，却早已干涸。",
+      "next": "resolution_check"
+    },
+    {
+      "id": "resolution_check",
+      "type": "condition",
+      "branches": [
+        {
+          "condition": {"has_flag": "tao_red_herring_investigated"},
+          "next": "resolution_complete"
+        },
+        {
+          "condition": {"has_flag": "handwriting_analyzed"},
+          "next": "resolution_complete"
+        }
+      ],
+      "fallback": "resolution_basic"
+    },
+    {
+      "id": "resolution_complete",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "案件告破。陶志远的收购计划随仲海之死彻底流产；柳菁继承的空壳商标，再也换不回那一套“活曲”。贺一鸣站在窖口，欲言又止——他 终于 明白，父亲拒绝的不是科学，是任何可能改变“苦水”本质的东西。",
+      "next": "resolution_complete_2"
+    },
+    {
+      "id": "resolution_complete_2",
+      "type": "text",
+      "speaker": "老秦",
+      "text": "守诚哥……我守了四十年曲房，没想到，最后守不住的是人。",
+      "next": "final_words"
+    },
+    {
+      "id": "resolution_basic",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "贺守诚被带走时，回头望了一眼酒窖最深处那口百年老缸。缸里，曲块仍在缓慢呼吸——它不知道，养它的那一双手，再也不会回来了。",
+      "next": "final_words"
+    },
+    {
+      "id": "final_words",
+      "type": "text",
+      "speaker": "调研员",
+      "text": "（一百六十七年的酒坊，六个月的毒，四小时的布置，一封伪造的遗书。苦水养曲，曲养苦命——这案子，没有赢家。）",
+      "next": "case_end_narrator"
+    },
+    {
+      "id": "case_end_narrator",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "【案件 GEN-001 · 苦水谣 · 序章完】\n\n桐溪镇的雨停了。你在卷宗封面写下最后一行字，然后合上——像合上一坛再也要不开启的老酒。",
+      "next": "opening_end"
+    },
+    {
+      "id": "opening_end",
+      "type": "text",
+      "speaker": "narrator",
+      "text": "苦水谣，谣的不是水，是人心在利益与传承之间，酿出的那一口无法回头的毒。",
+      "next": ""
+    }
+  ]
+}

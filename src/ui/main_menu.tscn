@@ -61,6 +61,12 @@ custom_minimum_size = Vector2(300, 50)
 theme_override_font_sizes/font_size = 22
 text = "开始剧情 (VN)"
 
+[node name="CaseSelectButton" type="Button" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 50)
+theme_override_font_sizes/font_size = 22
+text = "案件选择"
+
 [node name="InvestigateButton" type="Button" parent="VBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 50)

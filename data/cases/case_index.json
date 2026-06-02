@@ -1,0 +1,94 @@
+{
+  "cases": [
+    {
+      "id": "gen_001",
+      "title": "苦水谣",
+      "subtitle": "古镇酒坊谋杀案",
+      "difficulty": 3,
+      "tags": ["投毒", "暗道密室", "笔迹鉴定"],
+      "dialogue_path": "res://data/dialogue/case_gen001_opening.json",
+      "status": "playable"
+    },
+    {
+      "id": "gen_002",
+      "title": "雀鸣寺",
+      "subtitle": "山寺连环死亡案",
+      "difficulty": 4,
+      "tags": ["植物毒理", "纵火", "法医人类学"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_003",
+      "title": "琥珀色的房间",
+      "subtitle": "光敏剂远程杀人案",
+      "difficulty": 3,
+      "tags": ["光化学", "智能家居", "伪装自杀"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_004",
+      "title": "双生面",
+      "subtitle": "身份替换嵌合体案",
+      "difficulty": 5,
+      "tags": ["遗传学", "骨髓移植", "透析投毒"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_005",
+      "title": "渡鸦之眼",
+      "subtitle": "CO密室杀人案",
+      "difficulty": 3,
+      "tags": ["密室推理", "建筑工程", "校园创伤"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_006",
+      "title": "白骨观音",
+      "subtitle": "乡镇连环毒杀案",
+      "difficulty": 4,
+      "tags": ["中医药学", "犯罪侧写", "乌头碱"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_007",
+      "title": "失语者",
+      "subtitle": "聋哑少年案",
+      "difficulty": 3,
+      "tags": ["手语", "家庭暴力", "消防化学"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_008",
+      "title": "钟声不响",
+      "subtitle": "渔港碎尸案",
+      "difficulty": 4,
+      "tags": ["海洋学", "AIS定位", "财务审计"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_009",
+      "title": "第七杯",
+      "subtitle": "酒吧连环杀人案",
+      "difficulty": 4,
+      "tags": ["药物学", "双硫仑反应", "社交分析"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    },
+    {
+      "id": "gen_010",
+      "title": "三楼的钢琴",
+      "subtitle": "亲子暴力坠楼案",
+      "difficulty": 2,
+      "tags": ["法医力学", "声学分析", "儿童心理"],
+      "dialogue_path": "",
+      "status": "coming_soon"
+    }
+  ]
+}

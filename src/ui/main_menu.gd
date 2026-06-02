@@ -5,6 +5,8 @@ func _ready() -> void:
 	AudioManager.play_bgm("menu")
 	$VBox/StartButton.pressed.connect(_on_start)
 	$VBox/QuitButton.pressed.connect(_on_quit)
+	if $VBox.has_node("CaseSelectButton"):
+		$VBox/CaseSelectButton.pressed.connect(_on_case_select)
 	if $VBox.has_node("InvestigateButton"):
 		$VBox/InvestigateButton.pressed.connect(_on_investigate)
 
@@ -47,6 +49,9 @@ func _apply_theme() -> void:
 func _on_start() -> void:
 	GameManager.change_state(GameManager.STATE_DAILY_LIFE)
 	get_tree().change_scene_to_file("res://src/vn/vn_scene.tscn")
+
+func _on_case_select() -> void:
+	get_tree().change_scene_to_file("res://src/ui/case_select.tscn")
 
 func _on_investigate() -> void:
 	GameManager.change_state(GameManager.STATE_INVESTIGATION)
