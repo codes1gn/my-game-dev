@@ -54,13 +54,15 @@
 | 8. 王福江/头孢饮酒猝死案 | Ch 162-164 | 意外死亡+抛尸 | ✅ 完成 |
 | 9. 郭佳茵/一案变四案 | Ch 166-181 | 杀妻+阴婚+骗婚+囚禁 | ✅ 完成 |
 | 10. 吴倩倩碎尸案/三重顶罪案 | Ch 185-207 | 先奸后杀+碎尸+三层顶罪 | ✅ 完成 |
-| 11+ | Ch 210+ | 待提取 | ⏳ 待续 |
+| 11. 樊梓琨/校园霸凌复仇连环杀人案 | Ch 210-226 | 罕见病+格斗复仇连环杀人 | ✅ 完成 |
+| 12. 苗贝玲/演唱会过敏投毒案 | Ch 228-237 | 偶像圈过敏原投毒+嫁祸 | ✅ 完成 |
+| 13+ | Ch 238+ | 待提取 | ⏳ 待续 |
 
 全书共802章，预计约30-40个案件。提取文档位于 `docs/case-extractions/` 目录。
 
 ### Git 最新提交
 
-- `c5161b2` - docs: add causal chain extractions for cases 1-9 and material library design
+- `8a34432` - docs: add case 11-12 causal chain extractions (campus bullying revenge + concert allergy poisoning)
 
 ### 当前痛点分析
 
