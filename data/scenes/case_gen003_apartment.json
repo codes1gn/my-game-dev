@@ -1,0 +1,43 @@
+{
+  "id": "case_gen003_apartment",
+  "name": "苏晴公寓",
+  "background": "res://assets/scenes/bg_smart_apartment.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "bathroom",
+      "label": "浴室",
+      "rect": {"x": 340, "y": 190, "w": 180, "h": 160},
+      "evidence_ids": ["ev_wrist_wounds"],
+      "interaction": "examine"
+    },
+    {
+      "id": "master_bedroom",
+      "label": "主卧",
+      "rect": {"x": 540, "y": 70, "w": 160, "h": 110},
+      "evidence_ids": ["ev_herbal_tea", "ev_med_report"],
+      "interaction": "examine"
+    },
+    {
+      "id": "kitchen",
+      "label": "厨房",
+      "rect": {"x": 190, "y": 70, "w": 150, "h": 100},
+      "evidence_ids": ["ev_herbal_tea"],
+      "interaction": "examine"
+    },
+    {
+      "id": "study",
+      "label": "书房",
+      "rect": {"x": 20, "y": 40, "w": 150, "h": 110},
+      "evidence_ids": ["ev_smart_home", "ev_purchase_records"],
+      "interaction": "examine"
+    },
+    {
+      "id": "balcony",
+      "label": "阳台",
+      "rect": {"x": 720, "y": 25, "w": 140, "h": 130},
+      "evidence_ids": ["ev_med_report"],
+      "interaction": "examine"
+    }
+  ]
+}

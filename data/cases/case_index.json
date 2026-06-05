@@ -7,6 +7,8 @@
       "difficulty": 3,
       "tags": ["投毒", "暗道密室", "笔迹鉴定"],
       "dialogue_path": "res://data/dialogue/case_gen001_opening.json",
+      "scene_path": "res://data/scenes/case_001_apartment.json",
+      "deduction_path": "res://data/cases/case_001_deduction.json",
       "status": "playable"
     },
     {
@@ -16,7 +18,9 @@
       "difficulty": 4,
       "tags": ["植物毒理", "纵火", "法医人类学"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen002_temple.json",
+      "deduction_path": "res://data/cases/case_gen002_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_003",
@@ -25,7 +29,9 @@
       "difficulty": 3,
       "tags": ["光化学", "智能家居", "伪装自杀"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen003_apartment.json",
+      "deduction_path": "res://data/cases/case_gen003_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_004",
@@ -34,7 +40,9 @@
       "difficulty": 5,
       "tags": ["遗传学", "骨髓移植", "透析投毒"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen004_mansion.json",
+      "deduction_path": "res://data/cases/case_gen004_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_005",
@@ -43,7 +51,9 @@
       "difficulty": 3,
       "tags": ["密室推理", "建筑工程", "校园创伤"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen005_apartment.json",
+      "deduction_path": "res://data/cases/case_gen005_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_006",
@@ -52,7 +62,9 @@
       "difficulty": 4,
       "tags": ["中医药学", "犯罪侧写", "乌头碱"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen006_clinic.json",
+      "deduction_path": "res://data/cases/case_gen006_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_007",
@@ -61,7 +73,9 @@
       "difficulty": 3,
       "tags": ["手语", "家庭暴力", "消防化学"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen007_house.json",
+      "deduction_path": "res://data/cases/case_gen007_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_008",
@@ -70,7 +84,9 @@
       "difficulty": 4,
       "tags": ["海洋学", "AIS定位", "财务审计"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen008_port.json",
+      "deduction_path": "res://data/cases/case_gen008_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_009",
@@ -79,7 +95,9 @@
       "difficulty": 4,
       "tags": ["药物学", "双硫仑反应", "社交分析"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen009_bar.json",
+      "deduction_path": "res://data/cases/case_gen009_deduction.json",
+      "status": "investigation_ready"
     },
     {
       "id": "gen_010",
@@ -88,7 +106,9 @@
       "difficulty": 2,
       "tags": ["法医力学", "声学分析", "儿童心理"],
       "dialogue_path": "",
-      "status": "coming_soon"
+      "scene_path": "res://data/scenes/case_gen010_house.json",
+      "deduction_path": "res://data/cases/case_gen010_deduction.json",
+      "status": "investigation_ready"
     }
   ]
 }

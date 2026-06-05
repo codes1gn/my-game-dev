@@ -1,0 +1,30 @@
+{
+  "id": "ev_tool_marks",
+  "case_id": "gen_002",
+  "name": "纵火工具痕迹",
+  "description": "藏经楼废墟中检出汽油与柴油混合助燃剂残留。灵泉村村民唐顺家中搜出同款燃料桶及引火工具，其五年前的翻修工期与最近一具骸骨埋藏时间吻合，且当晚行踪无法自证。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "起火点下方木材浸有混合助燃剂，非寺庙日常用品。燃料配比与附近灵泉村常见农用柴油桶一致，说明纵火者从外部携带物资上山。",
+      "skill_required": null
+    },
+    {
+      "action": "工具比对",
+      "result": "唐顺家中油桶内壁残留与现场助燃剂成分匹配。他五年前负责藏经楼地基「修缮加固」，最近一具骸骨的埋葬坑壁规整、底部铺石灰——具备建筑经验者所为。唐顺具备挖掘、掩埋与纵火的全套条件。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "口供缺口分析",
+      "result": "唐顺声称火灾当晚在村尾家中睡觉，但邻居无人听见劈柴声，村口红外监控显示凌晨两点有人沿小路上山。他并非主谋——对净明近乎盲目的信任，使其成为被操纵的纵火执行者。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "锁定纵火执行者为唐顺，同时暴露其被净明利用的情感弱点。助燃剂与地基翻修记录将「借刀纵火」与「掩盖骸骨」两条线索合并。",
+    "suspects_implicated": ["tang_shun", "jing_ming"],
+    "deduction_tags": ["arson_tool", "accomplice", "manipulation"]
+  }
+}

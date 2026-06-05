@@ -25,46 +25,46 @@ stretch_mode = 6
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_top = 6.0
 offset_bottom = 50.0
 grow_horizontal = 2
 
 [node name="TitleLabel" type="Label" parent="TitleBar"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 26
 text = "推理板"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSplit" type="HSplitContainer" parent="."]
+[node name="HintLabel" type="Label" parent="TitleBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "拖拽证据卡片之间的连线，构建你的推理链"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Canvas" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = 60.0
-offset_right = 940.0
-offset_bottom = 470.0
-split_offset = 350
+offset_top = 56.0
+offset_right = -20.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="LeftPanel" type="PanelContainer" parent="HSplit"]
-layout_mode = 2
+[node name="LinkLines" type="Node2D" parent="Canvas"]
 
-[node name="Scroll" type="ScrollContainer" parent="HSplit/LeftPanel"]
-layout_mode = 2
-
-[node name="EvidenceList" type="VBoxContainer" parent="HSplit/LeftPanel/Scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 8
-
-[node name="RightPanel" type="PanelContainer" parent="HSplit"]
-layout_mode = 2
-
-[node name="Scroll" type="ScrollContainer" parent="HSplit/RightPanel"]
-layout_mode = 2
-
-[node name="QuestionContainer" type="VBoxContainer" parent="HSplit/RightPanel/Scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 6
+[node name="CardContainer" type="Control" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BottomBar" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -77,23 +77,37 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
+[node name="LinkCount" type="Label" parent="BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "已连接: 0"
+vertical_alignment = 1
+
 [node name="SubmitButton" type="Button" parent="BottomBar"]
 layout_mode = 2
 custom_minimum_size = Vector2(250, 45)
 theme_override_font_sizes/font_size = 22
 text = "提交推理结论"
 
+[node name="ClearButton" type="Button" parent="BottomBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 45)
+theme_override_font_sizes/font_size = 16
+text = "清除全部"
+
 [node name="ResultPopup" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -130.0
-offset_right = 200.0
-offset_bottom = 130.0
+offset_left = -220.0
+offset_top = -150.0
+offset_right = 220.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -115,11 +129,52 @@ horizontal_alignment = 1
 
 [node name="ResultDesc" type="RichTextLabel" parent="ResultPopup/Margin/VBox"]
 layout_mode = 2
-custom_minimum_size = Vector2(0, 140)
+custom_minimum_size = Vector2(0, 160)
 theme_override_font_sizes/normal_font_size = 16
 fit_content = true
 
 [node name="ResultClose" type="Button" parent="ResultPopup/Margin/VBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(0, 40)
-text = "返回主菜单"
+text = "继续"
+
+[node name="DetailPopup" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -80.0
+offset_right = 180.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailPopup"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="DetailPopup/Margin"]
+layout_mode = 2
+
+[node name="DetailTitle" type="Label" parent="DetailPopup/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="DetailText" type="RichTextLabel" parent="DetailPopup/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 80)
+theme_override_font_sizes/normal_font_size = 14
+fit_content = true
+
+[node name="DetailClose" type="Button" parent="DetailPopup/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 32)
+text = "关闭"

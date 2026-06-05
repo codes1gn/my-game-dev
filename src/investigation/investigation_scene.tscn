@@ -37,27 +37,42 @@ horizontal_alignment = 1
 
 [node name="SceneMap" type="TextureRect" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 40.0
 offset_top = 70.0
-offset_right = 920.0
-offset_bottom = 440.0
+offset_right = -40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="SceneMapBg" type="ColorRect" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 40.0
 offset_top = 70.0
-offset_right = 920.0
-offset_bottom = 440.0
+offset_right = -40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.2, 0.22, 0.25, 1)
 
 [node name="RoomLabels" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 40.0
 offset_top = 70.0
-offset_right = 920.0
-offset_bottom = 440.0
+offset_right = -40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="LivingRoom" type="Label" parent="RoomLabels"]
 layout_mode = 0
@@ -101,10 +116,15 @@ text = "玄关/门口"
 
 [node name="HotspotContainer" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 40.0
 offset_top = 70.0
-offset_right = 920.0
-offset_bottom = 440.0
+offset_right = -40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="EvidencePopup" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -144,6 +164,76 @@ fit_content = true
 
 [node name="Actions" type="VBoxContainer" parent="EvidencePopup/Margin/VBox"]
 layout_mode = 2
+
+[node name="TimeBar" type="PanelContainer" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 260.0
+offset_bottom = 46.0
+
+[node name="TimeHBox" type="HBoxContainer" parent="TimeBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ClockIcon" type="Label" parent="TimeBar/TimeHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "⏰"
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="TimeBar/TimeHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "剩余: 8:00"
+vertical_alignment = 1
+
+[node name="TimeProgress" type="ProgressBar" parent="TimeBar/TimeHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 16)
+size_flags_vertical = 4
+max_value = 480.0
+value = 480.0
+show_percentage = false
+
+[node name="ItemBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 6.0
+offset_right = -10.0
+offset_bottom = 46.0
+grow_horizontal = 0
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="ItemBarLabel" type="Label" parent="ItemBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+text = "道具:"
+vertical_alignment = 1
+
+[node name="CheckBanner" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 70.0
+offset_right = 220.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="BannerLabel" type="Label" parent="CheckBanner"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StatusBar" type="HBoxContainer" parent="."]
 layout_mode = 1

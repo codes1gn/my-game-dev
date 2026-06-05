@@ -76,7 +76,8 @@ func _add_case_card(parent: VBoxContainer, case_data: Dictionary, index: int) ->
 	var panel := PanelContainer.new()
 	panel.custom_minimum_size = Vector2(0, 80)
 
-	var playable: bool = case_data.get("status", "") == "playable"
+	var status: String = case_data.get("status", "")
+	var playable: bool = status == "playable" or status == "investigation_ready"
 	var bg_color := Color(0.08, 0.08, 0.12, 0.9) if playable else Color(0.05, 0.05, 0.08, 0.6)
 	var border_color := ThemeManager.COLORS["accent_gold_dim"] if playable else Color(0.3, 0.3, 0.3, 0.4)
 	var style := ThemeManager.make_panel_style(bg_color, border_color, 6)
@@ -129,11 +130,17 @@ func _add_case_card(parent: VBoxContainer, case_data: Dictionary, index: int) ->
 
 	if playable:
 		var play_btn := Button.new()
-		play_btn.text = "开始"
 		play_btn.custom_minimum_size = Vector2(100, 40)
 		ThemeManager.style_button(play_btn)
-		var dialogue_path: String = case_data.get("dialogue_path", "")
-		play_btn.pressed.connect(_on_case_start.bind(dialogue_path))
+		if status == "investigation_ready":
+			play_btn.text = "调查"
+			var scene_path: String = case_data.get("scene_path", "")
+			var deduction_path: String = case_data.get("deduction_path", "")
+			play_btn.pressed.connect(_on_case_investigate.bind(scene_path, deduction_path))
+		else:
+			play_btn.text = "开始"
+			var dialogue_path: String = case_data.get("dialogue_path", "")
+			play_btn.pressed.connect(_on_case_start.bind(dialogue_path))
 		hbox.add_child(play_btn)
 	else:
 		var lock_label := Label.new()
@@ -151,3 +158,9 @@ func _on_case_start(dialogue_path: String) -> void:
 	GameManager.next_dialogue_path = dialogue_path
 	GameManager.change_state(GameManager.STATE_DAILY_LIFE)
 	get_tree().change_scene_to_file("res://src/vn/vn_scene.tscn")
+
+func _on_case_investigate(scene_path: String, deduction_path: String) -> void:
+	GameManager.set_flag("current_scene_path", scene_path)
+	GameManager.set_flag("current_deduction_path", deduction_path)
+	GameManager.change_state(GameManager.STATE_INVESTIGATION)
+	get_tree().change_scene_to_file("res://src/investigation/investigation_scene.tscn")

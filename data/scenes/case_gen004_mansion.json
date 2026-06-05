@@ -1,0 +1,44 @@
+{
+  "id": "case_gen004_mansion",
+  "name": "江素清私邸",
+  "background": "res://assets/scenes/bg_mansion.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "study",
+      "label": "书房",
+      "rect": {"x": 20, "y": 40, "w": 160, "h": 110},
+      "evidence_ids": ["ev_secretary_files"],
+      "interaction": "examine"
+    },
+    {
+      "id": "medical_room",
+      "label": "医疗室",
+      "rect": {"x": 210, "y": 50, "w": 150, "h": 100},
+      "evidence_ids": ["ev_medical_records", "ev_dna_anomaly"],
+      "interaction": "examine"
+    },
+    {
+      "id": "archives",
+      "label": "档案室",
+      "rect": {"x": 390, "y": 45, "w": 150, "h": 105},
+      "evidence_ids": ["ev_will_forgery"],
+      "interaction": "examine"
+    },
+    {
+      "id": "security_center",
+      "label": "安保中心",
+      "rect": {"x": 570, "y": 30, "w": 140, "h": 95},
+      "evidence_ids": ["ev_facial_analysis"],
+      "interaction": "surveillance",
+      "clip_id": "surveillance_gen004"
+    },
+    {
+      "id": "garden",
+      "label": "花园",
+      "rect": {"x": 620, "y": 180, "w": 220, "h": 150},
+      "evidence_ids": [],
+      "interaction": "examine"
+    }
+  ]
+}

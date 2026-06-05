@@ -1,0 +1,30 @@
+{
+  "id": "ev_hvac_design",
+  "case_id": "gen_005",
+  "name": "通风系统设计图",
+  "description": "程鹤声为詹铭朗新房绘制的中央空调与新风系统施工图。图纸标注了进风口、主风道、卧室送风/回风布局及23层设备平台位置，并有程鹤声亲笔签章的备份副本。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "设计者为明湾大学建筑系副教授程鹤声，专精绿色通风。图纸整体合规，但主风道在卧室分支前有一段非标准加宽区——标注为「静压缓冲」，与常规设计不符。",
+      "skill_required": null
+    },
+    {
+      "action": "风道结构分析",
+      "result": "加宽段内壁存在隐蔽副通道接口，可将设备平台产生的CO汇入主风道而不经过常规过滤。该结构不在验收图纸中，需熟悉整套方案者才知晓其存在。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "权限与施工链推断",
+      "result": "程鹤声以通风-消防-监控联动为由，向物业索取了监控管理密码。设备安装由业主施工队执行，但验收时程鹤声到场确认运行参数——他有充分机会预埋CO通道与发生器安装位。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "通风系统被职业性地武器化。设计者程鹤声同时具备改造风道、获取监控权限与了解窗锁/链条锁型号的全套条件，是本案核心嫌疑人。",
+    "suspects_implicated": ["cheng_hesheng"],
+    "deduction_tags": ["hvac_weaponized", "professional_access", "killer_means"]
+  }
+}

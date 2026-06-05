@@ -1,0 +1,35 @@
+{
+  "id": "ev_bar_questionnaires",
+  "case_id": "gen_009",
+  "name": "心情问卷档案",
+  "description": "「第七杯」酒吧的特色服务：客人须先填写「心情问卷」，调酒师据此调制专属鸡尾酒。池明远保留全部问卷，称用于「研究客人心理、改进调酒方案」。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "问卷内容极其私密：近期心情、感情状态、最困扰的事、最想逃避的人。陆嘉铭、汤子安、方立行均曾填写，且均在死前72小时内到访酒吧。",
+      "skill_required": null
+    },
+    {
+      "action": "关系信息比对",
+      "result": "陆嘉铭写「刚交了女朋友，她前任似乎很介意」；汤子安写「女朋友说她前任还在联系她」；方立行写「她说之前男朋友都出了意外，我觉得她在开玩笑」。三人问卷均暴露同一事实：他们是叶晓禾的男友。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "调酒师知情推断",
+      "result": "问卷由池明远亲自收阅并据此调酒——他在投毒前已精准掌握每位受害者的感情身份。这不是随机酒吧客人，而是被「心情系统」筛选出的目标。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "目标锁定机制",
+      "result": "酒吧不能点酒、只能填问卷——这套机制使池明远能在合法互动中获取私密信息，判断谁「不配」叶晓禾，并在调制鸡尾酒时完成投药。问卷是连环案的信息入口与筛选工具。",
+      "skill_required": {"forensics": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "证明三名受害者身份均通过酒吧问卷暴露给池明远，建立「叶晓禾男友→第七杯→死亡」的关联链。说明凶手不是偶遇下手，而是利用职业便利系统性筛选目标。",
+    "suspects_implicated": ["chi_mingyuan"],
+    "deduction_tags": ["questionnaire", "target_selection", "relationship_exposure", "occupational_access"]
+  }
+}

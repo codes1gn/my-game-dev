@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_002",
+  "title": "推理板 — 雀鸣寺连环死亡案",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "fire_origin",
+      "label": "三处起火点",
+      "icon": "fire",
+      "detail": "藏经楼东北角、中央书架、西侧窗下三处独立起火，几乎同时点燃。非电路短路，系人为纵火。"
+    },
+    {
+      "id": "plant_toxin",
+      "label": "曼陀罗毒素",
+      "icon": "evidence",
+      "detail": "菜园曼陀罗、法元药茶、慧静组织及地下骸骨中均检出同源东莨菪碱。精确剂量可致昏迷或心律失常。"
+    },
+    {
+      "id": "bone_analysis",
+      "label": "地下骸骨旧伤",
+      "icon": "body",
+      "detail": "三具女性骸骨埋藏十五年内，多处陈旧骨折与钝器伤。对应三名「离寺」后失踪的尼姑，法元长期虐待的证据。"
+    },
+    {
+      "id": "tool_marks",
+      "label": "纵火工具痕迹",
+      "icon": "tool",
+      "detail": "现场助燃剂与唐顺家中油桶成分匹配。他五年前翻修地基，当晚行踪有缺口，被净明以「下山」承诺操纵。"
+    },
+    {
+      "id": "diary",
+      "label": "慧静日记残页",
+      "icon": "document",
+      "detail": "记录发现地基白骨与法元虐待真相，坚持报警。最后日期为火灾前夜，笔迹显示「师姐」曾劝阻。"
+    },
+    {
+      "id": "motive",
+      "label": "净明复仇动机",
+      "icon": "profile",
+      "detail": "二十三年前何妙音（净明）遭法元性侵后出家，隐忍二十三年。法元被毒杀「坐化」，净明成为现任住持。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "fire_origin",
+      "to": "tool_marks",
+      "conclusion": "三处独立起火 + 助燃剂与唐顺工具匹配 → 蓄意纵火，唐顺为执行者",
+      "tag": "纵火认定"
+    },
+    {
+      "from": "plant_toxin",
+      "to": "motive",
+      "conclusion": "曼陀罗同源毒素 + 二十三年隐忍复仇 → 净明毒杀法元，非自然坐化",
+      "tag": "首案锁定"
+    },
+    {
+      "from": "diary",
+      "to": "plant_toxin",
+      "conclusion": "慧静坚持报警 + 同种毒素 → 净明在火灾前夜毒杀慧静灭口",
+      "tag": "次案锁定"
+    },
+    {
+      "from": "bone_analysis",
+      "to": "fire_origin",
+      "conclusion": "地下骸骨证明法元长期杀人 + 纵火目标为藏经楼 → 放火意在销毁掩埋证据",
+      "tag": "毁证动机"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "tool_marks",
+      "to": "bone_analysis",
+      "conclusion": "唐顺曾翻修地基 + 最近骸骨坑壁规整铺石灰 → 他早知地下有骨，仍被利用纵火",
+      "tag": "工具人真相",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

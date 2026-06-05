@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctalent_tree"]
+
+[ext_resource type="Script" path="res://src/ui/talent_tree.gd" id="1"]
+
+[node name="TalentTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TitleBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "学习树"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="TitleBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "系统点数: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 56.0
+offset_right = -10.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BranchContainer" type="HBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="BottomBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="BottomBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 42)
+theme_override_font_sizes/font_size = 20
+text = "返回"
+
+[node name="ConfirmPopup" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="ConfirmPopup"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="ConfirmPopup/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ConfirmTitle" type="Label" parent="ConfirmPopup/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="ConfirmDesc" type="RichTextLabel" parent="ConfirmPopup/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+theme_override_font_sizes/normal_font_size = 14
+fit_content = true
+bbcode_enabled = true
+
+[node name="ConfirmButtons" type="HBoxContainer" parent="ConfirmPopup/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="ConfirmYes" type="Button" parent="ConfirmPopup/Margin/VBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 36)
+text = "学习"
+
+[node name="ConfirmNo" type="Button" parent="ConfirmPopup/Margin/VBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 36)
+text = "取消"

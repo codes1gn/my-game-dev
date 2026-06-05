@@ -1,0 +1,35 @@
+{
+  "id": "ev_toxicology_pattern",
+  "case_id": "gen_009",
+  "name": "三案毒理复检报告",
+  "description": "对陆嘉铭、汤子安、方立行三名死者的冷藏血样进行重新毒理分析。三人均被初判为「急性心脏事件」或「酒精中毒」，但复检发现共同异常。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "三名死者死亡当天均饮酒。陆嘉铭判定为急性酒精中毒并发心脏骤停，汤子安为急性心肌炎，方立行为急性心力衰竭——表面死因各异，但均属心血管突发类。",
+      "skill_required": null
+    },
+    {
+      "action": "代谢物检测",
+      "result": "三人血液中均检出头孢哌酮代谢物。三人均无近期感染或就医记录，体内不应出现该抗生素——说明在死亡前72小时内被非医疗途径摄入。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "双硫仑反应分析",
+      "result": "头孢哌酮含MTT侧链，可抑制乙醛脱氢酶。与酒精同服触发双硫仑样反应：乙醛蓄积导致面红、低血压、心律失常——症状与三案「心脏病猝死」几乎无法区分，常规尸检极易漏检。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "统计聚类推断",
+      "result": "三名30-35岁心脏健康男性在八个月内相继发生同类事件，概率约十亿分之一。共同特征是均与叶晓禾交往——这不是巧合，而是针对同一关系圈的连环间接投毒。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "揭示三起「心脏猝死」实为头孢+酒精双硫仑样反应所致，将分散的自然死亡串联为同一投毒模式。是打破「巧合论」、启动连环案调查的核心法医证据。",
+    "suspects_implicated": ["chi_mingyuan"],
+    "deduction_tags": ["toxicology", "disulfiram", "serial_pattern", "indirect_poisoning"]
+  }
+}

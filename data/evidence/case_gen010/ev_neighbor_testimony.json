@@ -1,0 +1,35 @@
+{
+  "id": "ev_neighbor_testimony",
+  "case_id": "gen_010",
+  "name": "邻居证词记录",
+  "description": "隔壁退休老太太及多名邻居的走访笔录。他们长期居住吴家两侧，对三楼钢琴声及家庭争吵极为熟悉。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "邻居普遍评价吴鸿飞「琴弹得好，脾气差」。多名住户称近年常听到三楼钢琴声后接争吵，有时伴随女孩哭声，但从未报警——「以为是管教孩子」。",
+      "skill_required": null
+    },
+    {
+      "action": "案发当日时间线",
+      "result": "退休老太太：「两点前一直有钢琴声，然后突然停了，大概五六分钟后听到砰一声，跑出去人已经在地上了。」与录音及法医时间推断一致。",
+      "skill_required": {"observation": 2}
+    },
+    {
+      "action": "争吵模式分析",
+      "result": "多名邻居回忆案发前一周曾听到吴鸿飞对妻女喊「必须练」「没有天赋就别浪费我时间」。林慧君当日在厨房，称听到三楼「不是钢琴的声音，像什么东西倒了」。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "伪装事故推断",
+      "result": "若系自杀，不应有五六分钟停琴后的拖拽与开窗过程；若系意外失足，窗台高度与钢琴凳旁血迹无法解释。邻居听到的「突然停琴→闷响」更符合冲突后推落。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "提供独立第三方对案发时段与家庭暴力的佐证，与录音、力学分析相互印证。排除「无人上楼的纯意外坠楼」假设。",
+    "suspects_implicated": ["lin_huijun", "wu_hongfei"],
+    "deduction_tags": ["neighbor_witness", "timeline", "domestic_conflict", "staged_accident"]
+  }
+}

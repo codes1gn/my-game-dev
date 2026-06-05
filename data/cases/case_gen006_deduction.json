@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_006",
+  "title": "推理板 — 白骨观音",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "toxicology",
+      "label": "乌头碱毒理",
+      "icon": "evidence",
+      "detail": "丁贵昌、马永来、孙德福三人血液中均检出致死浓度乌头碱，胃内容物有未吸收原形。临床表现与心梗相似但无冠脉病变——三起「心脏衰竭」均为口服投毒。"
+    },
+    {
+      "id": "insect_timeline",
+      "label": "昆虫死亡时间",
+      "icon": "body",
+      "detail": "嗜尸性昆虫发育阶段推算：三人精确死亡时间均落在就诊纪淑兰诊所领药后24–72小时内，形成高度规律的「领药→死亡」模式。"
+    },
+    {
+      "id": "ceramic_signature",
+      "label": "观音陶像签名",
+      "icon": "evidence",
+      "detail": "三案现场均发现手工白瓷观音像，底座内侧刻有序号17、18、19。有序编号 + 统一风格 = 连环杀手签名行为，暗示此前至少十六起同类案件。"
+    },
+    {
+      "id": "prescription_records",
+      "label": "篡改处方记录",
+      "icon": "document",
+      "detail": "纪淑兰亲笔处方标注「制草乌」，实际出库为生草乌。梁素云按方配药不知差异。纪淑兰私人笔记含乌头碱致死量换算——她是投毒方案的设计者。"
+    },
+    {
+      "id": "victim_profiles",
+      "label": "施暴者档案",
+      "icon": "profile",
+      "detail": "三名死者均为有治安记录的家暴施暴者，45–65岁，近期因小伤就诊。目标选择非随机，而是针对「不配被救的人」的精准清除。"
+    },
+    {
+      "id": "terminal_motive",
+      "label": "绝症倒计时",
+      "icon": "profile",
+      "detail": "纪淑兰确诊胰腺癌晚期，余命约六个月。病历有「医者救不了该死的人」手记。绝症倒计时 + 四十二年目睹家暴 = 在生命尽头以中医手段执行「最后审判」。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "toxicology",
+      "to": "prescription_records",
+      "conclusion": "三案乌头碱同源 + 处方篡改为生草乌 → 确认为纪氏诊所中医投毒，非自然心梗",
+      "tag": "死因锁定"
+    },
+    {
+      "from": "ceramic_signature",
+      "to": "victim_profiles",
+      "conclusion": "有序签名观音像 + 受害者均为家暴施暴者 → 确认为针对施暴者的有序型连环杀人",
+      "tag": "连环认定"
+    },
+    {
+      "from": "insect_timeline",
+      "to": "toxicology",
+      "conclusion": "死亡时间均在领药后48小时内 + 乌头碱检出 → 排除偶发心脏病，锁定投毒时间窗口",
+      "tag": "时间线吻合"
+    },
+    {
+      "from": "prescription_records",
+      "to": "terminal_motive",
+      "conclusion": "纪淑兰篡改处方并计算致死量 + 绝症倒计时与道德手记 → 真凶为纪淑兰，梁素云为不知情配药者",
+      "tag": "真凶认定"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "ceramic_signature",
+      "to": "prescription_records",
+      "conclusion": "观音签名序号 + 处方投毒链条 → 完整作案仪式：投毒清除后以陶像标记「审判序号」",
+      "tag": "作案仪式",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

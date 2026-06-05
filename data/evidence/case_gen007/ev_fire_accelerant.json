@@ -1,0 +1,30 @@
+{
+  "id": "ev_fire_accelerant",
+  "case_id": "case_gen007",
+  "name": "助燃剂残留",
+  "description": "厨房及客厅多处发现高浓度酒精燃烧残留。与普通家用烈酒不同，该液体经蒸馏提纯，燃点更低、蔓延更快。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "现场检出蒸馏酒精助燃剂，燃烧痕迹呈多点同时起火特征。起火点包括客厅尸体旁、厨房出口及通往地下室的门框——明显是人为泼洒纵火。",
+      "skill_required": null
+    },
+    {
+      "action": "来源追踪",
+      "result": "蒸馏装置痕迹出现在厨房角落，与周默学校化学实验课记录吻合。他曾在课堂作业中展示过简易蒸馏装置——具备自制高纯度酒精的能力。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "纵火意图推断",
+      "result": "纵火范围精准覆盖血迹最密集区域和可能藏匿证据的通道，但遗漏了后院部分未完全烧毁的物品。说明纵火者熟悉房屋结构，目的是掩盖钝器杀人痕迹而非单纯泄愤。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "证明杀人后有预谋纵火掩盖证据。助燃剂来源与周默的化学知识关联，将调查方向从「外来入侵」转向「家庭成员作案后毁灭证据」。",
+    "suspects_implicated": ["zhou_mo"],
+    "deduction_tags": ["arson", "premeditation", "evidence_destruction"]
+  }
+}

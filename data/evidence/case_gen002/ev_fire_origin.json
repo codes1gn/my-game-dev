@@ -1,0 +1,30 @@
+{
+  "id": "ev_fire_origin",
+  "case_id": "gen_002",
+  "name": "三处独立起火点",
+  "description": "消防队在藏经楼废墟中发现的燃烧痕迹显示，火灾并非从单一点蔓延。东北角、中央书架区和西侧窗下各有一处独立起火点，三处几乎同时点燃，排除了电路老化短路的初步结论。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "三处起火点呈三角形分布，彼此之间无连续燃烧蔓延路径。木材碳化深度相近，说明点火时间差不超过数分钟。",
+      "skill_required": null
+    },
+    {
+      "action": "燃烧模式分析",
+      "result": "多处独立起火是典型的人为纵火特征。每处下方均检出助燃剂残留，火势被刻意加速以在短时间内吞噬木结构建筑。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "纵火意图推断",
+      "result": "纵火目标明确指向藏经楼——此处地下埋有骸骨，楼内亦可能留存慧静留下的物证。放火者意在销毁证据，而非单纯泄愤或意外。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "将案件从「电路意外」转为蓄意纵火，证明有人刻意焚烧藏经楼以毁灭证据。是追查真凶与纵火执行者的关键起点。",
+    "suspects_implicated": ["tang_shun", "jing_ming"],
+    "deduction_tags": ["arson", "evidence_destruction", "premeditation"]
+  }
+}

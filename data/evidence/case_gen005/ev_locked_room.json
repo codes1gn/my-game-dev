@@ -1,0 +1,30 @@
+{
+  "id": "ev_locked_room",
+  "case_id": "gen_005",
+  "name": "密室状态",
+  "description": "詹铭朗被发现时，整套公寓处于完全密封状态：入户智能锁反锁并挂链条锁，全部窗户从内部扣紧，阳台插销落下。现场无任何强行闯入痕迹。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "入户门链条锁从内部挂扣，窗户锁扣均处于闭合状态，窗框无撬动痕迹。初步符合典型密室——凶手似乎无法在杀人后离开。",
+      "skill_required": null
+    },
+    {
+      "action": "锁具痕迹分析",
+      "result": "链条锁某一链环存在极细V形切割痕，强度被削弱至约15公斤即可拉断。门框外侧缝隙检出0.25毫米尼龙钓鱼线残留——可从门外远程拉断链条，制造「内部反锁」假象。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "窗锁机制推断",
+      "result": "本楼窗锁为磁吸式扣合结构，外部贴强力磁铁即可远程扣合窗锁。结合链条锁手法，密室可被刻意伪造——凶手离开后从外部完成最后一步封锁。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "表面密室并非无解：锁具被预先改造，凶手可在离开后伪造反锁状态。说明本案为预谋杀人，且凶手熟悉建筑五金与通风密封方案。",
+    "suspects_implicated": ["cheng_hesheng"],
+    "deduction_tags": ["locked_room", "premeditation", "scene_staging"]
+  }
+}

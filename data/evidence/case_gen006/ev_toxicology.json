@@ -1,0 +1,30 @@
+{
+  "id": "ev_toxicology",
+  "case_id": "gen_006",
+  "name": "三案毒理检测报告",
+  "description": "省法医中心对丁贵昌、马永来、孙德福三名死者血液及胃内容物进行的全面毒理筛查。三人均被初判为急性心肌梗死或心脏骤停，但专项检测均检出乌头碱及其代谢物。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "丁贵昌（55岁）、马永来（62岁）、孙德福（58岁）血液中乌头碱浓度分别为3.8、4.1、3.5 ng/mL，均超过致死阈值。三人临床表现——突发心律失常、面色发绀、无典型心梗ST段改变——与乌头碱钠通道阻断高度吻合。",
+      "skill_required": null
+    },
+    {
+      "action": "死因鉴别分析",
+      "result": "乌头碱中毒与急性心肌梗死在基层尸检中极难区分：均表现为突发心搏骤停。但三人均无显著冠状动脉硬化，且胃内容物中检出微量未完全吸收的乌头碱原形——排除自然心梗，确认为口服投毒。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "投毒来源推断",
+      "result": "三案检出的乌头碱同源性一致，且均与纪淑兰诊所后院晾晒的生草乌样本谱图匹配。生草乌未经充分炮制时乌头碱含量极高——与三名死者就诊后领取的跌打药酒、泡脚方时间线完全对应。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "将三起「心脏衰竭」死亡统一为乌头碱投毒，打破独立个案假象，将调查焦点引向纪氏诊所的配药环节。",
+    "suspects_implicated": ["ji_shulan", "liang_suyun"],
+    "deduction_tags": ["cause_of_death", "aconitine", "serial_poisoning"]
+  }
+}

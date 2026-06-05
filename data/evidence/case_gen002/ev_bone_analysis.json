@@ -1,0 +1,30 @@
+{
+  "id": "ev_bone_analysis",
+  "case_id": "gen_002",
+  "name": "地下骸骨旧伤痕",
+  "description": "清理藏经楼地基时挖出至少三具女性骸骨，埋藏时间跨度十五年以上。骨骼上留存多处陈旧性骨折与钝器击打痕迹，与法元在寺中实施长期虐待的供述相互印证。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "三具骸骨均为女性，年龄二十至三十五岁。最早一具埋藏约十五年，最近一具约三到五年。寺中登记有三名「离寺」后再无踪迹的尼姑，时间线吻合。",
+      "skill_required": null
+    },
+    {
+      "action": "伤痕鉴定",
+      "result": "多具骸骨存在肋骨陈旧性骨折、尺骨防御性骨折及颅骨钝击裂痕。伤痕分布与反复殴打模式一致，非一次性意外。其中两具检出东莨菪碱残留，一具为钝器致死。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "虐待史推断",
+      "result": "伤痕模式表明受害者在生前长期遭受系统性暴力。法元利用封闭寺院的权威对年轻尼姑实施精神控制与身体虐待，「不听话」者被毒杀或击打后埋于藏经楼下。净明作为同在寺中二十三年的见证者，不可能对此一无所知。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "证明雀鸣寺存在跨越十余年的连环杀害与掩埋，法元是核心施害者。为理解净明复仇动机及慧静发现秘密后遭灭口提供背景。",
+    "suspects_implicated": ["fa_yuan", "jing_ming"],
+    "deduction_tags": ["serial_killing", "abuse", "buried_evidence"]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ev_blunt_trauma",
+  "case_id": "case_gen007",
+  "name": "钝器创伤报告",
+  "description": "客厅中周国强的尸体呈现多处钝器击打伤。现场留有大量血迹，但部分区域被后续纵火高温破坏。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "死者头部及胸腹部有多处钝器伤，至少遭受三次以上重击。凶器应为家中常见钝器，非专业武器。死亡后有人试图移动尸体至厨房方向，但被火势中断。",
+      "skill_required": null
+    },
+    {
+      "action": "创伤模式分析",
+      "result": "击打角度偏低，符合身高约170cm、力量有限的施暴者特征。击打顺序为：先击头部致晕，再连续击打胸腹——带有强烈情绪宣泄特征，非专业杀手手法。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "时间线推断",
+      "result": "根据尸斑和血液凝固程度，死亡时间在纵火前约30至45分钟。客厅内无外来闯入痕迹，门锁完好，说明行凶者与死者同处一室且死者未防备。",
+      "skill_required": {"forensics": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "确定死因与作案手法。创伤模式指向年轻、力量有限但熟悉环境的施暴者，排除外来专业杀手。死亡时间与纵火间隔证明杀人后蓄意焚毁现场。",
+    "suspects_implicated": ["zhou_mo"],
+    "deduction_tags": ["cause_of_death", "suspect_profile", "timeline"]
+  }
+}

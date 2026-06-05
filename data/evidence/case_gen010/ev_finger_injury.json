@@ -1,0 +1,35 @@
+{
+  "id": "ev_finger_injury",
+  "case_id": "gen_010",
+  "name": "林慧君指伤鉴定",
+  "description": "林慧君左手小指关节畸形，她称「以前不小心夹到门缝里」。法医对其旧伤进行影像学鉴定，并比对十四年来家暴投诉的零星记录。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "林慧君左手小指无法完全伸直，关节变形。她说话永远轻声细语，被问及时下意识将手藏到身后——对伤情高度敏感。",
+      "skill_required": null
+    },
+    {
+      "action": "骨折类型鉴定",
+      "result": "X光显示指骨螺旋形骨折后未经正规治疗自然愈合——非夹门可造成。螺旋形骨折通常由扭转力导致，如被人抓住手指向外猛扭。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "家暴史交叉验证",
+      "result": "吴鸿飞被音乐学院辞退的真实原因是长期体罚学生。邻居曾听到三楼争吵及女儿哭声；林慧君在单独谈话中承认，断指发生在她试图阻止吴鸿飞砸女儿手指时。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "动机背景推断",
+      "result": "十四年婚姻中林慧君长期遭受身体与精神控制。案发当日吴鸿飞宣布「重新教晨星弹琴」——对母女而言意味着暴力循环重启，构成极端应激的触发背景。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "以林慧君旧伤证明长期家暴存在，为「受虐者反击」提供背景。将案件从单纯坠楼事故转向家庭暴力引发的致命冲突。",
+    "suspects_implicated": ["lin_huijun", "wu_hongfei"],
+    "deduction_tags": ["domestic_violence", "abuse_history", "motive_context", "victim_profile"]
+  }
+}

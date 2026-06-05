@@ -1,0 +1,43 @@
+{
+  "id": "case_gen007_house",
+  "name": "周家老宅",
+  "background": "res://assets/scenes/bg_house_domestic.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "living_room",
+      "label": "客厅",
+      "rect": {"x": 20, "y": 80, "w": 160, "h": 100},
+      "evidence_ids": ["ev_blunt_trauma"],
+      "interaction": "examine"
+    },
+    {
+      "id": "basement",
+      "label": "地下室",
+      "rect": {"x": 20, "y": 220, "w": 140, "h": 80},
+      "evidence_ids": ["ev_mother_disappearance"],
+      "interaction": "examine"
+    },
+    {
+      "id": "boy_room",
+      "label": "周默房间",
+      "rect": {"x": 220, "y": 60, "w": 140, "h": 90},
+      "evidence_ids": ["ev_sign_language"],
+      "interaction": "examine"
+    },
+    {
+      "id": "kitchen",
+      "label": "厨房",
+      "rect": {"x": 400, "y": 80, "w": 130, "h": 90},
+      "evidence_ids": ["ev_fire_accelerant"],
+      "interaction": "examine"
+    },
+    {
+      "id": "backyard",
+      "label": "后院",
+      "rect": {"x": 580, "y": 140, "w": 160, "h": 120},
+      "evidence_ids": ["ev_abuse_history"],
+      "interaction": "examine"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ev_facial_analysis",
+  "name": "面容与行为特征分析",
+  "case_id": "gen_004",
+  "description": "安保中心的人脸识别系统存档、七年前后监控截图，以及整形外科专家对现任魏庭安面部微痕迹的鉴定报告。系统曾长期将「出差前后」标记为同一人。",
+  "type": "digital",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "人脸识别系统对现任魏庭安的匹配度始终高于99.2%，七年前「出差」前后无告警。但江素清日记记载：儿子切桂花糕时用了左手——魏庭安 lifelong 右撇子。行为细节与面容识别结论出现裂痕。",
+      "skill_required": null
+    },
+    {
+      "action": "微整形痕迹鉴定",
+      "result": "耳廓软骨形态、鼻翼基底切口、下颌缘皮下瘢痕符合多次微整形特征——非自然衰老所能解释。异卵双胞胎面部本有差异，长期分离后可通过整形趋近一致，这正是替换可行的物理基础。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "笔迹与手势比对",
+      "result": "七年前出差后签名整体风格一致，但握笔压力分布变化：由纯右手主导变为右手主导+左手辅助力增强。笔迹学判断书写者可能为矫正过的左撇子——周鹤年符合，真魏庭安不符合。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "身份替换时间线",
+      "result": "魏庭安四十八小时「通讯故障」期间GPS止于郊区废弃工厂——与后来发现的真魏庭安遗骸位置吻合。归来后面容系统无法区分，但行为、笔迹、记忆（把柿子树说成枣树）均已「换人」。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "从面容微痕、左撇子习惯与笔迹压力分布证明「同一张脸」下已是周鹤年。弥补DNA鉴定在血液样本上的盲区，将身份替换从遗传学推测落实为可观察证据。",
+    "suspects_implicated": ["zhou_henian"],
+    "deduction_tags": ["micro_surgery", "facial_recognition", "behavioral_tells"]
+  }
+}

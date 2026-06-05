@@ -1,0 +1,35 @@
+{
+  "id": "ev_bar_cctv",
+  "case_id": "gen_009",
+  "name": "吧台监控录像",
+  "description": "「第七杯」酒吧吧台及调制区监控，覆盖三名受害者各自到访当日的时段。录像显示池明远独自完成鸡尾酒调制全过程。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "陆嘉铭、方立行死亡当天均在吧台消费「盲盒鸡尾酒」98元，信用卡记录吻合。汤子安死前48小时亦曾到访。三段录像中池明远均为唯一调酒者，无其他员工经手。",
+      "skill_required": null
+    },
+    {
+      "action": "调制动作分析",
+      "result": "慢放显示池明远在摇壶前有一次极短的侧身动作，右手探向吧台下方小抽屉——该抽屉内后搜出头孢空瓶。动作发生在客人填完问卷、确认身份之后。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "时间线比对",
+      "result": "三名受害者均在酒吧饮用后72小时内死亡——与头孢抑制乙醛脱氢酶的有效窗口一致。录像将「到店→投药→离店→延迟致死」的因果链在时间轴上闭合。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "职业便利认定",
+      "result": "客人无法点酒、只能接受池明远调制——这使他在众目睽睽下仍掌握唯一投药机会。监控证明无第三人介入，投毒行为与调酒师身份不可分割。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "以影像固定池明远在受害者到访当日的投药窗口与独自调制事实，是连接问卷筛选与毒理结果的现场执行证据。排除「客人自带酒水」等干扰假设。",
+    "suspects_implicated": ["chi_mingyuan"],
+    "deduction_tags": ["cctv", "drink_preparation", "execution", "occupational_access"]
+  }
+}

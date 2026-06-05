@@ -1,0 +1,30 @@
+{
+  "id": "ev_insect_timeline",
+  "case_id": "gen_006",
+  "name": "法医昆虫学死亡时间报告",
+  "description": "针对马永来（独居四十八小时后被发现）与丁贵昌（仓库内死亡）现场采集的嗜尸性昆虫样本分析。通过种类鉴定与发育阶段推算，重建三名死者的精确死亡时间窗口。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "马永来家中检出丝光绿蝇（Lucilia sericata）三期幼虫与麻蝇科蛹壳，推算死亡时间为发现前46–52小时。丁贵昌仓库内为大头金蝇（Chrysomya megacephala）二期幼虫，死亡约36小时前。孙德福驾驶室因通风较差，绿蝇一代幼虫发育较慢，死亡约72小时前。",
+      "skill_required": null
+    },
+    {
+      "action": "时间线交叉比对",
+      "result": "三人的精确死亡时间均落在「就诊纪淑兰诊所后24–72小时内」窗口。马永来家属称其在死亡前一日下午领取了新配跌打药酒——与昆虫推算的投毒起效时间（乌头碱口服15–90分钟）及后续尸体暴露时间完全吻合。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "自然死亡排除",
+      "result": "若三人均为自然心梗，死亡时间应随机分布，不应全部 clustering 在领药后48小时内。昆虫学重建的时间线 + 就诊记录 = 高度规律的「领药→死亡」模式，符合蓄意投毒而非偶发心脏事件。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "用昆虫学精确锚定死亡时间，证明三案死亡均发生在诊所配药之后，支撑连环投毒而非自然病亡的推断。",
+    "suspects_implicated": ["ji_shulan"],
+    "deduction_tags": ["timeline", "entomology", "pattern_recognition"]
+  }
+}

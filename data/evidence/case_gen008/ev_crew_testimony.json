@@ -1,0 +1,30 @@
+{
+  "id": "ev_crew_testimony",
+  "case_id": "case_gen008",
+  "name": "船员证词",
+  "description": "码头值班员及钟声号临时帮工的证词汇总。多人提到案发前后钟声号上的异常状况及船员行为。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "值班员证实：钟声号当夜仅三人出海——高振声、邓海清、蒋石磊。返港时高振声未露面，邓、蒋二人称「老板晕船先回去了」，但岸上没有高振声下船的记录。",
+      "skill_required": null
+    },
+    {
+      "action": "异常行为记录",
+      "result": "帮工王某提到：返港后蒋石磊独自清洗船甲板至凌晨五点，使用大量漂白剂。邓海清在码头徘徊，拒绝任何人上船检查。二人神情紧张，与平时出港归来状态截然不同。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "证词交叉验证",
+      "result": "另一船员证实：出海前听到船舱内激烈争吵，高振声吼叫「你们敢动我试试」。此后船舱门被锁上，再未听到高振声声音。争吵时间与AIS离港时间吻合。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "船员证词证明高振声未正常返港，且邓、蒋二人在案发前后行为异常。证词与AIS记录、财务冲突相互印证，将二人从「合伙人」锁定为「合谋凶手」。",
+    "suspects_implicated": ["deng_haiqing", "jiang_shilei"],
+    "deduction_tags": ["witness_testimony", "suspect_behavior", "timeline"]
+  }
+}

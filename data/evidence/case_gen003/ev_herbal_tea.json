@@ -1,0 +1,35 @@
+{
+  "id": "ev_herbal_tea",
+  "case_id": "gen_003",
+  "name": "花草茶成分分析",
+  "description": "主卧床头柜上放着一罐「霖露」牌手工花草茶，成分表标注洋甘菊、薰衣草、柠檬马鞭草、佛手柑皮。林桐说此茶为方若寒三个月前所赠。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "茶罐剩余约三分之一，苏晴每日饮用。标签含佛手柑皮——佛手柑精油天然含佛手柑内酯（5-MOP），属呋喃香豆素类光敏物质，但正常茶饮含量不足以引发严重光敏反应。",
+      "skill_required": null
+    },
+    {
+      "action": "化学成分化验",
+      "result": "化验检出远超天然含量的8-甲氧基补骨脂素（8-MOP）——这不是佛手柑皮自带的成分，而是被人为添加的纯化学品。8-MOP为强效光敏剂，临床仅用于PUVA光疗，绝不应出现在普通花草茶中。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "投毒路径推断",
+      "result": "茶由方若寒以「助眠」名义赠送，苏晴持续饮用三个月，与光过敏症状出现时间完全吻合。停茶后症状未缓解，说明8-MOP已在体内累积并改变皮肤光敏阈值。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "来源追溯",
+      "result": "8-MOP属处方级光敏剂，合法渠道限于制药企业与医院PUVA科室。普通消费者无法自行获取——投毒者必然通过特殊渠道取得，且具备药理知识。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "证明苏晴三个月的光过敏源于茶中被人为添加的8-MOP，而非自然疾病。赠送者为前老板方若寒，将慢性投毒的起点锁定在「霖露」花草茶。",
+    "suspects_implicated": ["fang_ruohan"],
+    "deduction_tags": ["poison", "furocoumarin", "chronic_dosing"]
+  }
+}

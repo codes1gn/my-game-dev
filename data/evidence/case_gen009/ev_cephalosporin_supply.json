@@ -1,0 +1,35 @@
+{
+  "id": "ev_cephalosporin_supply",
+  "case_id": "gen_009",
+  "name": "头孢采购记录",
+  "description": "酒吧储藏室发现若干空药瓶，以及池明远个人手机中的网购与转账记录。追查显示其长期、分批购入头孢类抗生素。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "储藏室角落藏有头孢哌酮钠粉针剂空瓶若干，规格2g/瓶，与卫生间垃圾桶内捡到的药品说明书一致。酒吧正常经营不需要抗生素库存。",
+      "skill_required": null
+    },
+    {
+      "action": "采购链追溯",
+      "result": "池明远通过多个账号分批网购头孢哌酮，收货地址含酒吧及私人住址。购入总量远超个人医疗需求，时间跨度覆盖三名受害者死亡区间。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "投毒可行性验证",
+      "result": "药理学实验：2g头孢哌酮溶于200ml鸡尾酒（约15%酒精）后溶液无色透明，仅带极微弱金属味，被复杂风味完全掩盖——与池明远调酒师身份高度契合。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "间接致死推断",
+      "result": "头孢本身非毒物，常规剂量对健康人无害——致死依赖受害者后续饮酒触发双硫仑反应。这使投毒极难被定性为「下毒」，而更像「意外药物相互作用」。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "锁定投毒物质来源与执行者物资储备，证明池明远具备持续获取头孢的能力。结合毒理报告，完成「物质来源→体内检出→间接致死」的完整链条。",
+    "suspects_implicated": ["chi_mingyuan"],
+    "deduction_tags": ["cephalosporin", "supply_chain", "poison_method", "premeditation"]
+  }
+}

@@ -1,51 +1,58 @@
 {
   "id": "case_001_apartment",
-  "name": "\u5218\u683c\u516c\u5bd3",
-  "background": "",
+  "name": "刘格公寓",
+  "background": "res://assets/scenes/bg_apartment.jpg",
   "dimensions": {"width": 880, "height": 370},
+  "time_budget_enabled": true,
   "hotspots": [
     {
       "id": "entrance",
-      "label": "\u95e8\u53e3\u8109\u5370",
+      "label": "门口脉印",
       "rect": {"x": 20, "y": 280, "w": 120, "h": 60},
       "evidence_ids": ["ev_footprint"],
-      "interaction": "examine"
+      "interaction": "examine",
+      "time_cost": 30
     },
     {
       "id": "living_room_table",
-      "label": "\u5ba2\u539c\u8336\u51e0",
+      "label": "客厅茶几",
       "rect": {"x": 130, "y": 80, "w": 140, "h": 70},
       "evidence_ids": ["ev_fruit_knife"],
-      "interaction": "examine"
+      "interaction": "examine",
+      "time_cost": 30
     },
     {
       "id": "living_room_sofa",
-      "label": "\u6c99\u53d1\u533a\u57df",
+      "label": "沙发区域",
       "rect": {"x": 130, "y": 170, "w": 140, "h": 70},
       "evidence_ids": ["ev_orange_peels"],
-      "interaction": "examine"
+      "interaction": "examine",
+      "time_cost": 20
     },
     {
       "id": "kitchen",
-      "label": "\u53a8\u623f",
+      "label": "厨房",
       "rect": {"x": 420, "y": 80, "w": 120, "h": 80},
       "evidence_ids": [],
-      "interaction": "examine"
+      "interaction": "examine",
+      "time_cost": 20
     },
     {
       "id": "bedroom",
-      "label": "\u5367\u5ba4",
+      "label": "卧室",
       "rect": {"x": 580, "y": 160, "w": 120, "h": 80},
       "evidence_ids": ["ev_body_position"],
-      "interaction": "examine"
+      "interaction": "examine",
+      "time_cost": 45
     },
     {
       "id": "surveillance",
-      "label": "\u76d1\u63a7\u5f55\u50cf",
+      "label": "监控录像",
       "rect": {"x": 720, "y": 20, "w": 120, "h": 50},
       "evidence_ids": ["ev_surveillance_tampering"],
       "interaction": "surveillance",
-      "clip_id": "surveillance_001"
+      "clip_id": "surveillance_001",
+      "time_cost": 60
     }
   ]
 }

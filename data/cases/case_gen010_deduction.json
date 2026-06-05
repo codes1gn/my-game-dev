@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_010",
+  "title": "推理板 — 三楼的钢琴",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "fall_analysis",
+      "label": "坠落伤力学分析",
+      "icon": "body",
+      "detail": "后枕部凹陷性骨折与正面坠地伤方向矛盾，琴房钢琴凳旁有血迹，地面存在拖行至窗户的摩擦痕——坠楼前已遭击打并被移动。"
+    },
+    {
+      "id": "finger_injury",
+      "label": "林慧君指伤鉴定",
+      "icon": "body",
+      "detail": "左手小指螺旋形骨折旧伤，系被人扭断而非夹门。十四年家暴史，断指发生在保护女儿免受钢琴盖砸击时。"
+    },
+    {
+      "id": "piano_recording",
+      "label": "钢琴录音时间线",
+      "icon": "camera",
+      "detail": "七分钟音频：04:12停琴→04:15倒地声→05:20上楼脚步→拖拽声→06:32开窗→06:40坠地。中间五六分钟为人为移尸开窗过程。"
+    },
+    {
+      "id": "neighbor_testimony",
+      "label": "邻居证词记录",
+      "icon": "document",
+      "detail": "邻居常闻三楼争吵与女孩哭声。案发日「钢琴突然停→五六分钟后闷响」，与录音时间线吻合，排除瞬间意外失足。"
+    },
+    {
+      "id": "daughter_drawings",
+      "label": "吴晨星心理绘画",
+      "icon": "evidence",
+      "detail": "女儿俯绘琴房：倒翻钢琴凳、大开窗户、红色路径从凳至窗。陈述「钢琴停了」并指认母亲当时上楼——目击印证拖行推落。"
+    },
+    {
+      "id": "motive",
+      "label": "林慧君长期受虐",
+      "icon": "profile",
+      "detail": "吴鸿飞当日宣布重新教女儿弹琴，触发母女创伤。林慧君在厨房听到三楼异响后上楼，在多年压迫下将丈夫推落窗户，伪装意外。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "fall_analysis",
+      "to": "piano_recording",
+      "conclusion": "坠楼伤方向矛盾 + 录音显示拖拽开窗 → 非自杀/意外，系冲突后推落伪装",
+      "tag": "他杀认定"
+    },
+    {
+      "from": "finger_injury",
+      "to": "neighbor_testimony",
+      "conclusion": "林慧君家暴旧伤 + 邻居长期闻争吵 → 长期家庭暴力为致命冲突提供背景",
+      "tag": "家暴背景"
+    },
+    {
+      "from": "piano_recording",
+      "to": "fall_analysis",
+      "conclusion": "录音停琴后倒地拖拽 + 力学分析后枕钝击伤 → 琴房冲突在先，坠楼在后",
+      "tag": "时间线锁定"
+    },
+    {
+      "from": "daughter_drawings",
+      "to": "motive",
+      "conclusion": "女儿绘画路径与指认 + 林慧君受虐动机 → 林慧君推落丈夫并伪装坠楼",
+      "tag": "凶手锁定"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "neighbor_testimony",
+      "to": "piano_recording",
+      "conclusion": "邻居「停琴五六分钟后闷响」 + 录音完整声序列 → 独立证词与数字证据互证",
+      "tag": "交叉印证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

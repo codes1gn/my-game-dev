@@ -1,0 +1,30 @@
+{
+  "id": "ev_tidal_analysis",
+  "case_id": "case_gen008",
+  "name": "潮汐分析报告",
+  "description": "海岸警卫队对案发海域的潮汐、洋流及沉积物分析。用于还原钟声号停留期间的抛洒物扩散路径。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "案发时段正值退潮后期，暗礁区水位较浅，便于在船上进行分尸操作而不被其他船只接近。该时段该海域无其他AIS信号记录，具备作案隐蔽性。",
+      "skill_required": null
+    },
+    {
+      "action": "洋流模拟",
+      "result": "模拟显示：若有人体组织从钟声号停留点抛入海中，24小时内会被洋流带至鱼粉加工厂排污口附近——与骨碎片发现位置一致。这不是巧合。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "时间窗口锁定",
+      "result": "结合潮汐表，最佳作案窗口为凌晨2:30至3:30——此时退潮、视野差、巡逻艇不在该水域。与AIS静止时段完全重叠，证明凶手精心选择了作案时间。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "将AIS定位与骨碎片发现地点串联。潮汐分析证明凶手利用退潮窗口在船上分尸，并利用洋流将残余组织冲至加工厂附近——与鱼粉中检出人类骨骼形成完整证据链。",
+    "suspects_implicated": ["deng_haiqing", "jiang_shilei"],
+    "deduction_tags": ["timeline", "location", "premeditation"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ev_fall_analysis",
+  "case_id": "gen_010",
+  "name": "坠落伤力学分析",
+  "description": "吴鸿飞死于三楼琴房窗户下方水泥地面，初判为坠楼。法医对颅骨、颈椎及全身骨折进行力学重建，发现与「单纯意外坠落」不符的矛盾点。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "头部着地，颅骨严重碎裂，颈椎断裂——符合高处坠落致命伤。窗台高80cm，内开窗完全敞开，一名成年男性需主动翻越才能坠出，非无意识失足可解释。",
+      "skill_required": null
+    },
+    {
+      "action": "受力方向分析",
+      "result": "正面着地骨折呈放射状自着地点扩散，但后枕部另有一处局部凹陷性骨折——形态更接近钝器击打，而非坠落冲击。结论：坠楼前后脑已遭受击打。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "现场血迹重建",
+      "result": "琴房钢琴凳旁（距窗户约两米）检出5cm×3cm血迹，Luminol反应阳性。「跳窗者」不应在远离窗户的钢琴凳旁流血——说明冲突起点在琴房中部，非窗台。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "拖拽痕迹推断",
+      "result": "地面有从钢琴凳至窗户的摩擦拖痕，与约75kg成年男性被拖行两米的力学计算吻合。坠楼是冲突后的「善后」，而非自杀或意外。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "以骨折模式与血迹分布证明吴鸿飞坠楼前已遭击打并被拖至窗边，打破自杀/意外假说。是认定「他杀后伪装坠楼」的核心物理证据。",
+    "suspects_implicated": ["lin_huijun"],
+    "deduction_tags": ["fall_mechanics", "injury_inconsistency", "staged_suicide", "scene_reconstruction"]
+  }
+}

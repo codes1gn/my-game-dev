@@ -1,0 +1,30 @@
+{
+  "id": "ev_co_readings",
+  "case_id": "gen_005",
+  "name": "一氧化碳浓度检测",
+  "description": "消防部门对23层公寓进行的空气与管道残留检测。死者血液碳氧血红蛋白（COHb）浓度68%，面部呈樱桃红色，符合急性一氧化碳中毒特征。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "开门通风后室内CO已降至安全水平，但中央空调通风管道内壁CO吸附浓度为室内空气的十五倍。CO并非均匀弥漫，而是沿主风道向卧室方向递增。",
+      "skill_required": null
+    },
+    {
+      "action": "分布模式分析",
+      "result": "CO浓度梯度与新风机组→主风道→卧室送风口的路径完全吻合，峰值出现在卧室回风口附近。这不是局部燃烧或泄漏，而是经通风系统定向输入。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "来源追溯",
+      "result": "23层设备平台新风机组过滤箱内发现非原装铝制CO发生器——甲酸经微型加热棒热分解产CO（HCOOH→CO+H₂O），产物被新风系统均匀吹入室内。无声、无味、无色，适合睡眠中中毒。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "确认死因为通风系统投毒式CO中毒，将调查焦点从「密室悖论」转向「谁改造了风道、谁安装了发生器」。",
+    "suspects_implicated": ["cheng_hesheng"],
+    "deduction_tags": ["cause_of_death", "hvac_poisoning", "co_distribution"]
+  }
+}

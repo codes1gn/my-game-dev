@@ -1,0 +1,35 @@
+{
+  "id": "ev_dna_anomaly",
+  "case_id": "gen_004",
+  "name": "多组织DNA鉴定报告",
+  "description": "对现任魏庭安的多组织样本（口腔拭子、血液、皮肤活检、毛囊）与已故江素清生前透析血样进行STR亲缘比对。医疗室冷藏柜中保存着调查组二次采样的完整报告。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "口腔黏膜与皮肤样本：排除与江素清的母子关系，显示二级旁系亲缘。血液与毛囊样本：符合母子一级亲缘关系。同一送检人，两套截然不同的DNA结论——这在常规鉴定中不应出现。",
+      "skill_required": null
+    },
+    {
+      "action": "嵌合体假设验证",
+      "result": "多组织结果分裂为两套基因型，符合嵌合体（chimera）特征——个体体内共存两套DNA。但天然嵌合体一出生即存在，无法解释「七年前出差后行为突变」的时间线。更可能是后天形成的嵌合状态。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "骨髓移植溯源",
+      "result": "十年前魏庭安曾为「朋友」捐献骨髓的记录与周鹤年（被送养孪生弟）的再生障碍性贫血病史吻合。骨髓移植后，受体血液系统DNA将变为供体DNA——这完美解释了血液符合母子、口腔/皮肤不符合的矛盾。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "鉴定策略推断",
+      "result": "何薇掌握的锐恩生物数据曾指出：常规亲子鉴定多用血液或口腔——骨髓移植者用血液可通过、用口腔则暴露。江素清遗嘱中的DNA鉴定条件，正是针对这一漏洞设置的验证陷阱。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "DNA矛盾是本案核心科学证据。多组织采样揭示「嵌合体」实为骨髓移植所致，证明现任魏庭安并非江素清之子——而是接受了真魏庭安骨髓的周鹤年。",
+    "suspects_implicated": ["zhou_henian", "he_wei"],
+    "deduction_tags": ["chimera", "bone_marrow_transplant", "identity_swap"]
+  }
+}

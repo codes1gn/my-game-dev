@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_004",
+  "title": "推理板 — 双生面",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "dna_anomaly",
+      "label": "嵌合体DNA矛盾",
+      "icon": "evidence",
+      "detail": "口腔/皮肤排除母子关系，血液/毛囊符合母子关系。同一送检人两套DNA——非天然嵌合体，而是骨髓移植所致。真魏庭安十年前为周鹤年捐髓，血液基因型已被替换。"
+    },
+    {
+      "id": "medical_records",
+      "label": "透析投钾记录",
+      "icon": "document",
+      "detail": "江素清最后一次透析后心脏骤停，封存血样钾离子远超正常。透析液回路被注入氯化钾——慢性肾病患者高钾致死极难察觉，且主治体系受安华集团控制。"
+    },
+    {
+      "id": "facial_analysis",
+      "label": "面容行为差异",
+      "icon": "camera",
+      "detail": "微整形瘢痕使异卵双胞胎面容趋同；七年后签名出现左撇子矫正特征。母亲日记：切糕用左手、把柿子树记成枣树——同一张脸下已是周鹤年。"
+    },
+    {
+      "id": "will_forgery",
+      "label": "遗嘱DNA条件",
+      "icon": "document",
+      "detail": "35%股权留给魏庭安，但须六个月内通过指定机构多组织DNA鉴定。对亲生儿子多余——江素清已怀疑儿子被替换，以遗嘱设下身后验真陷阱。"
+    },
+    {
+      "id": "secretary_files",
+      "label": "锐恩生物档案",
+      "icon": "profile",
+      "detail": "何薇带走魏庭安与周鹤年基因组比对及「身份验证规避方案」。骨髓移植后血液DNA可骗过常规鉴定，口腔/皮肤仍暴露——她协调七年替换与医疗体系掩护。"
+    },
+    {
+      "id": "identity_swap",
+      "label": "周鹤年篡位动机",
+      "icon": "profile",
+      "detail": "被送养孪生弟周鹤年因再生障碍性贫血接受魏庭安捐髓，窥见医疗帝国后取而代之。真魏庭安七年前遇害埋于废弃工厂，动机是继承本该属于自己的人生与安华集团。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "secretary_files",
+      "to": "dna_anomaly",
+      "conclusion": "锐恩基因组数据 + 多组织DNA分裂 → 何薇告知周鹤年骨髓移植可被利用，血液过检、口腔暴露",
+      "tag": "替换手法"
+    },
+    {
+      "from": "dna_anomaly",
+      "to": "will_forgery",
+      "conclusion": "血液/口腔DNA矛盾 + 遗嘱强制多组织鉴定 → 江素清已发现身份异常并设下验证陷阱",
+      "tag": "母亲反击"
+    },
+    {
+      "from": "facial_analysis",
+      "to": "identity_swap",
+      "conclusion": "微整形+左撇子笔迹 + 孪生弟篡位动机 → 证实现任魏庭安是周鹤年，真魏庭安七年前已被杀害",
+      "tag": "真凶认定"
+    },
+    {
+      "from": "medical_records",
+      "to": "will_forgery",
+      "conclusion": "透析投钾灭口 + 遗嘱DNA条件 → 周鹤年杀害母亲，阻止其在生前完成身份验证",
+      "tag": "灭口链条"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "secretary_files",
+      "to": "facial_analysis",
+      "conclusion": "基因规避方案 + 微整形面容趋同 → 何薇与周鹤年七年替换计划：从DNA到面容的完整伪装",
+      "tag": "共谋佐证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ev_financial_audit",
+  "case_id": "case_gen008",
+  "name": "财务审计报告",
+  "description": "渔公司财务部门的内部审计材料。发现高振声长期通过虚报渔获、克扣合伙人分红等手段侵吞公司资产。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "审计显示：过去十年高振声虚报渔获量累计超过800万元，邓海清和蒋石磊各自被少分约200万。账本上有高振声亲笔签名确认的假报表。",
+      "skill_required": null
+    },
+    {
+      "action": "近期冲突记录",
+      "result": "案发前一个月，邓、蒋二人曾向高振声当面对质，要求公开真实账目。高振声以「你们能有今天全靠我」回应，并威胁将二人踢出公司。会议录音被办公室监控保存。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "动机评估",
+      "result": "除财务欺诈外，高振声还长期对二人进行人格羞辱——强制加班、公开辱骂、克扣工资。邓海清有「三十年了，够了」的酒后言论记录。财务纠纷叠加压迫，构成充分杀人动机。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "建立邓海清与蒋石磊的作案动机。数十年财务欺诈与人格压迫使二人积怨已久，案发前的对质冲突将矛盾推向顶点。审计报告为「合伙人合谋杀人」提供经济层面的核心依据。",
+    "suspects_implicated": ["deng_haiqing", "jiang_shilei", "gao_zhensheng"],
+    "deduction_tags": ["motive", "financial_fraud", "conflict_history"]
+  }
+}

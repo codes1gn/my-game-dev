@@ -1,0 +1,30 @@
+{
+  "id": "ev_ceramic_signature",
+  "case_id": "gen_006",
+  "name": "白瓷观音像鉴定",
+  "description": "三名死者家中均发现一尊手工白瓷观音像（约15–20厘米），白釉、持柳枝托净瓶，风格一致但尺寸略有差异。底部无商业标记，紫外灯下无异常，但高倍镜下底座内侧刻有极小的序号数字。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "三尊观音像釉料成分一致——本地高岭土配长石釉，烧制温度约1250°C，均为手工拉坯。丁贵昌家为17号、马永来家为18号、孙德福家为19号。家属均称系纪淑兰诊所「保平安」所赠。",
+      "skill_required": null
+    },
+    {
+      "action": "签名行为分析",
+      "result": "有序编号 + 统一造型 + 放置于死者家中 = 典型有序型连环杀手签名行为。凶手在每起案件后留下标记物，既确认「审判完成」，又将死亡事件串联为同一作者的作品。序号17–19暗示此前至少还有十六起。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "制作来源追溯",
+      "result": "镇外废弃陶窑工作间内发现同款未上釉素坯、自制釉料配方笔记，以及第20号观音半成品。指纹与工具痕迹指向诊所助手梁素云——但观音像由纪淑兰指示「送给近期就诊的客人家属」，梁素云并不知晓编号含义。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "将三起独立死亡关联为连环案，并通过陶瓷工作间锁定签名物制作链。观音序号是破解全案规模的关键。",
+    "suspects_implicated": ["ji_shulan", "liang_suyun"],
+    "deduction_tags": ["signature", "serial_killer", "ceramic_analysis"]
+  }
+}

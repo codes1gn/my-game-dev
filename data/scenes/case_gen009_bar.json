@@ -1,0 +1,43 @@
+{
+  "id": "case_gen009_bar",
+  "name": "第七杯酒吧",
+  "background": "res://assets/scenes/bg_bar.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "bar_counter",
+      "label": "吧台",
+      "rect": {"x": 280, "y": 120, "w": 200, "h": 90},
+      "evidence_ids": ["ev_bar_cctv", "ev_bar_questionnaires"],
+      "interaction": "examine"
+    },
+    {
+      "id": "vip_room",
+      "label": "VIP包间",
+      "rect": {"x": 540, "y": 60, "w": 150, "h": 110},
+      "evidence_ids": ["ev_bar_questionnaires"],
+      "interaction": "examine"
+    },
+    {
+      "id": "storage_room",
+      "label": "储藏室",
+      "rect": {"x": 720, "y": 180, "w": 130, "h": 100},
+      "evidence_ids": ["ev_cephalosporin_supply"],
+      "interaction": "examine"
+    },
+    {
+      "id": "office",
+      "label": "办公室",
+      "rect": {"x": 30, "y": 40, "w": 150, "h": 110},
+      "evidence_ids": ["ev_social_media", "ev_toxicology_pattern"],
+      "interaction": "examine"
+    },
+    {
+      "id": "restroom",
+      "label": "卫生间",
+      "rect": {"x": 30, "y": 200, "w": 130, "h": 100},
+      "evidence_ids": ["ev_toxicology_pattern"],
+      "interaction": "examine"
+    }
+  ]
+}

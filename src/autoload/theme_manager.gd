@@ -87,15 +87,31 @@ func load_external_image(path: String) -> ImageTexture:
 		return null
 	return ImageTexture.create_from_image(img)
 
-func generate_crime_scene_bg(width: int, height: int) -> ImageTexture:
+const SCENE_PALETTES := {
+	"temple": [Color(0.08, 0.10, 0.06), Color(0.12, 0.14, 0.08), Color(0.15, 0.20, 0.10, 0.3)],
+	"apartment": [Color(0.14, 0.16, 0.20), Color(0.18, 0.15, 0.12), Color(0.22, 0.24, 0.28, 0.4)],
+	"mansion": [Color(0.12, 0.08, 0.06), Color(0.18, 0.12, 0.08), Color(0.25, 0.18, 0.10, 0.3)],
+	"clinic": [Color(0.10, 0.12, 0.08), Color(0.14, 0.16, 0.10), Color(0.18, 0.22, 0.14, 0.3)],
+	"house": [Color(0.12, 0.12, 0.14), Color(0.16, 0.14, 0.12), Color(0.20, 0.20, 0.22, 0.4)],
+	"port": [Color(0.06, 0.10, 0.16), Color(0.08, 0.14, 0.22), Color(0.12, 0.18, 0.28, 0.3)],
+	"bar": [Color(0.14, 0.06, 0.12), Color(0.20, 0.08, 0.16), Color(0.28, 0.10, 0.22, 0.3)],
+}
+
+func generate_crime_scene_bg(width: int, height: int, scene_type: String = "") -> ImageTexture:
+	var palette: Array = SCENE_PALETTES.get(scene_type, SCENE_PALETTES["apartment"])
+	var base: Color = palette[0]
+	var accent: Color = palette[1]
+	var grid_color: Color = palette[2]
+
 	var img := Image.create(width, height, false, Image.FORMAT_RGBA8)
-	var base := Color(0.14, 0.16, 0.20, 1.0)
 	for y in range(height):
+		var row_t := float(y) / float(height)
+		var row_base := base.lerp(accent, row_t * 0.6)
 		for x in range(width):
 			var noise_r := randf_range(-0.015, 0.015)
-			var c := Color(base.r + noise_r, base.g + noise_r, base.b + noise_r, 1.0)
+			var c := Color(row_base.r + noise_r, row_base.g + noise_r, row_base.b + noise_r, 1.0)
 			img.set_pixel(x, y, c)
-	var grid_color := Color(0.22, 0.24, 0.28, 0.4)
+
 	var step := 40
 	for y in range(0, height, step):
 		for x in range(width):
@@ -103,4 +119,15 @@ func generate_crime_scene_bg(width: int, height: int) -> ImageTexture:
 	for x in range(0, width, step):
 		for y in range(height):
 			img.set_pixel(x, y, img.get_pixel(x, y).lerp(grid_color, 0.3))
+
+	var cx := width / 2.0
+	var cy := height / 2.0
+	for y in range(height):
+		for x in range(width):
+			var dx := (float(x) - cx) / cx
+			var dy := (float(y) - cy) / cy
+			var dist := sqrt(dx * dx + dy * dy) / 1.4
+			var dark := clampf(dist * 0.4, 0.0, 0.4)
+			img.set_pixel(x, y, img.get_pixel(x, y).darkened(dark))
+
 	return ImageTexture.create_from_image(img)

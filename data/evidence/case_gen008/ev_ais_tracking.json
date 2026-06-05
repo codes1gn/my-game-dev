@@ -1,0 +1,30 @@
+{
+  "id": "ev_ais_tracking",
+  "case_id": "case_gen008",
+  "name": "AIS船舶定位",
+  "description": "钟声号渔船的AIS（自动识别系统）航行记录。数据显示该船在案发时段偏离常规渔场，进入无监控的离岸暗礁区。",
+  "type": "digital",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "钟声号于案发日凌晨1:20离开码头，2:45抵达离岸12海里的暗礁区并停留47分钟，随后折返。该航线不在任何报备作业区域内，且关闭了部分应答信号。",
+      "skill_required": null
+    },
+    {
+      "action": "信号异常分析",
+      "result": "AIS记录在2:50至3:10之间出现18分钟的数据空白，恰好是船只静止期间。技术部门认为系人为关闭应答器，而非设备故障——符合作案者刻意隐蔽行踪的特征。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "航线比对",
+      "result": "同日出港的其他渔船均前往东经121°以东海域，唯独钟声号向西偏离至近岸暗流区。该区域水深适中、人迹罕至，且靠近鱼粉加工厂排污口——便于后续处理遗体。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "锁定作案时间与地点。AIS记录证明钟声号在案发时段刻意偏离航线并关闭信号，将调查焦点引向该船船员。航线终点与抛尸、分尸地点高度吻合。",
+    "suspects_implicated": ["deng_haiqing", "jiang_shilei"],
+    "deduction_tags": ["timeline", "location", "premeditation"]
+  }
+}

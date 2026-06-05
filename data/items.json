@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "id": "magnifier",
+      "name": "高倍放大镜",
+      "icon": "🔍",
+      "type": "tool",
+      "cost": 15,
+      "consumable": false,
+      "description": "现场调查时额外显示1条隐藏物证。每案可用3次。",
+      "effect": {
+        "type": "reveal_hidden",
+        "uses_per_case": 3
+      },
+      "investigation_effect": "auto_pass_check",
+      "source": "shop"
+    },
+    {
+      "id": "recorder",
+      "name": "录音笔",
+      "icon": "🎙️",
+      "type": "tool",
+      "cost": 20,
+      "consumable": false,
+      "description": "审讯可回放并自动标记矛盾证词。审讯力检定+3。",
+      "effect": {
+        "type": "attribute_bonus",
+        "attribute": "interrogation",
+        "bonus": 3,
+        "context": "interrogation"
+      },
+      "investigation_effect": "check_bonus",
+      "source": "shop"
+    },
+    {
+      "id": "uv_light",
+      "name": "紫外灯",
+      "icon": "💡",
+      "type": "tool",
+      "cost": 25,
+      "consumable": false,
+      "description": "检查隐藏血迹和体液痕迹。鉴定学检定+3。",
+      "effect": {
+        "type": "attribute_bonus",
+        "attribute": "forensics",
+        "bonus": 3,
+        "context": "forensics"
+      },
+      "investigation_effect": "check_bonus",
+      "source": "shop"
+    },
+    {
+      "id": "intuition",
+      "name": "推理直觉",
+      "icon": "💡",
+      "type": "consumable",
+      "cost": 10,
+      "consumable": true,
+      "description": "推理板中提示一条关键连接（闪烁高亮）。消耗品。",
+      "effect": {
+        "type": "deduction_hint",
+        "hints": 1
+      },
+      "investigation_effect": "none",
+      "source": "shop"
+    },
+    {
+      "id": "summons",
+      "name": "权威传唤令",
+      "icon": "📜",
+      "type": "consumable",
+      "cost": 30,
+      "consumable": true,
+      "description": "强制某证人到场。消耗品。",
+      "effect": {
+        "type": "force_witness"
+      },
+      "investigation_effect": "none",
+      "source": "reputation"
+    },
+    {
+      "id": "fake_id",
+      "name": "假身份证",
+      "icon": "🪪",
+      "type": "tool",
+      "cost": 35,
+      "consumable": false,
+      "description": "伪装身份接近嫌疑人。魅力检定+5。",
+      "effect": {
+        "type": "attribute_bonus",
+        "attribute": "charisma",
+        "bonus": 5,
+        "context": "undercover"
+      },
+      "investigation_effect": "check_bonus",
+      "source": "talent"
+    },
+    {
+      "id": "hack_usb",
+      "name": "黑客U盘",
+      "icon": "💾",
+      "type": "tool",
+      "cost": 40,
+      "consumable": false,
+      "description": "解锁电子设备内容。可突破数字证据类检定。",
+      "effect": {
+        "type": "auto_pass",
+        "context": "digital"
+      },
+      "investigation_effect": "auto_pass_check",
+      "source": "talent_gold"
+    }
+  ],
+  "shop": {
+    "available": ["magnifier", "recorder", "uv_light", "intuition", "summons"],
+    "currency": "system_points"
+  }
+}

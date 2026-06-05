@@ -1,0 +1,30 @@
+{
+  "id": "ev_abuse_history",
+  "case_id": "case_gen007",
+  "name": "虐待记录档案",
+  "description": "后院火灾残留中抢救出的部分学校档案：特殊教育中心的虐待举报记录、伤情照片及社工家访笔记。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "档案显示周默自14岁起多次因 bruises 被学校社工关注。周国强三次拒绝配合家访，并以「孩子不听话需管教」搪塞。最近一次举报在案发前两周。",
+      "skill_required": null
+    },
+    {
+      "action": "伤情比对",
+      "result": "学校存档的旧伤照片与周默近期伤痕位置一致：背部条状淤青、手腕束缚痕迹。法医认为部分伤痕符合被皮带或棍棒长期殴打特征，非单次意外。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "动机评估",
+      "result": "社工笔记记录周默曾用手语表示「害怕回家」。继父周国强有酗酒史，邻居多次听到深夜争吵和撞击声。长期虐待构成极端应激下的报复性杀人动机。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "建立周默的作案动机。学校与社工的长期记录证明周国强对继子系统性虐待，为「受虐者反击」提供充分背景。档案被焚毁说明有人试图消除对周默不利的动机证据——反而坐实其与此案相关。",
+    "suspects_implicated": ["zhou_mo", "zhou_guoqiang"],
+    "deduction_tags": ["motive", "abuse_history", "domestic_violence"]
+  }
+}

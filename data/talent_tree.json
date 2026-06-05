@@ -1,0 +1,184 @@
+{
+  "branches": [
+    {
+      "id": "observation",
+      "name": "观察系",
+      "icon": "👁",
+      "attribute": "observation",
+      "talents": [
+        {
+          "id": "obs_basic",
+          "name": "细节之眼",
+          "tier": 1,
+          "cost": 10,
+          "requires": [],
+          "effect": { "type": "attribute_boost", "attribute": "observation", "value": 2 },
+          "description": "观察力 +2。现场调查时更容易发现隐藏物证。"
+        },
+        {
+          "id": "obs_advanced",
+          "name": "微表情识别",
+          "tier": 2,
+          "cost": 25,
+          "requires": ["obs_basic"],
+          "effect": { "type": "skill_unlock", "skill": "micro_expression", "attribute": "observation", "value": 1 },
+          "description": "审讯中自动标记嫌疑人的谎言。观察力 +1。"
+        },
+        {
+          "id": "obs_gold",
+          "name": "全局视野",
+          "tier": 3,
+          "cost": 50,
+          "requires": ["obs_advanced"],
+          "is_gold": true,
+          "effect": { "type": "skill_unlock", "skill": "global_vision", "attribute": "observation", "value": 2 },
+          "description": "★ 进入现场瞬间显示所有隐藏线索位置。观察力 +2。"
+        }
+      ]
+    },
+    {
+      "id": "interrogation",
+      "name": "审讯系",
+      "icon": "🎤",
+      "attribute": "interrogation",
+      "talents": [
+        {
+          "id": "int_basic",
+          "name": "压迫审讯",
+          "tier": 1,
+          "cost": 10,
+          "requires": [],
+          "effect": { "type": "attribute_boost", "attribute": "interrogation", "value": 2 },
+          "description": "审讯力 +2。证人和嫌疑人更容易暴露关键信息。"
+        },
+        {
+          "id": "int_advanced",
+          "name": "心理画像",
+          "tier": 2,
+          "cost": 25,
+          "requires": ["int_basic"],
+          "effect": { "type": "skill_unlock", "skill": "psych_profile", "attribute": "interrogation", "value": 1 },
+          "description": "对话中显示嫌疑人情绪条，可视化其心理状态。审讯力 +1。"
+        },
+        {
+          "id": "int_gold",
+          "name": "读心术",
+          "tier": 3,
+          "cost": 50,
+          "requires": ["int_advanced"],
+          "is_gold": true,
+          "effect": { "type": "skill_unlock", "skill": "mind_read", "attribute": "interrogation", "value": 2 },
+          "description": "★ 审讯时50%概率直接获得关键信息。审讯力 +2。"
+        }
+      ]
+    },
+    {
+      "id": "forensics",
+      "name": "鉴定系",
+      "icon": "🔬",
+      "attribute": "forensics",
+      "talents": [
+        {
+          "id": "for_basic",
+          "name": "基础鉴定",
+          "tier": 1,
+          "cost": 10,
+          "requires": [],
+          "effect": { "type": "attribute_boost", "attribute": "forensics", "value": 2 },
+          "description": "鉴定学 +2。法医报告和技术鉴定结果更加详细。"
+        },
+        {
+          "id": "for_advanced",
+          "name": "交叉比对",
+          "tier": 2,
+          "cost": 25,
+          "requires": ["for_basic"],
+          "effect": { "type": "skill_unlock", "skill": "cross_reference", "attribute": "forensics", "value": 1 },
+          "description": "两条证据可以合成新线索。鉴定学 +1。"
+        },
+        {
+          "id": "for_gold",
+          "name": "一眼鉴真",
+          "tier": 3,
+          "cost": 50,
+          "requires": ["for_advanced"],
+          "is_gold": true,
+          "effect": { "type": "skill_unlock", "skill": "instant_forensics", "attribute": "forensics", "value": 2 },
+          "description": "★ 法医报告直接标注死因和凶器。鉴定学 +2。"
+        }
+      ]
+    },
+    {
+      "id": "fitness",
+      "name": "体能系",
+      "icon": "💪",
+      "attribute": "fitness",
+      "talents": [
+        {
+          "id": "fit_basic",
+          "name": "耐力训练",
+          "tier": 1,
+          "cost": 10,
+          "requires": [],
+          "effect": { "type": "time_bonus", "hours": 1, "attribute": "fitness", "value": 2 },
+          "description": "体能 +2。每天可用调查时间 +1小时。"
+        },
+        {
+          "id": "fit_advanced",
+          "name": "追击本能",
+          "tier": 2,
+          "cost": 25,
+          "requires": ["fit_basic"],
+          "effect": { "type": "skill_unlock", "skill": "pursuit", "attribute": "fitness", "value": 1 },
+          "description": "解锁「追踪嫌疑人」行动选项。体能 +1。"
+        },
+        {
+          "id": "fit_gold",
+          "name": "铁人",
+          "tier": 3,
+          "cost": 50,
+          "requires": ["fit_advanced"],
+          "is_gold": true,
+          "effect": { "type": "skill_unlock", "skill": "iron_man", "attribute": "fitness", "value": 2 },
+          "description": "★ 调查不消耗时间（限1次/案件）。体能 +2。"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "社交系",
+      "icon": "🤝",
+      "attribute": "charisma",
+      "talents": [
+        {
+          "id": "soc_basic",
+          "name": "人脉网络",
+          "tier": 1,
+          "cost": 10,
+          "requires": [],
+          "effect": { "type": "attribute_boost", "attribute": "charisma", "value": 2 },
+          "description": "魅力 +2。NPC合作意愿和线人情报质量提升。"
+        },
+        {
+          "id": "soc_advanced",
+          "name": "线人系统",
+          "tier": 2,
+          "cost": 25,
+          "requires": ["soc_basic"],
+          "effect": { "type": "skill_unlock", "skill": "informant", "attribute": "charisma", "value": 1 },
+          "description": "每案自动获得1条免费情报。魅力 +1。"
+        },
+        {
+          "id": "soc_gold",
+          "name": "权力之言",
+          "tier": 3,
+          "cost": 50,
+          "requires": ["soc_advanced"],
+          "is_gold": true,
+          "effect": { "type": "skill_unlock", "skill": "authority", "attribute": "charisma", "value": 2 },
+          "description": "★ 任意NPC强制说出全部真话（限1次/案件）。魅力 +2。"
+        }
+      ]
+    }
+  ]
+}

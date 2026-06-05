@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_003",
+  "title": "推理板 — 琥珀色的房间",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "wrist_wounds",
+      "label": "割腕伤口分析",
+      "icon": "body",
+      "detail": "两道伤口深度均匀、角度一致，无自杀常见的犹豫伤。浴室有防水鞋套痕迹，说明他人在苏晴昏迷后进入并完成割腕——自杀现场是伪造的。"
+    },
+    {
+      "id": "herbal_tea",
+      "label": "花草茶成分",
+      "icon": "evidence",
+      "detail": "「霖露」茶中检出远超天然含量的8-MOP光敏剂，非佛手柑皮自带成分。茶为方若寒三个月前所赠，与光过敏发病时间完全吻合。"
+    },
+    {
+      "id": "smart_home",
+      "label": "智能家居日志",
+      "icon": "camera",
+      "detail": "卧室灯光UV-A输出被远程修改47次，从2%升至23%。系统由方若寒设计安装，操控IP指向其事务所网络——室内灯光成为隐形凶器。"
+    },
+    {
+      "id": "med_report",
+      "label": "MED检测报告",
+      "icon": "document",
+      "detail": "苏晴紫外线耐受阈值仅为常人四分之一。这种幅度更符合外源性光敏剂长期作用，而非自然光敏性皮炎——「怪病」实为慢性投毒的临床表现。"
+    },
+    {
+      "id": "purchase_records",
+      "label": "网购记录",
+      "icon": "document",
+      "detail": "方若寒分批购入bergapten与8-MOP原料，剂量与其加密文件夹中的光敏度计算表吻合。收货账号与「霖露」茶品牌存在关联。"
+    },
+    {
+      "id": "motive",
+      "label": "方若寒复仇动机",
+      "icon": "profile",
+      "detail": "三年前苏晴与秦暮远暧昧被揭发后离职，却复制方若寒设计风格自立门户抢客户。方若寒日记：「让她明白被夺走最重要的东西是什么感觉。」"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "herbal_tea",
+      "to": "med_report",
+      "conclusion": "茶中8-MOP超标 + MED仅为常人1/4 → 光敏症为人为化学诱导，非自然疾病",
+      "tag": "投毒认定"
+    },
+    {
+      "from": "herbal_tea",
+      "to": "purchase_records",
+      "conclusion": "茶中人工添加光敏剂 + 方若寒批量购入8-MOP → 投毒来源与执行者锁定",
+      "tag": "来源锁定"
+    },
+    {
+      "from": "smart_home",
+      "to": "herbal_tea",
+      "conclusion": "UV输出被远程调高 + 茶中光敏剂摄入 → 光与化学协同攻击，室内即致命陷阱",
+      "tag": "用光杀人"
+    },
+    {
+      "from": "wrist_wounds",
+      "to": "herbal_tea",
+      "conclusion": "无犹豫伤的他杀特征 + 长期8-MOP慢性投毒 → 伪装割腕以规避毒检、掩盖三个月蓄意伤害",
+      "tag": "伪装自杀"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "purchase_records",
+      "to": "smart_home",
+      "conclusion": "购买光敏剂原料 + 远程改灯47次 → 长达三个月的精密预谋，毁容计划逐步升级为杀人",
+      "tag": "预谋佐证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

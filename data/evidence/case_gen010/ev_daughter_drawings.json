@@ -1,0 +1,35 @@
+{
+  "id": "ev_daughter_drawings",
+  "case_id": "gen_010",
+  "name": "吴晨星心理绘画",
+  "description": "案发后吴晨星在儿童心理咨询室完成的绘画及简短陈述。她当时在场（二楼房间），目睹了部分楼上冲突及后续过程。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "咨询师要求画「最印象深刻的房间」。吴晨星绘制俯视角琴房：黑色三角钢琴居中，旁有倒翻钢琴凳，窗户大开，地板上有从钢琴凳弯至窗户的红色线条。",
+      "skill_required": null
+    },
+    {
+      "action": "绘画心理解读",
+      "result": "红色线条被儿童标注为「路」——从冲突点（钢琴凳）到出口（窗户）的移动路径，与现场拖痕及录音中的拖拽声高度吻合。画面无人，显示创伤性回避。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "目击陈述比对",
+      "result": "吴晨星对咨询师只说了四个字：「钢琴停了。」与录音04:12停琴、邻居「突然没声了」完全一致。她未上楼，但听到脚步、拖拽及开窗声——确认楼上有后续人为动作。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "证人指认推断",
+      "result": "吴晨星称「妈妈当时在厨房，后来上去了」。林慧君事后承认听到三楼异响却「不敢上去」。绘画+陈述+母亲行踪，将推落行为指向林慧君而非单纯意外。",
+      "skill_required": {"forensics": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "以儿童目击者视角印证琴房冲突与拖行至窗的路径，并指向林慧君案发时上楼的事实。是连接现场重建与嫌疑人行为的关键人证辅助。",
+    "suspects_implicated": ["lin_huijun"],
+    "deduction_tags": ["child_witness", "drawing_analysis", "eyewitness", "trauma_evidence"]
+  }
+}

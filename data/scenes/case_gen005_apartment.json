@@ -1,0 +1,44 @@
+{
+  "id": "case_gen005_apartment",
+  "name": "詹铭朗公寓",
+  "background": "res://assets/scenes/bg_old_apartment.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "entry_door",
+      "label": "入户门",
+      "rect": {"x": 20, "y": 270, "w": 130, "h": 70},
+      "evidence_ids": ["ev_locked_room"],
+      "interaction": "examine"
+    },
+    {
+      "id": "living_room",
+      "label": "客厅",
+      "rect": {"x": 170, "y": 140, "w": 180, "h": 110},
+      "evidence_ids": ["ev_surveillance"],
+      "interaction": "surveillance",
+      "clip_id": "surveillance_gen005"
+    },
+    {
+      "id": "bedroom",
+      "label": "卧室",
+      "rect": {"x": 600, "y": 120, "w": 150, "h": 100},
+      "evidence_ids": ["ev_co_readings"],
+      "interaction": "examine"
+    },
+    {
+      "id": "hvac_room",
+      "label": "通风管道间",
+      "rect": {"x": 400, "y": 25, "w": 140, "h": 85},
+      "evidence_ids": ["ev_hvac_design"],
+      "interaction": "examine"
+    },
+    {
+      "id": "kitchen",
+      "label": "厨房",
+      "rect": {"x": 370, "y": 200, "w": 130, "h": 90},
+      "evidence_ids": [],
+      "interaction": "examine"
+    }
+  ]
+}

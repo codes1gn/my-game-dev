@@ -1,0 +1,30 @@
+{
+  "id": "ev_plant_toxin",
+  "case_id": "gen_002",
+  "name": "曼陀罗植物残留",
+  "description": "寺庙后山菜园中大量生长着曼陀罗花（洋金花）。同时在法元旧居药罐、慧静残余组织及地下骸骨样本中均检出东莨菪碱——曼陀罗的主要毒性生物碱。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "菜园中曼陀罗植株修剪整齐，显然有人定期维护。净明以中草药义诊闻名，对这类植物的药性应当极为熟悉。",
+      "skill_required": null
+    },
+    {
+      "action": "毒理比对",
+      "result": "慧静体内、法元生前服用的药茶残渣、以及地下两具骸骨中检出的东莨菪碱为同源提取物。小剂量可致昏迷，精确剂量可诱发心律失常——与法元「坐化圆寂」及慧静「火灾死亡」高度吻合。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "投毒路径推断",
+      "result": "法元每日饮用净明煎制的药茶，投毒窗口稳定且不易被察觉。慧静则是在火灾前夜被以同样手法毒杀——凶手掌握制毒、投毒全流程，且对寺庙作息了如指掌。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "将法元之死、慧静之死与地下骸骨串联为同一毒源，指向熟悉曼陀罗药性的寺内人员。净明是唯一能稳定接触法元药茶的人。",
+    "suspects_implicated": ["jing_ming"],
+    "deduction_tags": ["poison", "datura", "cause_of_death"]
+  }
+}

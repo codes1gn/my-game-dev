@@ -1,82 +1,88 @@
 {
   "case_id": "case_001",
   "title": "推理板 — 刘格命案",
-  "evidence_summary": [
+  "mode": "link",
+
+  "evidence_nodes": [
     {
-      "name": "现场足迹",
-      "finding": "除陈益和刘格外，有第三人的脚印。第三人的脚印覆盖在陈益的脚印之上，证明第三人后到。第三人未戴脚套，说明与刘格相识。"
+      "id": "footprint",
+      "label": "第三人足迹",
+      "icon": "footprint",
+      "detail": "除陈益和刘格外，有第三人的脚印。覆盖在陈益脚印之上，说明第三人后到。未戴脚套，与死者相识。"
     },
     {
-      "name": "水果刀",
-      "finding": "凶器上只有陈益和刘格的指纹。凶手使用了反侦察手段，说明是蓄意谋杀。选用已有陈益指纹的刀，疑似故意栽赃。"
+      "id": "knife",
+      "label": "水果刀指纹",
+      "icon": "knife",
+      "detail": "凶器上只有陈益和刘格的指纹。凶手使用反侦察手段（手套），蓄意选用已有陈益指纹的刀。"
     },
     {
-      "name": "橙子皮",
-      "finding": "陈益和刘格曾一起切橙子吃，解释了凶器上陈益指纹的来源。来访时气氛正常，陈益未提及三十万借款。"
+      "id": "orange",
+      "label": "橙子皮残留",
+      "icon": "evidence",
+      "detail": "陈益和刘格曾一起切橙子吃，解释了凶器上陈益指纹的来源。来访时气氛正常。"
     },
     {
-      "name": "尸体位置",
-      "finding": "刘格被正面刺伤，凶手身高约175cm，右手持刀。死亡时间在下午四到六点，与陈益离开时间吻合。"
+      "id": "body",
+      "label": "尸体创口分析",
+      "icon": "body",
+      "detail": "刘格被正面刺伤，凶手身高约175cm，右手持刀。死亡时间在下午四到六点。"
     },
     {
-      "name": "监控破坏",
-      "finding": "入户走廊监控从内部被网络手段破坏。凶手具备技术能力，与刘格软件公司背景相关。外部天网监控未被破坏。"
+      "id": "camera",
+      "label": "监控被黑",
+      "icon": "camera",
+      "detail": "入户走廊监控从内部被网络手段破坏。凶手具备IT技术能力，与刘格软件公司背景相关。"
+    },
+    {
+      "id": "loan",
+      "label": "30万购码协议",
+      "icon": "document",
+      "detail": "刘格以30万购买陈益代码，但之后反悔承诺，引发利益纠纷。陈益来访时未提及此事。"
     }
   ],
-  "questions": [
+
+  "correct_links": [
     {
-      "id": "q_killer",
-      "prompt": "谁是凶手？",
-      "options": [
-        {"id": "chen_yi", "text": "陈益（主角自己）"},
-        {"id": "third_person", "text": "第三人（陈益离开后进入的人）"},
-        {"id": "suicide", "text": "刘格自杀"},
-        {"id": "unknown", "text": "无法判断"}
-      ]
+      "from": "footprint",
+      "to": "knife",
+      "conclusion": "第三人后到 + 凶器被擦拭 → 第三人是真凶，蓄意栽赃陈益",
+      "tag": "真凶认定"
     },
     {
-      "id": "q_premeditated",
-      "prompt": "这是蓄意谋杀还是激情杀人？",
-      "options": [
-        {"id": "premeditated", "text": "蓄意谋杀 — 凶手提前准备了反侦察手段"},
-        {"id": "passion", "text": "激情杀人 — 临时起意"},
-        {"id": "accident", "text": "意外事件"}
-      ]
+      "from": "knife",
+      "to": "orange",
+      "conclusion": "凶器上陈益指纹来自切橙子 → 陈益指纹是无辜残留，非作案痕迹",
+      "tag": "洗清嫌疑"
     },
     {
-      "id": "q_chen_yi_innocent",
-      "prompt": "陈益是否清白？关键证据是什么？",
-      "options": [
-        {"id": "footprint_overlap", "text": "清白 — 足迹覆盖分析证明第三人后到"},
-        {"id": "motive", "text": "清白 — 陈益没有作案动机"},
-        {"id": "not_clear", "text": "不确定 — 证据不足"}
-      ]
+      "from": "camera",
+      "to": "loan",
+      "conclusion": "黑掉监控需要IT技能 + 软件公司利益纠纷 → 动机指向公司内部人员",
+      "tag": "动机锁定"
     },
     {
-      "id": "q_surveillance",
-      "prompt": "入户监控是如何被破坏的？这说明什么？",
-      "options": [
-        {"id": "network_internal", "text": "内部网络技术手段 — 凶手具备IT技术能力"},
-        {"id": "physical_damage", "text": "物理破坏摄像头 — 普通入室犯罪"},
-        {"id": "malfunction", "text": "设备自然故障 — 与案件无关"}
-      ]
-    },
-    {
-      "id": "q_motive",
-      "prompt": "刘格被杀最可能的动机是什么？",
-      "options": [
-        {"id": "company_dispute", "text": "软件公司利益纠纷 — 三十万购代码后反悔承诺"},
-        {"id": "debt_revenge", "text": "债务纠纷 — 刘格欠钱不还"},
-        {"id": "robbery", "text": "入室抢劫 — 现场有财物丢失"},
-        {"id": "random", "text": "随机犯罪 — 陌生人作案"}
-      ]
+      "from": "body",
+      "to": "footprint",
+      "conclusion": "正面刺伤+死者认识凶手 + 第三人无脚套 → 凶手是熟人，非陌生闯入",
+      "tag": "熟人作案"
     }
   ],
-  "correct_answers": {
-    "q_killer": "third_person",
-    "q_premeditated": "premeditated",
-    "q_chen_yi_innocent": "footprint_overlap",
-    "q_surveillance": "network_internal",
-    "q_motive": "company_dispute"
+
+  "bonus_links": [
+    {
+      "from": "camera",
+      "to": "knife",
+      "conclusion": "监控被黑 + 凶器反侦察 → 凶手具备技术能力且有预谋",
+      "tag": "预谋佐证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
   }
 }

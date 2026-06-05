@@ -1,0 +1,43 @@
+{
+  "id": "case_gen010_house",
+  "name": "吴家三层自建房",
+  "background": "res://assets/scenes/bg_piano_house.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "piano_room",
+      "label": "三楼琴房",
+      "rect": {"x": 340, "y": 30, "w": 200, "h": 100},
+      "evidence_ids": ["ev_piano_recording", "ev_fall_analysis"],
+      "interaction": "examine"
+    },
+    {
+      "id": "fall_point",
+      "label": "坠落点",
+      "rect": {"x": 380, "y": 260, "w": 160, "h": 90},
+      "evidence_ids": ["ev_fall_analysis"],
+      "interaction": "examine"
+    },
+    {
+      "id": "living_room",
+      "label": "二楼客厅",
+      "rect": {"x": 560, "y": 140, "w": 150, "h": 110},
+      "evidence_ids": ["ev_neighbor_testimony"],
+      "interaction": "examine"
+    },
+    {
+      "id": "kitchen",
+      "label": "厨房",
+      "rect": {"x": 30, "y": 180, "w": 150, "h": 120},
+      "evidence_ids": ["ev_finger_injury"],
+      "interaction": "examine"
+    },
+    {
+      "id": "daughter_room",
+      "label": "女儿房间",
+      "rect": {"x": 720, "y": 50, "w": 140, "h": 110},
+      "evidence_ids": ["ev_daughter_drawings", "ev_piano_recording"],
+      "interaction": "examine"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ev_piano_recording",
+  "case_id": "gen_010",
+  "name": "钢琴录音时间线",
+  "description": "女儿吴晨星手机误触录制的约七分钟音频，经降噪增强后可分辨三楼琴房及楼梯方向的声源序列，还原案发前后关键时间线。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "00:00-04:12 断断续续钢琴声（练习曲）；04:12 钢琴骤停；04:15 一声较大「咚」响（重物倒地）；04:50-05:20 楼板脚步声由远及近（二楼→三楼方向）。",
+      "skill_required": null
+    },
+    {
+      "action": "声源序列重建",
+      "result": "05:20-06:30 持续地面拖拽摩擦声；06:32 金属窗铰链吱呀声（窗户开启）；06:35-06:38 短促用力声；06:40 窗外闷响（坠地）。完整序列：冲突→倒地→上楼→拖行→开窗→推落。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "步态特征分析",
+      "result": "上楼脚步声轻而频率快，步幅较小——不像成年男性，更接近体重较轻者。但拖拽75kg人体需较大力量，说明行凶者在冲突后仍有足够体力完成移尸。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "时间空白解读",
+      "result": "邻居证词：钢琴声在坠楼前约五六分钟停止——与录音中04:12停琴、06:40坠地的时间差吻合。中间并非「犹豫自杀」，而是有意识的拖行与开窗过程。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "以音频时间线固定「停琴→冲突→拖拽→开窗→坠楼」全过程，证明坠楼前有明确人为干预。是打破「意外/自杀」叙事的关键数字证据。",
+    "suspects_implicated": ["lin_huijun"],
+    "deduction_tags": ["audio_timeline", "struggle", "dragging", "window_push"]
+  }
+}

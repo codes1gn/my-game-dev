@@ -1,0 +1,35 @@
+{
+  "id": "ev_social_media",
+  "case_id": "gen_009",
+  "name": "社交媒体追踪记录",
+  "description": "池明远办公室电脑及手机中提取的数字取证报告：其对叶晓禾社交动态的异常关注，以及对叶晓禾历任男友的间接监控痕迹。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "池明远与叶晓禾分手已三年，但社交账号仍保留全部合照，并频繁查看叶晓禾动态。酒吧命名「第七杯」源于两人初次约会连喝七杯酒的纪念——情感执念未断。",
+      "skill_required": null
+    },
+    {
+      "action": "关系监控分析",
+      "result": "数字取证显示池明远曾搜索三名受害者姓名及社交账号，时间点均在其与叶晓禾交往期间。方立行死亡前一周，池明远还保存了叶晓禾与方立行的合照截图。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "动机心理推断",
+      "result": "池明远在私密笔记中写道叶晓禾「总是被不值得的男人伤害」，自认「唯一真正了解她的人」。这种扭曲的「保护欲」将嫉妒升级为清除叶晓禾身边男性的逻辑。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "连环作案模式",
+      "result": "三名受害者均为叶晓禾分手后的新男友，死亡间隔与叶晓禾感情线更替同步。社交追踪+问卷筛选+酒吧投药，构成针对同一情感三角的系统性连环犯罪。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "揭示池明远对叶晓禾的长期执念与对情敌的监控，提供「爱而不得→清除竞争者」的动机证据。将三名分散死者与同一嫌疑人心理动因绑定。",
+    "suspects_implicated": ["chi_mingyuan"],
+    "deduction_tags": ["social_media", "obsession", "motive", "serial_killer_profile"]
+  }
+}

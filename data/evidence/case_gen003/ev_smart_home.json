@@ -1,0 +1,35 @@
+{
+  "id": "ev_smart_home",
+  "case_id": "gen_003",
+  "name": "智能家居日志",
+  "description": "书房智能中控面板上运行着方若寒事务所设计的「光影空间」照明系统——苏晴离职时收到的告别礼物。系统可远程调节色温、亮度及频谱输出。",
+  "type": "digital",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "系统连接主卧与阳台区域的专业可调频谱灯具。苏晴光过敏后长期拉窗帘，主要依靠这套室内灯光生活——她曾说「至少这个灯照着不疼」，不知灯光本身也在造成伤害。",
+      "skill_required": null
+    },
+    {
+      "action": "后台日志提取",
+      "result": "过去三个月，卧室灯光系统被远程修改47次。每次改动微小：UV-A波段（315–400nm）辐射输出从标准值2%逐步调高至23%，远超人体安全暴露限值。修改记录可追溯至方若寒事务所办公网络IP。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "光化协同分析",
+      "result": "普通LED的UV-A输出几乎为零，但方若寒设计的专业灯具可输出近紫外波段。8-MOP光敏剂使皮肤UV耐受阈值骤降——在「正常」室内灯光下，苏晴实际承受着光和化学的双重攻击。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "远程操控溯源",
+      "result": "远程控制密钥与方若寒工作电脑加密文件夹中保存的频谱调整方案一致。设计者本人掌握完整操控权限——这不是黑客攻击，而是系统安装者的蓄意滥用。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "揭示「用光杀人」的核心手法：远程调高UV输出，配合茶中光敏剂在室内持续灼伤皮肤。日志IP指向方若寒，证明其对苏晴公寓照明系统的长期恶意操控。",
+    "suspects_implicated": ["fang_ruohan"],
+    "deduction_tags": ["smart_home", "uv_exposure", "premeditation"]
+  }
+}

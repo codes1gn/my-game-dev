@@ -1,0 +1,30 @@
+{
+  "id": "ev_bullying_records",
+  "case_id": "gen_005",
+  "name": "校园霸凌档案",
+  "description": "吕安国提供的陈年线索与校方存档：十五年前程鹤声在读期间多次「摔伤」就诊，校医院记录与校园论坛缓存显示长期霸凌，詹铭朗被列为主要施暴者之一。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "程鹤声大一至大三校医院就诊七次，伤因均记为「摔伤」或「运动损伤」。退休护士证词：「伤不像摔的，倒像被人打的。」程鹤声从未正式报警。",
+      "skill_required": null
+    },
+    {
+      "action": "事件关联分析",
+      "result": "保安吕安国回忆：大二某夜程鹤声被人从厕所拖出，按入马桶溺水，同层多名男生当晚不在宿舍——其中包括詹铭朗。论坛缓存帖回复点名「詹某+王某+李某」。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "动机与触发推断",
+      "result": "程鹤声手臂布满烟头烫伤与钢尺抽打旧疤。三个月前詹铭朗以「最好的朋友」名义请其设计新房通风系统——职业成就与施暴记忆在同一空间重叠，构成创伤复苏式复仇触发点。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "建立程鹤声对詹铭朗的深层仇恨与作案动机。解释他为何选择通风系统作为武器——用施暴者请求的专业能力完成复仇。",
+    "suspects_implicated": ["cheng_hesheng", "zhan_minglang"],
+    "deduction_tags": ["motive", "bullying_history", "trauma_trigger"]
+  }
+}

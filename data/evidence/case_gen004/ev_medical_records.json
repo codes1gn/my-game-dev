@@ -1,0 +1,35 @@
+{
+  "id": "ev_medical_records",
+  "case_id": "gen_004",
+  "name": "透析医疗记录",
+  "description": "江素清生前每周在安华集团旗下医院做慢性肾病透析。医疗室留存着她最后一次透析的完整记录、透析液批次检测报告，以及法医复检用的封存血样。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "死亡证明载明「肾功能衰竭并发心力衰竭」，由安华集团医院医生签署。最后一次透析记录显示流程正常结束，无异常报警——表面看是一次普通的透析后心脏骤停。",
+      "skill_required": null
+    },
+    {
+      "action": "透析液成分复检",
+      "result": "透析液主批次成分正常，但江素清体内封存血样检出高浓度钾离子——远超透析后应有水平。高钾血症可直接导致心脏骤停，对慢性肾病患者尤为致命。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "投毒路径还原",
+      "result": "钾离子注入最可能发生在透析过程中——向透析液回路添加氯化钾。患者心脏停跳在医疗场景下极难被质疑，且江素清已发现儿子被替换，灭口动机充分。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "医疗体系操控链",
+      "result": "江素清主治医生隶属安华集团——由「魏庭安」控制的医疗系统。何薇作为董事长特别助理，有权协调透析排期与医护安排。透析投毒需要内部配合，指向周鹤年与何薇共谋。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "推翻江素清「自然病逝」结论，证明其在透析中被蓄意投钾杀害。医疗记录将灭口行为与安华集团内部权力结构绑定，是母亲发现身份替换后的直接后果。",
+    "suspects_implicated": ["zhou_henian", "he_wei"],
+    "deduction_tags": ["dialysis_poisoning", "potassium", "cover_up"]
+  }
+}

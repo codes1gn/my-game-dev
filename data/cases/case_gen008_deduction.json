@@ -1,0 +1,88 @@
+{
+  "case_id": "case_gen008",
+  "title": "推理板 — 钟声不响",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "ais",
+      "label": "AIS定位记录",
+      "icon": "camera",
+      "detail": "钟声号案发时段偏离航线，在离岸暗礁区停留47分钟并关闭应答信号。该区域靠近鱼粉厂排污口。"
+    },
+    {
+      "id": "bone",
+      "label": "鱼粉骨碎片",
+      "icon": "body",
+      "detail": "加工厂鱼粉批次中检出高振声的人类骨骼碎片，切割面与粉碎机刀盘特征吻合。入厂登记人为蒋石磊。"
+    },
+    {
+      "id": "tidal",
+      "label": "潮汐分析",
+      "icon": "document",
+      "detail": "案发时段正值退潮，暗礁区人迹罕至。洋流模拟显示抛洒物24小时内可漂至加工厂排污口。"
+    },
+    {
+      "id": "financial",
+      "label": "财务欺诈",
+      "icon": "document",
+      "detail": "高振声十年虚报渔获、克扣分红，累计侵吞800万。案发前一个月邓、蒋二人当面对质并遭威胁。"
+    },
+    {
+      "id": "testimony",
+      "label": "船员证词",
+      "icon": "document",
+      "detail": "高振声未正常返港，邓、蒋二人行为异常——漂白剂清洗甲板、拒绝登船检查。出海前船舱内有激烈争吵。"
+    },
+    {
+      "id": "dismember",
+      "label": "分尸处理",
+      "icon": "evidence",
+      "detail": "骨骼经高速旋转刀片切割，发生在死亡后6至8小时。残余组织通过鱼粉生产线销毁，批次与钟声号返港时间吻合。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "financial",
+      "to": "testimony",
+      "conclusion": "财务欺诈与压迫 + 出海前争吵 → 邓、蒋二人因积怨合谋杀害高振声",
+      "tag": "动机锁定"
+    },
+    {
+      "from": "ais",
+      "to": "tidal",
+      "conclusion": "AIS暗礁停留 + 退潮窗口 → 凶手精心选择时间与地点实施分尸",
+      "tag": "作案时空"
+    },
+    {
+      "from": "bone",
+      "to": "dismember",
+      "conclusion": "人类骨碎片 + 机械切割特征 → 高振声被分尸后投入鱼粉机销毁",
+      "tag": "死因与处置"
+    },
+    {
+      "from": "testimony",
+      "to": "bone",
+      "conclusion": "高振声未返港 + 蒋石磊跳过质检 → 分尸后由蒋石磊将「原料」送入加工厂",
+      "tag": "真凶认定"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "ais",
+      "to": "bone",
+      "conclusion": "AIS暗礁位置 + 骨碎片批次 → 洋流将残余组织冲至加工厂，形成完整抛尸链",
+      "tag": "证据闭环",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

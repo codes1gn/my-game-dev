@@ -1,0 +1,30 @@
+{
+  "id": "ev_sign_language",
+  "case_id": "case_gen007",
+  "name": "手语方言记录",
+  "description": "周默房间中发现的手语笔记本及特殊教育学校的手语方言对照表。记录了本地聋人手语与标准手语之间的差异。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "笔记本记录了周默与母亲陈月之间的私人手语暗号，部分手势与标准手语差异显著。邻居曾见母子用手语交流，但外人难以理解其含义。",
+      "skill_required": null
+    },
+    {
+      "action": "方言差异分析",
+      "result": "案发前一周，有目击者见一聋哑少年在后院用手语与某人激烈「争吵」。该少年的几个关键手势属于周默家族私有方言，非本地聋校通用手语——外人无法精准模仿。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "通讯记录比对",
+      "result": "学校手语老师证实：周默曾用手语向同学描述继父的虐待，并提到「妈妈不见了」。其手势组合具有高度个人特征，可作为身份识别依据。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "手语方言差异是锁定周默的关键。目击证词中的聋哑少年手势与其私有方言吻合，排除其他聋哑嫌疑人。同时揭示周默长期遭受虐待并知晓母亲失踪异常。",
+    "suspects_implicated": ["zhou_mo"],
+    "deduction_tags": ["identity_confirmation", "witness_corroboration", "abuse_disclosure"]
+  }
+}

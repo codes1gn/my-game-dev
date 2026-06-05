@@ -1,0 +1,35 @@
+{
+  "id": "ev_will_forgery",
+  "case_id": "gen_004",
+  "name": "遗嘱与公证档案",
+  "description": "江素清遗嘱原件及省公证处开封记录。档案室存有关键条款副本、DNA鉴定指定机构清单，以及袁知行提交的四十五年前产科双胞胎病历。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "遗嘱将安华集团35%股权留给「亲生儿子魏庭安」，但附加条件：继承人须在六个月内通过指定机构完成与江素清的DNA亲子鉴定。对亲生儿子而言此条件多余——除非立遗嘱人怀疑继承人身份。",
+      "skill_required": null
+    },
+    {
+      "action": "公证程序审查",
+      "result": "遗嘱公证程序本身合法有效，并非伪造文书。但「指定医疗机构」均为可进行多组织采样的第三方机构——刻意规避仅用血液或口腔的常规鉴定漏洞。这是江素清精心设计的身后验真机制。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "双胞胎病历关联",
+      "result": "四十五年前人民医院产科记录：江素清产下异卵双胞胎男婴，出院记录仅登记一名。被送养者即周鹤年。遗嘱DNA条件与双胞胎秘密形成闭环——母亲怕的不是儿子非亲生，而是儿子已被替换。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "反击策略解读",
+      "result": "江素清未报警，选择在遗嘱中埋设DNA验证陷阱，让真相在她死后强制浮出水面。她已用口腔与血液样本分别鉴定并发现矛盾，日记终止于「我的儿子不见了」——遗嘱是她最后的反击。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "遗嘱DNA条件是案件导火索，也是母亲发现替换后的反击策略。公证档案合法但条款异常，指向江素清对现任魏庭安身份的深层怀疑。",
+    "suspects_implicated": ["zhou_henian"],
+    "deduction_tags": ["will_condition", "notarization", "inheritance"]
+  }
+}

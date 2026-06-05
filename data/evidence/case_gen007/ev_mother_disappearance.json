@@ -1,0 +1,30 @@
+{
+  "id": "ev_mother_disappearance",
+  "case_id": "case_gen007",
+  "name": "母亲失踪线索",
+  "description": "地下室发现陈月失踪前的个人物品：未寄出的信、首饰盒及被水泥掩盖的地面异常。官方记录显示陈月已「失踪」五年。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "地下室角落地面有近期被翻动痕迹，下方检出微量人类骨骼碎片及纤维残留。陈月的首饰盒内有一封未寄给娘家的信，日期为失踪前三天，提及「他知道了」。",
+      "skill_required": null
+    },
+    {
+      "action": "失踪时间线重建",
+      "result": "陈月失踪时周默15岁，正值青春期。周国强对外称妻子「跟别的男人跑了」，但陈月信中提到继父发现了她要为儿子存钱的秘密账户——两人存在激烈冲突。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "死因推断",
+      "result": "地下室的土壤样本检出与客厅凶器相同类型的金属微粒。结合周国强的暴力史，高度怀疑陈月并非离家出走，而是被周国强杀害后埋尸地下室，后被周默在清理时发现。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "揭示案件深层动机。母亲陈月并非失踪而是被周国强杀害，这一发现解释了周默在案发前的异常行为及极端复仇动机。地下室线索将两起命案串联，使本案从「继子弑父」升级为「长期家暴引发的悲剧」。",
+    "suspects_implicated": ["zhou_guoqiang", "zhou_mo"],
+    "deduction_tags": ["hidden_crime", "motive_deepening", "family_secret"]
+  }
+}

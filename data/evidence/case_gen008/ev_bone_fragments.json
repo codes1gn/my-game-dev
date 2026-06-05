@@ -1,0 +1,30 @@
+{
+  "id": "ev_bone_fragments",
+  "case_id": "case_gen008",
+  "name": "鱼粉中的骨碎片",
+  "description": "鱼粉加工厂三号生产线产出批次中检出异常骨碎片。经鉴定为人类指骨及颌骨残留，与DNA检验中缺失的高振声骨骼部位吻合。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "在批次FM-2024-0317的鱼粉样本中发现三处人类骨骼碎片，混于鱼骨粉中难以肉眼分辨。DNA比对确认属于高振声，且骨骼有机械切割痕迹。",
+      "skill_required": null
+    },
+    {
+      "action": "切割面分析",
+      "result": "骨骼断面呈现高速旋转刀片切割特征，与加工厂鱼料粉碎机刀盘转速及齿距完全匹配。切割发生在死亡后6至8小时内——与AIS记录的返港时间线吻合。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "批次追溯",
+      "result": "该批次原料于案发当日上午由钟声号「返港鱼获」名义送入加工厂。入厂登记人为蒋石磊，质检环节被跳过——其职务恰好负责原料验收。",
+      "skill_required": {"observation": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "本案最关键的物证。人类骨骼碎片经鱼粉机处理，解释了为何找不到完整尸体。批次追溯将分尸行为直接关联到钟声号返港及蒋石磊的职务便利。",
+    "suspects_implicated": ["deng_haiqing", "jiang_shilei"],
+    "deduction_tags": ["dismemberment", "body_disposal", "physical_evidence"]
+  }
+}

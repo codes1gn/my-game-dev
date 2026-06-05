@@ -1,0 +1,88 @@
+{
+  "case_id": "case_gen007",
+  "title": "推理板 — 失语者",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "blunt",
+      "label": "钝器创伤",
+      "icon": "body",
+      "detail": "周国强死于多处钝器击打，施暴者身高约170cm、力量有限，带有强烈情绪宣泄特征，非专业杀手。"
+    },
+    {
+      "id": "accelerant",
+      "label": "蒸馏酒精助燃",
+      "icon": "evidence",
+      "detail": "现场使用自制蒸馏酒精纵火，精准覆盖血迹区域。纵火者熟悉房屋结构，目的是掩盖杀人痕迹。"
+    },
+    {
+      "id": "sign",
+      "label": "手语方言差异",
+      "icon": "document",
+      "detail": "目击证词中的聋哑少年使用周默家族私有手语方言，外人无法模仿。周默曾用手语向同学描述虐待。"
+    },
+    {
+      "id": "abuse",
+      "label": "虐待记录",
+      "icon": "document",
+      "detail": "学校与社工档案记录周默长期遭周国强殴打，案发前两周仍有新举报。构成极端应激下的复仇动机。"
+    },
+    {
+      "id": "mother",
+      "label": "母亲失踪真相",
+      "icon": "evidence",
+      "detail": "地下室发现陈月遗物及被掩盖的埋尸痕迹。陈月并非离家出走，而是五年前被周国强杀害。"
+    },
+    {
+      "id": "fire",
+      "label": "纵火掩盖",
+      "icon": "evidence",
+      "detail": "杀人后30至45分钟有人泼洒助燃剂多点起火，试图销毁血迹与档案。后院部分物品未被完全焚毁。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "abuse",
+      "to": "blunt",
+      "conclusion": "长期虐待 + 钝器情绪性击打 → 周默因极端应激报复性杀死继父",
+      "tag": "动机锁定"
+    },
+    {
+      "from": "sign",
+      "to": "blunt",
+      "conclusion": "私有手语方言 + 创伤特征 → 目击聋哑少年即周默，排除外来嫌疑人",
+      "tag": "真凶认定"
+    },
+    {
+      "from": "accelerant",
+      "to": "fire",
+      "conclusion": "蒸馏酒精 + 多点纵火 → 杀人后蓄意焚毁现场、毁灭证据",
+      "tag": "掩盖罪行"
+    },
+    {
+      "from": "mother",
+      "to": "abuse",
+      "conclusion": "母亲被继父杀害 + 长期家暴 → 周默发现真相后仇恨达到顶点",
+      "tag": "深层动机"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "sign",
+      "to": "mother",
+      "conclusion": "手语记录 + 母亲线索 → 周默早已知晓母亲失踪异常，案发前已着手调查",
+      "tag": "预谋佐证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

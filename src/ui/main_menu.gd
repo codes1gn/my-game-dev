@@ -3,12 +3,21 @@ extends Control
 func _ready() -> void:
 	_apply_theme()
 	AudioManager.play_bgm("menu")
-	$VBox/StartButton.pressed.connect(_on_start)
-	$VBox/QuitButton.pressed.connect(_on_quit)
-	if $VBox.has_node("CaseSelectButton"):
-		$VBox/CaseSelectButton.pressed.connect(_on_case_select)
-	if $VBox.has_node("InvestigateButton"):
-		$VBox/InvestigateButton.pressed.connect(_on_investigate)
+	var vbox := $Scroll/VBox
+	vbox.get_node("StartButton").pressed.connect(_on_start)
+	vbox.get_node("QuitButton").pressed.connect(_on_quit)
+	if vbox.has_node("CaseSelectButton"):
+		vbox.get_node("CaseSelectButton").pressed.connect(_on_case_select)
+	if vbox.has_node("InvestigateButton"):
+		vbox.get_node("InvestigateButton").pressed.connect(_on_investigate)
+	if vbox.has_node("TalentTreeButton"):
+		vbox.get_node("TalentTreeButton").pressed.connect(_on_talent_tree)
+	if vbox.has_node("ShopButton"):
+		vbox.get_node("ShopButton").pressed.connect(_on_shop)
+	if vbox.has_node("SaveButton"):
+		vbox.get_node("SaveButton").pressed.connect(_on_save)
+	if vbox.has_node("LoadButton"):
+		vbox.get_node("LoadButton").pressed.connect(_on_load)
 
 func _apply_theme() -> void:
 	var bg_tex := ThemeManager.load_external_image("res://assets/scenes/bg_main_menu.jpg")
@@ -29,22 +38,23 @@ func _apply_theme() -> void:
 
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	$VBox/Title.add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
-	$VBox/Title.add_theme_font_size_override("font_size", 56)
+	var vbox2 := $Scroll/VBox
+	vbox2.get_node("Title").add_theme_color_override("font_color", ThemeManager.COLORS["accent_gold"])
+	vbox2.get_node("Title").add_theme_font_size_override("font_size", 48)
 
-	$VBox/Subtitle.add_theme_color_override("font_color", ThemeManager.COLORS["text_secondary"])
-	$VBox/Subtitle.add_theme_font_size_override("font_size", 18)
+	vbox2.get_node("Subtitle").add_theme_color_override("font_color", ThemeManager.COLORS["text_secondary"])
+	vbox2.get_node("Subtitle").add_theme_font_size_override("font_size", 16)
 
-	for child in $VBox.get_children():
+	for child in vbox2.get_children():
 		if child is Button:
 			ThemeManager.style_button(child)
-			child.custom_minimum_size = Vector2(320, 52)
+			child.custom_minimum_size = Vector2(320, 46)
 
 	var line := ColorRect.new()
 	line.color = ThemeManager.COLORS["accent_gold_dim"]
 	line.custom_minimum_size = Vector2(200, 1)
-	$VBox.add_child(line)
-	$VBox.move_child(line, 2)
+	vbox2.add_child(line)
+	vbox2.move_child(line, 2)
 
 func _on_start() -> void:
 	GameManager.change_state(GameManager.STATE_DAILY_LIFE)
@@ -56,6 +66,20 @@ func _on_case_select() -> void:
 func _on_investigate() -> void:
 	GameManager.change_state(GameManager.STATE_INVESTIGATION)
 	get_tree().change_scene_to_file("res://src/investigation/investigation_scene.tscn")
+
+func _on_talent_tree() -> void:
+	get_tree().change_scene_to_file("res://src/ui/talent_tree.tscn")
+
+func _on_shop() -> void:
+	get_tree().change_scene_to_file("res://src/ui/item_shop.tscn")
+
+func _on_save() -> void:
+	GameManager.set_flag("save_load_mode", "save")
+	get_tree().change_scene_to_file("res://src/ui/save_load.tscn")
+
+func _on_load() -> void:
+	GameManager.set_flag("save_load_mode", "load")
+	get_tree().change_scene_to_file("res://src/ui/save_load.tscn")
 
 func _on_quit() -> void:
 	get_tree().quit()

@@ -1,0 +1,43 @@
+{
+  "id": "case_gen002_temple",
+  "name": "雀鸣寺",
+  "background": "res://assets/scenes/bg_temple.jpg",
+  "dimensions": {"width": 880, "height": 370},
+  "hotspots": [
+    {
+      "id": "scripture_ruins",
+      "label": "藏经楼废墟",
+      "rect": {"x": 30, "y": 40, "w": 200, "h": 120},
+      "evidence_ids": ["ev_fire_origin", "ev_bone_analysis", "ev_tool_marks"],
+      "interaction": "examine"
+    },
+    {
+      "id": "rear_hall",
+      "label": "后殿",
+      "rect": {"x": 260, "y": 50, "w": 150, "h": 100},
+      "evidence_ids": [],
+      "interaction": "examine"
+    },
+    {
+      "id": "meditation_room",
+      "label": "禅房",
+      "rect": {"x": 440, "y": 60, "w": 140, "h": 90},
+      "evidence_ids": ["ev_plant_toxin"],
+      "interaction": "examine"
+    },
+    {
+      "id": "garden",
+      "label": "菜园",
+      "rect": {"x": 610, "y": 180, "w": 130, "h": 110},
+      "evidence_ids": ["ev_plant_toxin"],
+      "interaction": "examine"
+    },
+    {
+      "id": "old_quarters",
+      "label": "法元旧居",
+      "rect": {"x": 620, "y": 40, "w": 140, "h": 100},
+      "evidence_ids": ["ev_diary"],
+      "interaction": "examine"
+    }
+  ]
+}

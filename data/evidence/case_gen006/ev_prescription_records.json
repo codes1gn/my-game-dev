@@ -1,0 +1,30 @@
+{
+  "id": "ev_prescription_records",
+  "case_id": "gen_006",
+  "name": "纪淑兰处方与配药记录",
+  "description": "从纪氏诊所搜查出的手写处方本、配药台账及药材出入库记录。常规页面为跌打正骨方剂，但三名死者对应的处方页存在明显篡改——川乌/草乌用量标注为「制」，实际出库为生草乌。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "丁贵昌（腰痛药酒）、马永来（泡脚方）、孙德福（肩伤贴膏）的处方均由纪淑兰亲笔开具，签字日期与三人最后就诊日一致。台账显示配药环节由梁素云执行——她按处方称重抓药，无法区分生草乌与制草乌的外观差异。",
+      "skill_required": null
+    },
+    {
+      "action": "篡改痕迹鉴定",
+      "result": "三份处方中「制川乌」「制草乌」的「制」字笔压与周围文字不同，为后补。药材库盘点：生草乌消耗量过去三年异常上升，而制草乌用量稳定——纪淑兰作为四十二年老中医，不可能未察觉库存偏差。",
+      "skill_required": {"observation": 3}
+    },
+    {
+      "action": "投毒路径重建",
+      "result": "纪淑兰在处方上标注安全剂量（制草乌），实际指示替换为生草乌粉末混入药酒/泡脚剂。梁素云按方配药，成为不知情的执行者。纪淑兰掌握生乌头碱剂量计算——其私人笔记中有不同体重对应的致死量换算表。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "锁定投毒手段为篡改中医处方、混入未炮制乌头。纪淑兰是处方作者与剂量设计者，梁素云仅为配药环节的无意识代理人。",
+    "suspects_implicated": ["ji_shulan", "liang_suyun"],
+    "deduction_tags": ["method", "prescription_tampering", "TCM_poisoning"]
+  }
+}

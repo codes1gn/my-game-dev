@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_005",
+  "title": "推理板 — 渡鸦之眼",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "locked_room",
+      "label": "密室状态",
+      "icon": "door",
+      "detail": "入户门链条反锁、窗户内扣，无闯入痕迹。链条环被微型切割削弱，门外钓鱼线可远程拉断；磁吸窗锁可外部扣合——密室系伪造。"
+    },
+    {
+      "id": "co_readings",
+      "label": "CO浓度异常",
+      "icon": "evidence",
+      "detail": "死者COHb 68%，樱桃红面容。管道内壁CO残留为室内十五倍，浓度沿新风→卧室风道递增，指向通风系统投毒。"
+    },
+    {
+      "id": "hvac_design",
+      "label": "通风系统设计",
+      "icon": "document",
+      "detail": "程鹤声绘制的施工图含隐蔽CO副通道；他以联动调试为由取得监控密码。新风机组过滤箱内发现甲酸热分解CO发生器。"
+    },
+    {
+      "id": "surveillance",
+      "label": "监控时间戳",
+      "icon": "camera",
+      "detail": "案发日凌晨1–3点录像与前日完全循环，LED闪烁频率同步。后台远程登录IP指向大学图书馆，账号密码曾给过程鹤声。"
+    },
+    {
+      "id": "bullying_records",
+      "label": "霸凌档案",
+      "icon": "profile",
+      "detail": "十五年前程鹤声遭长期霸凌，詹铭朗为主要施暴者。校医院七次「摔伤」记录、论坛缓存与手臂旧疤印证创伤来源。"
+    },
+    {
+      "id": "killer_means",
+      "label": "职业便利作案",
+      "icon": "tool",
+      "detail": "程鹤声是通风系统设计者兼验收人，熟悉窗锁型号与链条锁结构，并掌握监控管理权限——具备远程投毒、伪造密室、掩盖行踪的全套条件。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "co_readings",
+      "to": "hvac_design",
+      "conclusion": "CO沿风道梯度分布 + 隐蔽副通道与发生器 → 确认为通风系统定向投毒，非意外泄漏",
+      "tag": "死因锁定"
+    },
+    {
+      "from": "locked_room",
+      "to": "hvac_design",
+      "conclusion": "伪造密室 + 外部可控通风投毒 → 凶手无需留于室内，预设CO发生器即可远程完成杀人",
+      "tag": "密室破解"
+    },
+    {
+      "from": "hvac_design",
+      "to": "bullying_records",
+      "conclusion": "程鹤声设计武器化风道 + 詹铭朗为旧日霸凌者 → 设计者即复仇者，动机与手段对齐",
+      "tag": "真凶认定"
+    },
+    {
+      "from": "surveillance",
+      "to": "killer_means",
+      "conclusion": "监控录像覆盖 + 设计者独占系统权限 → 程鹤声预谋掩盖作案窗口，具备完整反侦察能力",
+      "tag": "预谋佐证"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "locked_room",
+      "to": "surveillance",
+      "conclusion": "链条锁/磁吸窗锁伪造密室 + 监控循环覆盖 → 双重伪装构成完整善后方案",
+      "tag": "善后链条",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}

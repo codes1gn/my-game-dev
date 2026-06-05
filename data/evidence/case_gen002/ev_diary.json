@@ -1,0 +1,30 @@
+{
+  "id": "ev_diary",
+  "case_id": "gen_002",
+  "name": "慧静日记残页",
+  "description": "火灾中部分未完全焚毁的日记残页，从法元旧居暗格中亦搜出备份片段。慧静记录了撬开藏经楼地砖发现白骨、法元生前对年轻尼姑的虐待，以及她坚持报警的决心。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "残页经笔迹鉴定确认为慧静本人所写。最后几页日期停在火灾前夜，内容提及「必须让外面的人知道」和「师姐劝我不要说」。",
+      "skill_required": null
+    },
+    {
+      "action": "内容比对",
+      "result": "日记详细描述了法元以「修行」之名实施的长期虐待，以及地基下白骨的发现经过。慧静在火灾前已掌握足以引爆案件的完整真相——她的存在对净明构成直接威胁。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "死因时序推断",
+      "result": "法医确认慧静气管内无烟灰沉积，说明她在火灾前已停止呼吸。日记最后一页笔迹潦草，似在服药后勉强写就。结合曼陀罗毒素检出，慧静系被毒杀后焚尸，而非火灾遇难。",
+      "skill_required": {"observation": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "证明慧静因发现秘密并坚持报警而遭灭口，将纵火动机从「毁证」具体化为「阻止报警」。日记中「师姐」一词直接指向净明。",
+    "suspects_implicated": ["jing_ming", "fa_yuan"],
+    "deduction_tags": ["witness_elimination", "motive", "timeline"]
+  }
+}

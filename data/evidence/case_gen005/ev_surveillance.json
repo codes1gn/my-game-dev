@@ -1,0 +1,30 @@
+{
+  "id": "ev_surveillance",
+  "case_id": "gen_005",
+  "name": "监控时间戳",
+  "description": "小区23层电梯厅、楼道及大门的CCTV录像。案发前后72小时画面中，23层电梯厅在案发日凌晨1:00–3:00出现一段与前一日凌晨完全相同的循环画面。",
+  "type": "digital",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "案发日凌晨1:00–3:00的录像与24小时前同时间段画面逐帧一致，连电梯厅LED灯每37秒的微闪频率都完全同步——不可能是自然录制，系录像覆盖。",
+      "skill_required": null
+    },
+    {
+      "action": "数字取证分析",
+      "result": "监控管理后台在案发前日被远程登录，IP追溯至明湾大学图书馆公共WiFi。登录账户为物业授权的通风联动调试账号——密码曾提供给通风系统设计者程鹤声。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "作案窗口推断",
+      "result": "被覆盖的两小时正是凶手安装CO发生器、完成密室伪装的关键窗口。监控篡改与通风投毒、链条锁伪造形成完整善后链——凶手具备预谋与反侦察意识。",
+      "skill_required": {"observation": 3}
+    }
+  ],
+  "relevance": {
+    "summary": "证明凶手刻意掩盖案发时段行踪，且具备监控系统访问权限。将程鹤声的设计者身份与作案时间线直接绑定。",
+    "suspects_implicated": ["cheng_hesheng"],
+    "deduction_tags": ["surveillance_tampering", "digital_forensics", "premeditation"]
+  }
+}

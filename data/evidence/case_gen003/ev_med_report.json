@@ -1,0 +1,35 @@
+{
+  "id": "ev_med_report",
+  "case_id": "gen_003",
+  "name": "皮肤科MED检测报告",
+  "description": "苏晴三个月间多次就医，最终在三甲医院做了最小红斑剂量（MED）测试。报告与复诊记录留在主卧，阳台区域则是她发病前最后仍敢短暂停留的日晒空间。",
+  "type": "document",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "初诊为日光性皮炎，加重后诊断为严重光敏性皮炎。医生曾询问光敏性药物与含呋喃香豆素食物接触史——苏晴提到近期饮用新花草茶，但未怀疑人为投毒。",
+      "skill_required": null
+    },
+    {
+      "action": "MED数值解读",
+      "result": "MED测试显示苏晴的皮肤紫外线耐受阈值仅为正常人的四分之一。这种幅度在正常光敏性皮炎中极为罕见——更像是外源性光敏剂长期作用后的药理性改变，而非单纯体质问题。",
+      "skill_required": {"forensics": 3}
+    },
+    {
+      "action": "病程时间线比对",
+      "result": "症状始于三个月前，与开始饮用方若寒所赠「霖露」茶及安装智能灯光系统的时间完全重合。停茶两周后未改善，符合8-MOP体内蓄积特征——光敏阈值已被持久性拉低。",
+      "skill_required": {"observation": 4}
+    },
+    {
+      "action": "鉴别诊断结论",
+      "result": "排除药物性光敏与常见植物接触后，剩余最合理解释是持续摄入外源性8-MOP。苏晴的「怪病」实为慢性化学攻击的临床表现——攻击者精准利用了皮肤科学中MED可被药物改变的原理。",
+      "skill_required": {"forensics": 5}
+    }
+  ],
+  "relevance": {
+    "summary": "从医学角度证明光过敏非自然发生，而是人为诱导。MED异常降低为茶中8-MOP投毒提供独立佐证，将「皮肤病」重新定性为蓄意伤害。",
+    "suspects_implicated": ["fang_ruohan"],
+    "deduction_tags": ["medical_evidence", "photosensitivity", "timeline"]
+  }
+}

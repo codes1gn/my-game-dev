@@ -1,0 +1,35 @@
+{
+  "id": "ev_wrist_wounds",
+  "case_id": "gen_003",
+  "name": "割腕伤口分析",
+  "description": "苏晴倒在浴缸中，手腕上有两道整齐的切口。浴缸水呈淡红色，现场初步被判定为自杀，但伤口形态存在多处疑点。",
+  "type": "physical",
+  "image": "",
+  "analysis_options": [
+    {
+      "action": "基本检查",
+      "result": "两道伤口深度均匀、角度一致，位于桡动脉位置。现场未发现遗书，但卧室桌上有三唑仑空瓶。林桐称苏晴当天仍在讨论新项目，情绪不像决意轻生。",
+      "skill_required": null
+    },
+    {
+      "action": "伤口形态分析",
+      "result": "自杀割腕通常会出现多条试探性浅切口（犹豫伤），随后才有一两条深切口。苏晴的伤口没有犹豫痕迹，深度与角度高度一致——更符合在意识丧失状态下被他人切开。",
+      "skill_required": {"forensics": 4}
+    },
+    {
+      "action": "现场痕迹比对",
+      "result": "浴室地面水渍分布显示，除苏晴外至少还有一人曾进入浴缸区域——鞋印从门口指向浴缸，再折返门口，穿的是无纹路防水鞋套。结合三唑仑起效时间（15–20分钟），有人在她昏迷后进入并完成割腕。",
+      "skill_required": {"forensics": 5}
+    },
+    {
+      "action": "伪装自杀动机推断",
+      "result": "割腕自杀通常不会做全面毒理检测，但若判定为安眠药自杀则必然尸检——尸检会发现血液中8-MOP光敏剂。凶手刻意将死因伪装为割腕，意在掩盖长达三个月的慢性投毒。",
+      "skill_required": {"psychology": 4}
+    }
+  ],
+  "relevance": {
+    "summary": "推翻自杀结论，证明他杀并伪装现场。伤口无犹豫痕、第三人鞋印与三唑仑共存，指向凶手在受害者昏迷后割腕以确保死亡，并试图规避深度毒检。",
+    "suspects_implicated": ["fang_ruohan"],
+    "deduction_tags": ["staged_suicide", "cause_of_death", "premeditation"]
+  }
+}

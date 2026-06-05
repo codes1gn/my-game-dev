@@ -1,0 +1,88 @@
+{
+  "case_id": "gen_009",
+  "title": "推理板 — 第七杯",
+  "mode": "link",
+
+  "evidence_nodes": [
+    {
+      "id": "toxicology",
+      "label": "三案毒理复检",
+      "icon": "evidence",
+      "detail": "陆嘉铭、汤子安、方立行血液中均检出头孢哌酮代谢物，且死亡前均饮酒。三人表面死因各异，实为头孢+酒精双硫仑样反应所致的心律失常。"
+    },
+    {
+      "id": "questionnaires",
+      "label": "心情问卷档案",
+      "icon": "document",
+      "detail": "三名受害者在「第七杯」填写的问卷均暴露同一信息：他们是叶晓禾的男友。池明远收阅问卷后亲自调酒，精准掌握每位目标身份。"
+    },
+    {
+      "id": "cephalosporin",
+      "label": "头孢采购记录",
+      "icon": "document",
+      "detail": "储藏室及网购记录显示池明远分批购入大量头孢哌酮粉针剂。2g溶于鸡尾酒后无色无味，致死依赖受害者后续饮酒触发间接反应。"
+    },
+    {
+      "id": "social_media",
+      "label": "社交追踪记录",
+      "icon": "profile",
+      "detail": "池明远分手三年仍监控叶晓禾动态，搜索并保存三名男友信息。酒吧名「第七杯」源于两人初约——扭曲的「保护欲」驱动清除情敌。"
+    },
+    {
+      "id": "cctv",
+      "label": "吧台监控录像",
+      "icon": "camera",
+      "detail": "三名受害者到访当日录像显示池明远独自调制鸡尾酒，摇壶前短暂取吧台抽屉内物品——该抽屉后搜出头孢空瓶。"
+    },
+    {
+      "id": "motive",
+      "label": "池明远执念动机",
+      "icon": "profile",
+      "detail": "池明远自认叶晓禾「总被不值得的男人伤害」，以心情问卷筛选并清除其新男友。叶晓禾报案时仍不知真凶，以为自己「克死」男友。"
+    }
+  ],
+
+  "correct_links": [
+    {
+      "from": "toxicology",
+      "to": "cephalosporin",
+      "conclusion": "三案双硫仑反应 + 池明远批量购入头孢 → 间接投毒手法与物质来源锁定",
+      "tag": "投毒认定"
+    },
+    {
+      "from": "questionnaires",
+      "to": "toxicology",
+      "conclusion": "问卷暴露叶晓禾男友身份 + 三人同模式死亡 → 针对同一关系圈的连环作案",
+      "tag": "连环锁定"
+    },
+    {
+      "from": "questionnaires",
+      "to": "social_media",
+      "conclusion": "问卷筛选情敌 + 社交追踪叶晓禾 → 池明远掌握目标信息并具备清除动机",
+      "tag": "动机锁定"
+    },
+    {
+      "from": "cctv",
+      "to": "cephalosporin",
+      "conclusion": "监控捕捉独自投药动作 + 储藏室头孢库存 → 吧台现场完成投毒执行",
+      "tag": "执行确认"
+    }
+  ],
+
+  "bonus_links": [
+    {
+      "from": "social_media",
+      "to": "cctv",
+      "conclusion": "长期追踪情敌 + 监控固定投药瞬间 → 有预谋的连环间接投毒，非临时起意",
+      "tag": "预谋佐证",
+      "bonus_points": 5
+    }
+  ],
+
+  "scoring": {
+    "points_per_correct": 15,
+    "bonus_per_extra": 5,
+    "penalty_per_wrong": -3,
+    "perfect_bonus": 20
+  }
+}
